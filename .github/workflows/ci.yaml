@@ -34,6 +34,7 @@ jobs:
 
   publish:
     name: Publish
+    if: github.event_name == 'release'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,8 +51,53 @@ jobs:
           registry-url: https://registry.npmjs.org
       - name: Install Dependencies
         run: pnpm install
-      - if: github.event_name == 'release'
-        name: Publish
+      - name: Publish
         run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  pre-release:
+    name: Pre-Release
+    permissions:
+      contents: write
+    needs:
+      - build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: pack
+          path: dist/
+      - name: Create Pre-Release
+        uses: liblaf/actions/release@main
+        with:
+          clobber: true
+          files: dist/*
+          prerelease: true
+          tag: latest
+
+  release:
+    name: Release
+    permissions:
+      contents: write
+    needs:
+      - build
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: pack
+          path: dist/
+      - name: Create Pre-Release
+        uses: liblaf/actions/release@main
+        with:
+          files: dist/*
+          tag: ${{ github.event.release.tag_name }}
