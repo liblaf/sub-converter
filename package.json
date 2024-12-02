@@ -1,0 +1,45 @@
+{
+  "name": "@liblaf/sub-converter",
+  "version": "0.0.0",
+  "description": "TODO",
+  "keywords": ["TODO"],
+  "homepage": "https://github.com/liblaf/sub-converter",
+  "bugs": {
+    "url": "https://github.com/liblaf/sub-converter/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "liblaf",
+    "email": "30631553+liblaf@users.noreply.github.com",
+    "url": "https://github.com/liblaf"
+  },
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": "./dist/index.js"
+    }
+  },
+  "repository": "github:liblaf/sub-converter",
+  "scripts": {
+    "build": "tsup",
+    "lint": "biome check --write",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "tsup": "^8.3.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  }
+}
