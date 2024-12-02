@@ -2,9 +2,7 @@
   "name": "@liblaf/sub-converter",
   "version": "0.0.0",
   "description": "TODO",
-  "keywords": [
-    "TODO"
-  ],
+  "keywords": ["TODO"],
   "homepage": "https://github.com/liblaf/sub-converter",
   "bugs": {
     "url": "https://github.com/liblaf/sub-converter/issues"
@@ -15,9 +13,7 @@
     "email": "30631553+liblaf@users.noreply.github.com",
     "url": "https://github.com/liblaf"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
