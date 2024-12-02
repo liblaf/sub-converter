@@ -21,5 +21,13 @@
   },
   "organizeImports": {
     "enabled": true
+  },
+  "json": {
+    "formatter": {
+      "enabled": false
+    },
+    "linter": {
+      "enabled": false
+    }
   }
 }
