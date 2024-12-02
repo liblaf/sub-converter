@@ -28,7 +28,7 @@
   "scripts": {
     "build": "tsup",
     "lint": "biome check --write",
-    "prepublishOnly": "pnpm run build"
+    "prepack": "pnpm run build"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
