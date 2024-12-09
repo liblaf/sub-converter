@@ -4,11 +4,16 @@
   "language": "en",
   "words": [
     "dotenv",
+    "fakeip",
+    "geoip",
+    "inet",
     "jscoverage",
     "jspm",
     "liblaf",
     "nuxt",
     "pids",
+    "rcode",
+    "remeda",
     "vuepress",
     "wscript"
   ],
