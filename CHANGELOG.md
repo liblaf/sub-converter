@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.1](https://github.com/liblaf/sub-converter/compare/v0.0.0...v0.0.1) (2024-12-11)
+
+
+### ✨ Features
+
+* add DNS and inbound configuration for sing-box ([0473d8f](https://github.com/liblaf/sub-converter/commit/0473d8f2ec56b49127c3d9532d3a1389f0040525))
+
+
+### ♻ Code Refactoring
+
+* reorganize and enhance sing-box configuration and exchange logic ([9a410da](https://github.com/liblaf/sub-converter/commit/9a410dabd4ce82d614d939a0eb39a9c2e1d6f423))
+
 ## 0.0.0 (2024-12-02)
 
 
