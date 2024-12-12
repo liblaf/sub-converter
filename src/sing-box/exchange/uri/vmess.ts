@@ -1,5 +1,5 @@
 import type { Outbound } from "@/sing-box/types";
-import { URIParseError, decodeBase64 } from "@/utils";
+import { URIParseError, tryDecodeBase64 } from "@/utils";
 import { z } from "zod";
 
 // ref: <https://github.com/2dust/v2rayN/wiki/%E5%88%86%E4%BA%AB%E9%93%BE%E6%8E%A5%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E(ver-2)>
@@ -9,7 +9,7 @@ const VMESS_SCHEMA = z.object({
   add: z.string(), // 地址 IP 或域名
   port: z.coerce.number(), // 端口号
   id: z.string().uuid(), // UUID
-  aid: z.number(), // alterId
+  aid: z.coerce.number(), // alterId
   scy: z.string().optional(), // 加密方式 (security), 没有时值默认 auto
   net: z.string().optional(), // 传输协议 (tcp\kcp\ws\h2\quic)
   type: z.string().optional(), // 伪装类型 (none\http\srtp\utp\wechat-video) *tcp or kcp or QUIC
@@ -28,15 +28,26 @@ export function singboxFromVmess(uri: string): Outbound {
   const match = uri.match(/vmess:\/\/(?<body>.+)/);
   if (!match) throw new URIParseError("vmess", uri);
   let { body } = match.groups!;
-  body = decodeBase64(body);
+  body = tryDecodeBase64(body);
   const json: Vmess = VMESS_SCHEMA.parse(JSON.parse(body));
-  return {
+  const outbound: Outbound = {
     type: "vmess",
-    tag: json.ps,
+    tag: json.ps.trim(),
     server: json.add,
     server_port: json.port,
     uuid: json.id,
     alter_id: json.aid,
     security: "auto",
   };
+  switch (json.tls) {
+    case "tls": {
+      outbound.tls = {
+        enabled: true,
+        insecure: false,
+        server_name: json.sni,
+      };
+      break;
+    }
+  }
+  return outbound;
 }
