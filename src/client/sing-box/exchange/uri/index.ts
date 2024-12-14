@@ -1,4 +1,4 @@
-import type { Outbound } from "@/sing-box/types";
+import type { Outbound } from "@/client/sing-box/types";
 import { UnknownUriProtocolError } from "@/utils";
 import { singboxFromSS } from "./ss";
 import { singboxFromTrojan } from "./trojan";

@@ -1,4 +1,4 @@
-import type { Outbound } from "@/sing-box/types";
+import type { Outbound } from "@/client/sing-box/types";
 import { URIParseError, tryDecodeBase64 } from "@/utils";
 import { z } from "zod";
 

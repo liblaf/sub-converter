@@ -5,7 +5,7 @@ export type Config = {
   ntp?: object;
   endpoints?: object[];
   inbounds?: object[];
-  outbounds?: object[];
+  outbounds?: Outbound[];
   route?: object;
   experimental?: object;
 };

@@ -17,12 +17,18 @@
     "nuxt",
     "obfs",
     "pids",
+    "quic",
     "rcode",
     "rdrc",
     "remeda",
+    "rprx",
+    "türkiye",
+    "utls",
+    "vless",
     "vmess",
     "vuepress",
-    "wscript"
+    "wscript",
+    "xtls"
   ],
   "ignorePaths": [
     "**/.cspell.*",

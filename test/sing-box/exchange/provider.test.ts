@@ -1,4 +1,4 @@
-import { singboxFromBase64 } from "@/sing-box/exchange";
+import { singboxFromBase64 } from "@/client/sing-box/exchange";
 import { subconvert } from "@/utils";
 import { expect, test } from "vitest";
 

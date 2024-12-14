@@ -1,4 +1,4 @@
-import { singboxFromUri } from "@/sing-box/exchange";
+import { singboxFromUri } from "@/client/sing-box/exchange";
 import TESTCASES from "@data/testcases.json";
 import { expect, test } from "vitest";
 

@@ -13,7 +13,7 @@ export const LINUX: Config = {
     servers: [
       // https://sing-box.sagernet.org/configuration/dns/server/
       { tag: "dns:proxy", address: "https://8.8.8.8/dns-query" },
-      { tag: "dns:local", address: "8.8.8.8", detour: "DIRECT" },
+      { tag: "dns:local", address: "local", detour: "DIRECT" },
       { tag: "dns:reject", address: "rcode://refused" },
     ],
     rules: [
