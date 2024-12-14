@@ -1,2 +1,3 @@
 export { tryDecodeBase64 } from "./base64";
-export { URIParseError, UnknownUriProtocolError } from "./errors";
+export { UnknownUriProtocolError, URIParseError } from "./errors";
+export { subconvert } from "./subconvert";

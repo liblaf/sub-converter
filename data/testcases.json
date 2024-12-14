@@ -33,7 +33,7 @@
     "uri": "vmess://eyJ2IjoiMiIsInBzIjoiIOWkh-azqOaIluWIq-WQjSAgIiwiYWRkIjoiMTExLjExMS4xMTEuMTExIiwicG9ydCI6IjMyMDAwIiwiaWQiOiIxMzg2Zjg1ZS02NTdiLTRkNmUtOWQ1Ni03OGJhZGI3NWUxZmQiLCJhaWQiOiIxMDAiLCJzY3kiOiJ6ZXJvIiwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJob3N0Ijoid3d3LmJiYi5jb20iLCJwYXRoIjoiLyIsInRscyI6InRscyIsInNuaSI6Ind3dy5jY2MuY29tIiwiYWxwbiI6ImgyIiwiZnAiOiJjaHJvbWUifQ",
     "singbox": {
       "type": "vmess",
-      "tag": "备注或别名",
+      "tag": " 备注或别名  ",
       "server": "111.111.111.111",
       "server_port": 32000,
       "uuid": "1386f85e-657b-4d6e-9d56-78badb75e1fd",
@@ -47,10 +47,10 @@
     }
   },
   {
-    "uri": "ss://YWVzLTI1Ni1nY206UEFTU1dPUkQ@example.com:12345#NAME",
+    "uri": "ss://YWVzLTI1Ni1nY206UEFTU1dPUkQ@example.com:12345#JMS%20Shadowsocks%201",
     "singbox": {
       "type": "shadowsocks",
-      "tag": "NAME",
+      "tag": "JMS Shadowsocks 1",
       "server": "example.com",
       "server_port": 12345,
       "method": "aes-256-gcm",
@@ -58,10 +58,10 @@
     }
   },
   {
-    "uri": "ss://YWVzLTI1Ni1nY206UEFTU1dPUkRAZXhhbXBsZS5jb206MTIzNDU#NAME",
+    "uri": "ss://YWVzLTI1Ni1nY206UEFTU1dPUkRAZXhhbXBsZS5jb206MTIzNDU#JMS%20Shadowsocks%202",
     "singbox": {
       "type": "shadowsocks",
-      "tag": "NAME",
+      "tag": "JMS Shadowsocks 2",
       "server": "example.com",
       "server_port": 12345,
       "method": "aes-256-gcm",
@@ -69,15 +69,79 @@
     }
   },
   {
-    "uri": "vmess://eyJwcyI6Ik5BTUUiLCJwb3J0IjoiMTIzNDUiLCJpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsImFpZCI6MCwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJ0bHMiOiJub25lIiwiYWRkIjoiOC44LjguOCJ9",
+    "uri": "vmess://eyJwcyI6IkpNUyBWTWVzcyIsInBvcnQiOiIxMjM0NSIsImlkIjoiMDAwMDAwMDAtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwIiwiYWlkIjowLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoibm9uZSIsInRscyI6Im5vbmUiLCJhZGQiOiI4LjguOC44In0",
     "singbox": {
       "type": "vmess",
-      "tag": "NAME",
+      "tag": "JMS VMess",
       "server": "8.8.8.8",
       "server_port": 12345,
       "uuid": "00000000-0000-0000-0000-000000000000",
       "alter_id": 0,
       "security": "auto"
+    }
+  },
+  {
+    "uri": "vmess://eyJ2IjoiMiIsInBzIjoiQUNBIFZNZXNzIFdlYlNvY2tldCIsImFkZCI6ImFkZC5leGFtcGxlLmNvbSIsInBvcnQiOiI0NDMiLCJpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInR5cGUiOiJub25lIiwiaG9zdCI6Imhvc3QuZXhhbXBsZS5jb20iLCJwYXRoIjoiXC9wYXRoP2tleT12YWwiLCJ0bHMiOiJ0bHMiLCJzbmkiOiJzbmkuZXhhbXBsZS5jb20ifQ",
+    "singbox": {
+      "type": "vmess",
+      "tag": "ACA VMess WebSocket",
+      "server": "add.example.com",
+      "server_port": 443,
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "alter_id": 0,
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/path?key=val",
+        "headers": {
+          "Host": "host.example.com"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "sni.example.com",
+        "insecure": false
+      }
+    }
+  },
+  {
+    "uri": "vless://00000000-0000-0000-0000-000000000000@8.8.8.8:12345?type=tcp&encryption=none&host=&path=&headerType=none&quicSecurity=none&serviceName=&security=reality&flow=xtls-rprx-vision&fp=chrome&sni=sni.example.com&pbk=PUBLIC_KEY&sid=SHORT_ID#CitrusLab%20VLESS%20Reality",
+    "singbox": {
+      "type": "vless",
+      "tag": "CitrusLab VLESS Reality",
+      "server": "8.8.8.8",
+      "server_port": 12345,
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "sni.example.com",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "PUBLIC_KEY",
+          "short_id": "SHORT_ID"
+        }
+      }
+    }
+  },
+  {
+    "uri": "trojan://00000000-0000-0000-0000-000000000000@example.com:12345?allowInsecure=1&peer=peer.example.com&sni=sni.example.com#NiceDuck%20Trojan",
+    "singbox": {
+      "type": "trojan",
+      "tag": "NiceDuck Trojan",
+      "server": "example.com",
+      "server_port": 12345,
+      "password": "00000000-0000-0000-0000-000000000000",
+      "tls": {
+        "enabled": true,
+        "server_name": "sni.example.com",
+        "insecure": true
+      }
     }
   }
 ]

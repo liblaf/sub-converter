@@ -1,32 +1,26 @@
 import type { Outbound } from "@/sing-box/types";
+import { subconvert } from "@/utils";
 import type { BunFile } from "bun";
 import { $ } from "bun";
 
 type TestCase = {
   uri: string;
-  singbox: Outbound;
+  singbox?: Outbound;
 };
 
 const TESTCASES_PATH = "data/testcases.json";
 
-async function subconvert(target: string, uri: string): Promise<string> {
-  const url = new URL("https://url.v1.mk/sub");
-  url.searchParams.set("target", target);
-  url.searchParams.set("url", uri);
-  url.searchParams.set("list", "true");
-  const resp = await fetch(url);
-  if (!resp.ok) {
-    throw new Error(`Failed to convert: ${uri}`);
-  }
-  const text = await resp.text();
-  return text;
-}
-
 async function prepare(uri: string): Promise<TestCase> {
-  return {
-    uri,
-    singbox: JSON.parse(await subconvert("singbox", uri)).outbounds[0],
-  };
+  const testcase: TestCase = { uri };
+  try {
+    testcase.singbox = JSON.parse(
+      await subconvert("singbox", uri),
+    ).outbounds[0];
+  } catch (error) {
+    console.error(`Failed to prepare: ${uri}`);
+    console.error(error);
+  }
+  return testcase;
 }
 
 async function main(): Promise<void> {

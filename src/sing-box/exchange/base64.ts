@@ -5,6 +5,7 @@ import { singboxFromUri } from "./uri";
 export function singboxFromBase64(base64: string): Outbound[] {
   const uris = tryDecodeBase64(base64)
     .split("\n")
-    .filter((s) => s.trim());
+    .map((s) => s.trim())
+    .filter((s) => s);
   return uris.map(singboxFromUri);
 }

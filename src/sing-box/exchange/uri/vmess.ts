@@ -31,17 +31,32 @@ export function singboxFromVmess(uri: string): Outbound {
   body = tryDecodeBase64(body);
   const json: Vmess = VMESS_SCHEMA.parse(JSON.parse(body));
   const outbound: Outbound = {
+    // https://sing-box.sagernet.org/configuration/outbound/vmess/
     type: "vmess",
-    tag: json.ps.trim(),
+    tag: json.ps,
     server: json.add,
     server_port: json.port,
     uuid: json.id,
-    alter_id: json.aid,
     security: "auto",
+    alter_id: json.aid,
   };
+  switch (json.net) {
+    case "ws": {
+      outbound.transport = {
+        // https://sing-box.sagernet.org/configuration/shared/v2ray-transport/#websocket
+        type: "ws",
+        path: json.path,
+        headers: {
+          Host: json.host,
+        },
+      };
+      break;
+    }
+  }
   switch (json.tls) {
     case "tls": {
       outbound.tls = {
+        // https://sing-box.sagernet.org/configuration/shared/tls/#outbound
         enabled: true,
         insecure: false,
         server_name: json.sni,

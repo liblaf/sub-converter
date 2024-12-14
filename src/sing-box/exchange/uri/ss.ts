@@ -5,7 +5,8 @@ export function singboxFromSS(uri: string): Outbound {
   // https://github.com/shadowsocks/shadowsocks-org/wiki/SIP002-URI-Scheme
   const match = uri.match(/ss:\/\/(?<body>.+)#(?<tag>.+)/);
   if (!match) throw new URIParseError("ss", uri);
-  const { body, tag } = match.groups!;
+  let { body, tag } = match.groups!;
+  tag = decodeURIComponent(tag).trim();
   const outbound: Outbound = {
     type: "shadowsocks",
     tag,
