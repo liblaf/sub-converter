@@ -10,11 +10,12 @@ export class FetchError extends SubConverterError {
     options?: { cause?: unknown; message?: string; resp?: Response },
   ) {
     const url: string = asString(input);
+    const resp: Response | undefined = options?.resp?.clone();
     let message = `Failed to fetch: ${url}`;
     if (options?.message) message += `\n${options.message}`;
-    if (options?.resp) message += `\nResponse: ${options.resp}`;
+    if (options?.resp) message += `\n${resp}`;
     super(message, { cause: options?.cause });
-    this.resp = options?.resp;
+    this.resp = resp;
     this.url = url;
   }
 }
