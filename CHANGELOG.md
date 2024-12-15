@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.0.1](https://github.com/liblaf/sub-converter/compare/v0.0.0...v0.0.1) (2024-12-15)
+
+
+### ✨ Features
+
+* add DNS and inbound configuration for sing-box ([0473d8f](https://github.com/liblaf/sub-converter/commit/0473d8f2ec56b49127c3d9532d3a1389f0040525))
+* add test case preparation and URI parsing improvements ([81b9cf8](https://github.com/liblaf/sub-converter/commit/81b9cf81d978f49f07e78ed6b648253934ad47c4))
+* enhance URI parsing and add support for new protocols ([7de08ae](https://github.com/liblaf/sub-converter/commit/7de08aecb236debbb85bccde95777369438afafc))
+
+
+### 📝 Documentation
+
+* update changelog with recent CI workflow improvements ([0df0752](https://github.com/liblaf/sub-converter/commit/0df07524035cf4f3374f4f4415fc0a8818948805))
+
+
+### ♻ Code Refactoring
+
+* reorganize and enhance sing-box configuration and exchange logic ([9a410da](https://github.com/liblaf/sub-converter/commit/9a410dabd4ce82d614d939a0eb39a9c2e1d6f423))
+* reorganize and modularize sing-box client code ([7ea1edc](https://github.com/liblaf/sub-converter/commit/7ea1edc201573b00ae63459a1dc1b89ad0d81b16))
+* reorganize codebase for better modularity and maintainability ([545a2b3](https://github.com/liblaf/sub-converter/commit/545a2b34afee7cbaf955470103a056405ab656a7))
+
+
+### 🔧 Continuous Integration
+
+* add GitHub Actions workflow for running tests ([fb8fb66](https://github.com/liblaf/sub-converter/commit/fb8fb66702c6169e6f3f22d45259f202ae4a1f52))
+
 ## 0.0.0 (2024-12-02)
 
 ### 🔧 Continuous Integration
