@@ -12,7 +12,6 @@ export class FetchError extends SubConverterError {
     const url: string = asString(input);
     let message = `Failed to fetch: ${url}`;
     if (options?.message) message += `\n${options.message}`;
-    if (options?.cause) message += `\nCaused by: ${options.cause}`;
     if (options?.resp) message += `\nResponse: ${options.resp}`;
     super(message, { cause: options?.cause });
     this.resp = options?.resp;
@@ -28,11 +27,15 @@ export async function fetchUnsafe(
     const resp: Response = await fetch(input, { redirect: "follow", ...init });
     if (!resp.ok) {
       const text: string = await resp.text();
-      throw new FetchError(input, { message: text, resp: resp });
+      const error = new FetchError(input, { message: text, resp: resp });
+      console.error({ error });
+      throw error;
     }
     return resp;
   } catch (error) {
-    throw new FetchError(input, { cause: error });
+    const err = new FetchError(input, { cause: error });
+    console.error({ error: err });
+    throw err;
   }
 }
 

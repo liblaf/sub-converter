@@ -42,10 +42,9 @@ export async function fetchInfo(
     url: getProviderUrl(provider),
   };
   if (provider.clash)
-    info = {
-      ...info,
-      ...(await fetchClashInfo(provider.clash.url, provider.clash.ua)),
-    };
+    info = { ...info, ...(await fetchClashInfo(provider.clash)) };
+  else if (provider.singbox)
+    info = { ...info, ...(await fetchClashInfo(provider.singbox)) };
   else if (provider.jms)
     info = { ...info, ...(await fetchJmsInfo(provider.jms)) };
   else throw new FetchInfoError(provider.name);

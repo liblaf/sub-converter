@@ -2,13 +2,13 @@ import { fetchUnsafe } from "@/utils";
 import { addDays, format } from "date-fns";
 import type { SubscriptionUserinfo } from "../types";
 
-export async function fetchClashInfo(
-  url: string,
-  ua = "clash.meta",
-): Promise<SubscriptionUserinfo> {
+export async function fetchClashInfo({
+  url,
+  ua,
+}: { url: string; ua?: string }): Promise<SubscriptionUserinfo> {
   const resp: Response = await fetchUnsafe(url, {
     method: "HEAD",
-    headers: { "User-Agent": ua },
+    headers: { "User-Agent": ua ?? "clash.meta" },
   });
   const header: string | null = resp.headers.get("Subscription-Userinfo");
   const info: SubscriptionUserinfo = parseSubInfo(header);
