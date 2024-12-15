@@ -11,14 +11,14 @@ import {
   makeCountryFilter,
 } from "@/filter";
 import { filterSingboxOutbounds } from "../../provider";
-import type { Config, Outbound } from "../../types";
+import type { Config, InboundMixed, Outbound } from "../../types";
 import { addGroup, makeRemoteRuleset } from "../utils";
-import type { TemplateOptions } from "./types";
+import type { TemplateFactory, TemplateOptions } from "./types";
 
-export function makeDefaultConfig(
+export const makeDefaultConfig: TemplateFactory = (
   providers: Map<string, Outbound[]>,
   opts: TemplateOptions,
-): Config {
+): Config => {
   const cfg: Config = {
     // https://sing-box.sagernet.org/configuration/
     log: {
@@ -65,9 +65,7 @@ export function makeDefaultConfig(
         // https://sing-box.sagernet.org/configuration/shared/listen/
         listen: "0.0.0.0",
         listen_port: opts.port,
-        sniff: true,
-        sniff_override_destination: true,
-      },
+      } satisfies InboundMixed,
     ],
     outbounds: [
       // https://sing-box.sagernet.org/configuration/outbound/
@@ -138,4 +136,4 @@ export function makeDefaultConfig(
     ...filterSingboxOutbounds(providers, GROUPS.SELECT.filter),
   );
   return cfg;
-}
+};
