@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/liblaf/sub-converter/compare/v0.0.3...v0.0.4) (2024-12-15)
+
+
+### ♻ Code Refactoring
+
+* reorganize and modularize codebase for better maintainability ([7ade227](https://github.com/liblaf/sub-converter/commit/7ade227b8264853fe14c9bbc345ff1c0176c911e))
+
 ## [0.0.3](https://github.com/liblaf/sub-converter/compare/v0.0.2...v0.0.3) (2024-12-15)
 
 ### ♻ Code Refactoring
