@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.3](https://github.com/liblaf/sub-converter/compare/v0.0.2...v0.0.3) (2024-12-15)
+
+
+### ♻ Code Refactoring
+
+* reorganize subscription info fetching logic ([b30ca78](https://github.com/liblaf/sub-converter/commit/b30ca78f5a20c7cede9cfe6591a187e5bce25624))
+
 ## [0.0.2](https://github.com/liblaf/sub-converter/compare/v0.0.1...v0.0.2) (2024-12-15)
 
 
