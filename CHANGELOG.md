@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.0.2](https://github.com/liblaf/sub-converter/compare/v0.0.1...v0.0.2) (2024-12-15)
+
+
+### ✨ Features
+
+* add subscription info fetching for providers ([c04531a](https://github.com/liblaf/sub-converter/commit/c04531a52be7b55d7dd5f4a1b43110c90cf074a4))
+
+
+### ♻ Code Refactoring
+
+* enhance configuration templates and add iOS support ([ee1afdd](https://github.com/liblaf/sub-converter/commit/ee1afdd46b68bddec9810d615a5cf0c0153edbdc))
+* improve module exports and update outbound filter logic ([0ec6b51](https://github.com/liblaf/sub-converter/commit/0ec6b5170a99d0738dda8ce900036625fffd3310))
+
 ## [0.0.1](https://github.com/liblaf/sub-converter/compare/v0.0.0...v0.0.1) (2024-12-15)
 
 
