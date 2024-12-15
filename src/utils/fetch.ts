@@ -1,17 +1,19 @@
 export class FetchError extends Error {
   readonly name: string = "FetchError";
-  readonly status?: number;
+  readonly resp?: Response;
   readonly url: string;
 
   constructor(
     input: string | URL | Request,
-    options?: { message?: string; cause?: unknown; status?: number },
+    options?: { cause?: unknown; message?: string; resp?: Response },
   ) {
     const url: string = asString(input);
     let message = `Failed to fetch: ${url}`;
     if (options?.message) message += `\n${options.message}`;
+    if (options?.cause) message += `\nCaused by: ${options.cause}`;
+    if (options?.resp) message += `\nResponse: ${options.resp}`;
     super(message, { cause: options?.cause });
-    this.status = options?.status;
+    this.resp = options?.resp;
     this.url = url;
   }
 }
@@ -24,7 +26,7 @@ export async function fetchUnsafe(
     const resp: Response = await fetch(input, { redirect: "follow", ...init });
     if (!resp.ok) {
       const text: string = await resp.text();
-      throw new FetchError(input, { message: text, status: resp.status });
+      throw new FetchError(input, { message: text, resp: resp });
     }
     return resp;
   } catch (error) {

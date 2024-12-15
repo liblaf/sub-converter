@@ -16,7 +16,7 @@ export function singboxFromSS(uri: string): Outbound {
 }
 
 function parseBody(body: string, uri: string): any {
-  const bodyDecode = tryDecodeBase64(body);
+  const bodyDecode: string = tryDecodeBase64(body);
   const match = bodyDecode.match(
     /(?<userinfo>.+)@(?<hostname>.+):(?<port>\d+)(\/)?(\?(?<plugin>.+))?/,
   );

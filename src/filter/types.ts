@@ -1,1 +1,4 @@
-export type ProxyFilter = (name: string) => boolean;
+export type ProxyFilter = {
+  name: string;
+  filter: (name: string) => boolean;
+};

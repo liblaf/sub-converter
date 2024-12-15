@@ -12,3 +12,11 @@ export function singboxFromUri(uri: string): Outbound {
   if (uri.startsWith("vmess://")) return singboxFromVmess(uri);
   throw new UnknownUriProtocolError(uri);
 }
+
+export function singboxFromUriList(text: string): Outbound[] {
+  const uri: string[] = text
+    .split("\n")
+    .map((s: string): string => s.trim())
+    .filter((s: string): boolean => !!s);
+  return uri.map(singboxFromUri);
+}
