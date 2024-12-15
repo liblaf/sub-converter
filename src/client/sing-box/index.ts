@@ -11,6 +11,7 @@ export {
 } from "./provider";
 export {
   addGroup,
+  getTemplateFactory,
   makeDefaultConfig,
   makeRemoteRuleset,
   sanitize,

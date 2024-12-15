@@ -1,4 +1,5 @@
 export {
+  getTemplateFactory,
   makeDefaultConfig,
   TEMPLATE_OPTIONS_SCHEMA,
   TEMPLATES,

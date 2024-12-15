@@ -21,3 +21,5 @@ export const PROVIDER_OPTIONS_SCHEMA = z.object({
 });
 
 export type ProviderOptions = z.infer<typeof PROVIDER_OPTIONS_SCHEMA>;
+
+export const PROVIDERS_SCHEMA = z.array(PROVIDER_OPTIONS_SCHEMA);
