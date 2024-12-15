@@ -20,20 +20,24 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "import": {
         "types": "./dist/index.d.mts",
         "default": "./dist/index.mjs"
       },
-      "require": "./dist/index.js"
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     },
     "./*": {
-      "types": "./dist/*/index.d.ts",
       "import": {
         "types": "./dist/*/index.d.mts",
         "default": "./dist/*/index.mjs"
       },
-      "require": "./dist/*/index.js"
+      "require": {
+        "types": "./dist/*/index.d.ts",
+        "default": "./dist/*/index.js"
+      }
     }
   },
   "repository": "github:liblaf/sub-converter",

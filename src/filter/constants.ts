@@ -38,7 +38,7 @@ export enum OutboundTag {
   MEDIA = "📺 Media",
   PROXY = "PROXY",
   REJECT = "REJECT",
-  SELECT = "🌐 Select",
+  SELECT = "✅ Select",
 }
 
 export enum RulesetTag {

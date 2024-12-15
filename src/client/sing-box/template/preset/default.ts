@@ -134,6 +134,8 @@ export function makeDefaultConfig(
   addGroup(cfg, providers, GROUPS.MEDIA);
   for (const country of Object.keys(FLAGS))
     addGroup(cfg, providers, makeCountryFilter(country));
-  cfg.outbounds?.push(...filterSingboxOutbounds(providers, undefined));
+  cfg.outbounds?.push(
+    ...filterSingboxOutbounds(providers, GROUPS.SELECT.filter),
+  );
   return cfg;
 }
