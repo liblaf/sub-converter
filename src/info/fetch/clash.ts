@@ -1,6 +1,6 @@
 import { fetchUnsafe } from "@/utils";
 import { addDays, format } from "date-fns";
-import type { SubscriptionUserinfo } from "./types";
+import type { SubscriptionUserinfo } from "../types";
 
 export async function fetchClashInfo(
   url: string,

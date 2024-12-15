@@ -1,5 +1,5 @@
 import type { Outbound } from "@/client/sing-box/types";
-import { URIParseError, tryDecodeBase64 } from "@/utils";
+import { UriParseError, tryDecodeBase64 } from "@/utils";
 import { z } from "zod";
 
 // ref: <https://github.com/2dust/v2rayN/wiki/%E5%88%86%E4%BA%AB%E9%93%BE%E6%8E%A5%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E(ver-2)>
@@ -26,7 +26,7 @@ type Vmess = z.infer<typeof VMESS_SCHEMA>;
 export function singboxFromVmess(uri: string): Outbound {
   // https://github.com/2dust/v2rayN/wiki/%E5%88%86%E4%BA%AB%E9%93%BE%E6%8E%A5%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E(ver-2)
   const match = uri.match(/vmess:\/\/(?<body>.+)/);
-  if (!match) throw new URIParseError("vmess", uri);
+  if (!match) throw new UriParseError("vmess", uri);
   let { body } = match.groups!;
   body = tryDecodeBase64(body);
   const json: Vmess = VMESS_SCHEMA.parse(JSON.parse(body));

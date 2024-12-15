@@ -1,9 +1,9 @@
 import type { Outbound } from "@/client/sing-box/types";
-import { URIParseError } from "@/utils";
+import { UriParseError } from "@/utils";
 
 export function singboxFromTrojan(uri: string): Outbound {
   const url = new URL(uri);
-  if (url.protocol !== "trojan:") throw new URIParseError("trojan", uri);
+  if (url.protocol !== "trojan:") throw new UriParseError("trojan", uri);
   return {
     // https://sing-box.sagernet.org/configuration/outbound/trojan/
     type: "trojan",

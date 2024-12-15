@@ -1,10 +1,12 @@
-export class UnknownUriProtocolError extends Error {
+export class SubConverterError extends Error {}
+
+export class UnknownUriProtocolError extends SubConverterError {
   constructor(readonly uri: string) {
     super(`Unknown URI Protocol: ${uri}`);
   }
 }
 
-export class URIParseError extends Error {
+export class UriParseError extends SubConverterError {
   constructor(
     readonly type: string,
     readonly uri: string,

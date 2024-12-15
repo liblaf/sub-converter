@@ -1,9 +1,9 @@
 import type { Outbound } from "@/client/sing-box/types";
-import { URIParseError } from "@/utils";
+import { UriParseError } from "@/utils";
 
 export function singboxFromVless(uri: string): Outbound {
   const url = new URL(uri);
-  if (url.protocol !== "vless:") throw new URIParseError("vless", uri);
+  if (url.protocol !== "vless:") throw new UriParseError("vless", uri);
   return {
     // https://sing-box.sagernet.org/configuration/outbound/vless/
     type: "vless",

@@ -1,23 +1,30 @@
-import type { ProviderOptions } from "../types";
-import { getProviderUrl } from "../utils";
-import { fetchClashInfo } from "./clash";
-import { fetchJmsInfo } from "./jms";
+import type { ProviderOptions } from "@/provider";
+import { getProviderUrl } from "@/provider";
+import { SubConverterError } from "@/utils/errors";
+import { fetchClashInfo, fetchJmsInfo } from "./fetch";
 import type { SubscriptionUserinfo } from "./types";
 
-export async function fetchProvidersInfo(
+class FetchInfoError extends SubConverterError {
+  readonly name: string = "FetchInfoError";
+  constructor(readonly provider: string) {
+    super(`Failed to fetch info from provider: ${provider}`);
+  }
+}
+
+export async function fetchAllInfo(
   providers: ProviderOptions[],
 ): Promise<SubscriptionUserinfo[]> {
   const infos: SubscriptionUserinfo[] = await Promise.all(
-    providers.map(fetchSubInfoSafe),
+    providers.map(fetchInfoSafe),
   );
   return infos;
 }
 
-export async function fetchSubInfoSafe(
+export async function fetchInfoSafe(
   provider: ProviderOptions,
 ): Promise<SubscriptionUserinfo> {
   try {
-    return await fetchSubInfoUnsafe(provider);
+    return await fetchInfo(provider);
   } catch (error) {
     return {
       name: provider.name,
@@ -27,7 +34,7 @@ export async function fetchSubInfoSafe(
   }
 }
 
-export async function fetchSubInfoUnsafe(
+export async function fetchInfo(
   provider: ProviderOptions,
 ): Promise<SubscriptionUserinfo> {
   let info: SubscriptionUserinfo = {
@@ -41,6 +48,6 @@ export async function fetchSubInfoUnsafe(
     };
   else if (provider.jms)
     info = { ...info, ...(await fetchJmsInfo(provider.jms)) };
-  else throw new Error(`Unsupported provider: ${provider.name}`);
+  else throw new FetchInfoError(provider.name);
   return info;
 }

@@ -22,4 +22,8 @@ export const PROVIDER_OPTIONS_SCHEMA = z.object({
 
 export type ProviderOptions = z.infer<typeof PROVIDER_OPTIONS_SCHEMA>;
 
-export const PROVIDERS_SCHEMA = z.array(PROVIDER_OPTIONS_SCHEMA);
+export const PROFILE_SCHEMA = z.object({
+  providers: z.array(PROVIDER_OPTIONS_SCHEMA),
+});
+
+export type Profile = z.infer<typeof PROFILE_SCHEMA>;

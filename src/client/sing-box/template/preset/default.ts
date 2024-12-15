@@ -19,7 +19,7 @@ export const makeDefaultConfig: TemplateFactory = (
   providers: Map<string, Outbound[]>,
   opts: TemplateOptions,
 ): Config => {
-  const cfg: Config = {
+  let cfg: Config = {
     // https://sing-box.sagernet.org/configuration/
     log: {
       // https://sing-box.sagernet.org/configuration/log/
@@ -124,14 +124,14 @@ export const makeDefaultConfig: TemplateFactory = (
       },
     },
   };
-  addGroup(cfg, providers, GROUPS.SELECT);
-  addGroup(cfg, providers, GROUPS.AI);
-  addGroup(cfg, providers, GROUPS.AUTO);
-  addGroup(cfg, providers, GROUPS.DOWNLOAD);
-  addGroup(cfg, providers, GROUPS.EMBY);
-  addGroup(cfg, providers, GROUPS.MEDIA);
+  cfg = addGroup(cfg, providers, GROUPS.SELECT);
+  cfg = addGroup(cfg, providers, GROUPS.AI);
+  cfg = addGroup(cfg, providers, GROUPS.AUTO);
+  cfg = addGroup(cfg, providers, GROUPS.DOWNLOAD);
+  cfg = addGroup(cfg, providers, GROUPS.EMBY);
+  cfg = addGroup(cfg, providers, GROUPS.MEDIA);
   for (const country of Object.keys(FLAGS))
-    addGroup(cfg, providers, makeCountryFilter(country));
+    cfg = addGroup(cfg, providers, makeCountryFilter(country));
   cfg.outbounds?.push(
     ...filterSingboxOutbounds(providers, GROUPS.SELECT.filter),
   );

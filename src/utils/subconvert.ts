@@ -1,3 +1,5 @@
+import { fetchUnsafe } from "./fetch";
+
 export async function subconvert(
   target: string,
   url: string,
@@ -10,9 +12,7 @@ export async function subconvert(
   req.searchParams.set("add_emoji", "false");
   req.searchParams.set("remove_emoji", "false");
   req.searchParams.set("list", "true");
-  const resp = await fetch(req);
-  if (!resp.ok)
-    throw new Error(`Failed to convert: ${url}\n${await resp.text()}`);
+  const resp = await fetchUnsafe(req);
   const text = await resp.text();
   return text;
 }

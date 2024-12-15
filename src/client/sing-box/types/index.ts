@@ -1,6 +1,6 @@
 export type { DNS, DNSServer } from "./dns";
 export type { Inbound, InboundMixed, InboundTun } from "./inbound";
-export type { Outbound } from "./outbound";
+export type { Outbound, OutboundSelector, OutboundUrltest } from "./outbound";
 export type { Route, RouteRule } from "./route";
 export type { RuleSet, RuleSetRemote } from "./rule-set";
 export type { ListenFields } from "./shared";

@@ -1,10 +1,10 @@
 import type { Outbound } from "@/client/sing-box/types";
-import { URIParseError, tryDecodeBase64 } from "@/utils";
+import { UriParseError, tryDecodeBase64 } from "@/utils";
 
-export function singboxFromSS(uri: string): Outbound {
+export function singboxFromSs(uri: string): Outbound {
   // https://github.com/shadowsocks/shadowsocks-org/wiki/SIP002-URI-Scheme
   const match = uri.match(/ss:\/\/(?<body>.+)#(?<tag>.+)/);
-  if (!match) throw new URIParseError("ss", uri);
+  if (!match) throw new UriParseError("ss", uri);
   let { body, tag } = match.groups!;
   tag = decodeURIComponent(tag).trim();
   const outbound: Outbound = {
@@ -20,7 +20,7 @@ function parseBody(body: string, uri: string): any {
   const match = bodyDecode.match(
     /(?<userinfo>.+)@(?<hostname>.+):(?<port>\d+)(\/)?(\?(?<plugin>.+))?/,
   );
-  if (!match) throw new URIParseError("ss", uri);
+  if (!match) throw new UriParseError("ss", uri);
   const { userinfo, hostname, port, plugin } = match.groups!;
   return {
     server: hostname,
@@ -33,7 +33,7 @@ function parseBody(body: string, uri: string): any {
 function parseUserinfo(userinfo: string, uri: string): any {
   const userinfoDecode = tryDecodeBase64(userinfo);
   const match = userinfoDecode.match(/(?<method>.+):(?<password>.+)/);
-  if (!match) throw new URIParseError("ss", uri);
+  if (!match) throw new UriParseError("ss", uri);
   let { method, password } = match.groups!;
   password = decodeURIComponent(password);
   return { method, password };

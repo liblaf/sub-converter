@@ -1,4 +1,6 @@
-export class FetchError extends Error {
+import { SubConverterError } from "./errors";
+
+export class FetchError extends SubConverterError {
   readonly name: string = "FetchError";
   readonly resp?: Response;
   readonly url: string;

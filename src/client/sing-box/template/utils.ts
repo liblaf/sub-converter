@@ -1,13 +1,19 @@
-import { OutboundTag, type ProxyFilter } from "@/filter";
+import type { ProxyFilter } from "@/filter";
+import { OutboundTag } from "@/filter";
 import { filterSingboxOutboundTags } from "../provider";
-import type { Config, Outbound, RuleSetRemote } from "../types";
+import type {
+  Config,
+  Outbound,
+  OutboundUrltest,
+  RuleSetRemote,
+} from "../types";
 
 export function addGroup(
   cfg: Config,
   providers: Map<string, Outbound[]>,
   filter: ProxyFilter,
 ): Config {
-  let group: Outbound | undefined = cfg.outbounds?.find(
+  let group: Outbound | undefined = cfg.outbounds!.find(
     (o: Outbound): boolean => o.tag === filter.name,
   );
   if (group === undefined) {
@@ -16,13 +22,13 @@ export function addGroup(
       tag: filter.name,
       outbounds: [],
       url: "https://cp.cloudflare.com",
-    };
-    cfg.outbounds?.push(group);
+    } satisfies OutboundUrltest;
+    cfg.outbounds!.push(group);
   }
   group.outbounds = filterSingboxOutboundTags(providers, filter.filter);
-  cfg.outbounds
-    ?.find((o) => o.tag === OutboundTag.PROXY)
-    ?.outbounds?.push(filter.name);
+  cfg
+    .outbounds!.find((o) => o.tag === OutboundTag.PROXY)!
+    .outbounds.push(filter.name);
   return cfg;
 }
 
@@ -36,5 +42,5 @@ export function makeRemoteRuleset(
     format: "binary",
     url: `https://api.liblaf.me/rules/sing/${type}/${name}.srs`,
     download_detour: OutboundTag.DIRECT,
-  };
+  } satisfies RuleSetRemote;
 }

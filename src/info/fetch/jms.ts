@@ -1,6 +1,6 @@
 import { fetchUnsafe, jmsSubInfoUrl } from "@/utils";
 import { z } from "zod";
-import type { SubscriptionUserinfo } from "./types";
+import type { SubscriptionUserinfo } from "../types";
 
 const BW_COUNTER_SCHEMA = z.object({
   bw_counter_b: z.number().int(),

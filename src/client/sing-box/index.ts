@@ -21,7 +21,15 @@ export {
 export type { TemplateOptions } from "./template";
 export type {
   Config,
+  DNS,
+  DNSServer,
+  Inbound,
+  InboundMixed,
+  InboundTun,
+  ListenFields,
   Outbound,
+  OutboundSelector,
+  OutboundUrltest,
   Route,
   RouteRule,
   RuleSet,

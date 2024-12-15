@@ -1,9 +1,3 @@
-export {
-  fetchProvidersInfo,
-  fetchSubInfoSafe,
-  fetchSubInfoUnsafe,
-} from "./info";
-export type { SubscriptionUserinfo } from "./info";
-export { PROVIDER_OPTIONS_SCHEMA, PROVIDERS_SCHEMA } from "./types";
-export type { ProviderOptions } from "./types";
+export { PROFILE_SCHEMA, PROVIDER_OPTIONS_SCHEMA } from "./types";
+export type { Profile, ProviderOptions } from "./types";
 export { getProviderUrl } from "./utils";

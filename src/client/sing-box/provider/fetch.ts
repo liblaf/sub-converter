@@ -23,7 +23,9 @@ export async function fetchSingboxOutbounds(
   let outbounds: Outbound[] = [];
   if (provider.singbox) {
     const resp = await fetchUnsafe(provider.singbox.url, {
-      headers: { "User-Agent": provider.singbox.ua },
+      headers: {
+        "User-Agent": provider.singbox.ua,
+      },
     });
     const cfg: Config = await resp.json();
     outbounds = cfg.outbounds ?? [];
