@@ -1,0 +1,11 @@
+.github/release-please/.manifest.json
+*-lock.*
+*.cjs
+*.cts
+*.js
+*.jsx
+*.lock
+*.mjs
+*.mts
+*.ts
+*.tsx
