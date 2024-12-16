@@ -52,6 +52,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/bun": "^1.1.14",
+    "@types/object-inspect": "^1.13.0",
     "dotenv": "^16.4.7",
     "tsup": "^8.3.5",
     "vite-tsconfig-paths": "^5.1.4",
@@ -68,8 +69,7 @@
   "dependencies": {
     "date-fns": "^4.1.0",
     "js-base64": "^3.7.7",
-    "remeda": "^2.17.4",
-    "utility-types": "^3.11.0",
+    "object-inspect": "^1.13.3",
     "zod": "^3.24.1"
   }
 }

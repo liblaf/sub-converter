@@ -1,7 +1,7 @@
 import { SubConverterError } from "./errors";
+import { logger } from "./logger";
 
 export class FetchError extends SubConverterError {
-  readonly name: string = "FetchError";
   readonly resp?: Response;
   readonly url: string;
 
@@ -10,12 +10,10 @@ export class FetchError extends SubConverterError {
     options?: { cause?: unknown; message?: string; resp?: Response },
   ) {
     const url: string = asString(input);
-    const resp: Response | undefined = options?.resp?.clone();
     let message = `Failed to fetch: ${url}`;
     if (options?.message) message += `\n${options.message}`;
-    if (options?.resp) message += `\n${resp}`;
     super(message, { cause: options?.cause });
-    this.resp = resp;
+    this.resp = options?.resp;
     this.url = url;
   }
 }
@@ -29,14 +27,14 @@ export async function fetchUnsafe(
     if (!resp.ok) {
       const text: string = await resp.text();
       const error = new FetchError(input, { message: text, resp: resp });
-      console.error({ error });
+      logger.error(error);
       throw error;
     }
     return resp;
-  } catch (error) {
-    const err = new FetchError(input, { cause: error });
-    console.error({ error: err });
-    throw err;
+  } catch (err) {
+    const error = new FetchError(input, { cause: err });
+    logger.error(error);
+    throw error;
   }
 }
 

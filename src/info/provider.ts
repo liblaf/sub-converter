@@ -1,6 +1,7 @@
 import type { ProviderOptions } from "@/provider";
 import { getProviderUrl } from "@/provider";
 import { SubConverterError } from "@/utils/errors";
+import inspect from "object-inspect";
 import { fetchClashInfo, fetchJmsInfo } from "./fetch";
 import type { SubscriptionUserinfo } from "./types";
 
@@ -29,7 +30,7 @@ export async function fetchInfoSafe(
     return {
       name: provider.name,
       url: getProviderUrl(provider),
-      error: `${error}`,
+      error: inspect(error),
     };
   }
 }
