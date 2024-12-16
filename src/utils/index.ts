@@ -3,4 +3,4 @@ export { UnknownUriProtocolError, UriParseError } from "./errors";
 export { FetchError, fetchUnsafe } from "./fetch";
 export { jmsSubInfoUrl, jmsSubUrl } from "./jms";
 export { logger, Logger } from "./logger";
-export { subconvert } from "./subconvert";
+export { subconvert, subconvertInfo } from "./subconvert";

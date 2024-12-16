@@ -1,5 +1,6 @@
 import type { ProviderOptions } from "@/provider";
 import { getProviderUrl } from "@/provider";
+import { subconvertInfo } from "@/utils";
 import { SubConverterError } from "@/utils/errors";
 import inspect from "object-inspect";
 import { fetchClashInfo, fetchJmsInfo } from "./fetch";
@@ -42,12 +43,31 @@ export async function fetchInfo(
     name: provider.name,
     url: getProviderUrl(provider),
   };
-  if (provider.clash)
-    info = { ...info, ...(await fetchClashInfo(provider.clash)) };
-  else if (provider.singbox)
-    info = { ...info, ...(await fetchClashInfo(provider.singbox)) };
-  else if (provider.jms)
-    info = { ...info, ...(await fetchJmsInfo(provider.jms)) };
-  else throw new FetchInfoError(provider.name);
+  try {
+    info = { ...info, ...(await fetchInfoDirect(provider)) };
+  } catch (error) {
+    info = { ...info, ...(await fetchInfoProxy(provider)) };
+  }
   return info;
+}
+
+async function fetchInfoDirect(
+  provider: ProviderOptions,
+): Promise<SubscriptionUserinfo> {
+  if (provider.clash) return fetchClashInfo(provider.clash);
+  if (provider.singbox) return fetchClashInfo(provider.singbox);
+  if (provider.jms) return fetchJmsInfo(provider.jms);
+  if (provider.base64) return fetchClashInfo(provider.base64);
+  if (provider.uri) return fetchClashInfo(provider.uri);
+  throw new FetchInfoError(provider.name);
+}
+
+async function fetchInfoProxy(
+  provider: ProviderOptions,
+): Promise<SubscriptionUserinfo> {
+  if (provider.clash) return subconvertInfo("clash", provider.clash.url);
+  if (provider.singbox) return subconvertInfo("singbox", provider.singbox.url);
+  if (provider.base64) return subconvertInfo("base64", provider.base64.url);
+  if (provider.uri) return subconvertInfo("uri", provider.uri.url);
+  throw new FetchInfoError(provider.name);
 }
