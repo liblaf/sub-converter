@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.8](https://github.com/liblaf/sub-converter/compare/v0.0.7...v0.0.8) (2024-12-16)
+
+
+### 🐛 Bug Fixes
+
+* correct outbound filtering logic and add Clash provider support ([a7edf0b](https://github.com/liblaf/sub-converter/commit/a7edf0bca4e7e4dd60000666dfb8619df3ef2bf7))
+
 ## [0.0.7](https://github.com/liblaf/sub-converter/compare/v0.0.6...v0.0.7) (2024-12-16)
 
 
