@@ -34,8 +34,8 @@ export async function fetchSingboxOutbounds(
   } catch {
     outbounds = await fetchSingboxOutboundsProxy(provider);
   }
-  outbounds = outbounds.filter((o: Outbound): boolean =>
-    OUTBOUND_EXCLUDE_TYPES.has(o.type),
+  outbounds = outbounds.filter(
+    (o: Outbound): boolean => !OUTBOUND_EXCLUDE_TYPES.has(o.type),
   );
   outbounds = outbounds.map((o: Outbound): Outbound => {
     o.tag = renameTag(o.tag);
@@ -87,6 +87,7 @@ async function fetchSingboxOutboundsProxy(
   provider: ProviderOptions,
 ): Promise<Outbound[]> {
   if (provider.singbox) return await subconvertSingbox(provider.singbox.url);
+  if (provider.clash) return await subconvertSingbox(provider.clash.url);
   if (provider.base64) return await subconvertSingbox(provider.base64.url);
   if (provider.uri) return await subconvertSingbox(provider.uri.url);
   if (provider.jms)
