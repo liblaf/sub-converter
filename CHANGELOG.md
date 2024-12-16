@@ -2,30 +2,26 @@
 
 ## [0.0.6](https://github.com/liblaf/sub-converter/compare/v0.0.5...v0.0.6) (2024-12-16)
 
-
 ### ♻ Code Refactoring
 
-* exclude specific outbound types during fetch ([ab10a56](https://github.com/liblaf/sub-converter/commit/ab10a567cac8426ed4a1b376de23e25167ba5140))
-* improve error handling and logging ([c8632c8](https://github.com/liblaf/sub-converter/commit/c8632c85a00b8e14f48cfe41b7009df4a991f0c7))
+- exclude specific outbound types during fetch ([ab10a56](https://github.com/liblaf/sub-converter/commit/ab10a567cac8426ed4a1b376de23e25167ba5140))
+- improve error handling and logging ([c8632c8](https://github.com/liblaf/sub-converter/commit/c8632c85a00b8e14f48cfe41b7009df4a991f0c7))
 
 ## [0.0.5](https://github.com/liblaf/sub-converter/compare/v0.0.4...v0.0.5) (2024-12-15)
 
-
 ### 🐛 Bug Fixes
 
-* clone response object to prevent mutation during error handling ([cc1570b](https://github.com/liblaf/sub-converter/commit/cc1570b0d933298aa9838dd1cd148e6d3bb771a1))
-
+- clone response object to prevent mutation during error handling ([cc1570b](https://github.com/liblaf/sub-converter/commit/cc1570b0d933298aa9838dd1cd148e6d3bb771a1))
 
 ### ♻ Code Refactoring
 
-* simplify fetchClashInfo function signature and error handling ([f73116c](https://github.com/liblaf/sub-converter/commit/f73116c16a5f74649810016d82c7abc178917f29))
+- simplify fetchClashInfo function signature and error handling ([f73116c](https://github.com/liblaf/sub-converter/commit/f73116c16a5f74649810016d82c7abc178917f29))
 
 ## [0.0.4](https://github.com/liblaf/sub-converter/compare/v0.0.3...v0.0.4) (2024-12-15)
 
-
 ### ♻ Code Refactoring
 
-* reorganize and modularize codebase for better maintainability ([7ade227](https://github.com/liblaf/sub-converter/commit/7ade227b8264853fe14c9bbc345ff1c0176c911e))
+- reorganize and modularize codebase for better maintainability ([7ade227](https://github.com/liblaf/sub-converter/commit/7ade227b8264853fe14c9bbc345ff1c0176c911e))
 
 ## [0.0.3](https://github.com/liblaf/sub-converter/compare/v0.0.2...v0.0.3) (2024-12-15)
 
