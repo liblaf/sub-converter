@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.7](https://github.com/liblaf/sub-converter/compare/v0.0.6...v0.0.7) (2024-12-16)
+
+
+### ♻ Code Refactoring
+
+* improve fetch logic for provider outbounds ([4169315](https://github.com/liblaf/sub-converter/commit/4169315f153b03fe72be399a76923a951c15f0d1))
+* improve provider info fetching with error handling ([fbdfaed](https://github.com/liblaf/sub-converter/commit/fbdfaed9e843b72f2157742ad99d0735f1725a7b))
+
 ## [0.0.6](https://github.com/liblaf/sub-converter/compare/v0.0.5...v0.0.6) (2024-12-16)
 
 ### ♻ Code Refactoring
