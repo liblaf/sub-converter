@@ -4,6 +4,14 @@ import { fetchUnsafe, jmsSubUrl } from "@/utils";
 import { singboxFromBase64 } from "../exchange";
 import type { Config, Outbound } from "../types";
 
+const OUTBOUND_EXCLUDE_TYPES = new Set([
+  "direct",
+  "block",
+  "dns",
+  "selector",
+  "urltest",
+]);
+
 export async function fetchSingboxProviders(
   providers: ProviderOptions[],
 ): Promise<Map<string, Outbound[]>> {
@@ -53,6 +61,9 @@ export async function fetchSingboxOutbounds(
   } else {
     throw new Error(`Invalid provider: ${provider.name}`);
   }
+  outbounds = outbounds.filter((o: Outbound): boolean =>
+    OUTBOUND_EXCLUDE_TYPES.has(o.type),
+  );
   outbounds = outbounds.map((o: Outbound): Outbound => {
     o.tag = renameTag(o.tag);
     return o;
