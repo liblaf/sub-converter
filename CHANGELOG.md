@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.5](https://github.com/liblaf/sub-converter/compare/v0.0.4...v0.0.5) (2024-12-15)
+
+
+### 🐛 Bug Fixes
+
+* clone response object to prevent mutation during error handling ([cc1570b](https://github.com/liblaf/sub-converter/commit/cc1570b0d933298aa9838dd1cd148e6d3bb771a1))
+
+
+### ♻ Code Refactoring
+
+* simplify fetchClashInfo function signature and error handling ([f73116c](https://github.com/liblaf/sub-converter/commit/f73116c16a5f74649810016d82c7abc178917f29))
+
 ## [0.0.4](https://github.com/liblaf/sub-converter/compare/v0.0.3...v0.0.4) (2024-12-15)
 
 
