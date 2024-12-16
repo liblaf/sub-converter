@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.6](https://github.com/liblaf/sub-converter/compare/v0.0.5...v0.0.6) (2024-12-16)
+
+
+### ♻ Code Refactoring
+
+* exclude specific outbound types during fetch ([ab10a56](https://github.com/liblaf/sub-converter/commit/ab10a567cac8426ed4a1b376de23e25167ba5140))
+* improve error handling and logging ([c8632c8](https://github.com/liblaf/sub-converter/commit/c8632c85a00b8e14f48cfe41b7009df4a991f0c7))
+
 ## [0.0.5](https://github.com/liblaf/sub-converter/compare/v0.0.4...v0.0.5) (2024-12-15)
 
 
