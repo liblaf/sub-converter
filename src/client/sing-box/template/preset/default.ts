@@ -1,14 +1,13 @@
 import {
   ClashMode,
   DnsTag,
-  FLAGS,
   GROUPS,
   GeoipTag,
   GeositeTag,
   InboundTag,
   OutboundTag,
   RulesetTag,
-  makeCountryFilter,
+  allGroups,
 } from "@/filter";
 import { filterSingboxOutbounds } from "../../provider";
 import type { Config, InboundMixed, Outbound } from "../../types";
@@ -128,14 +127,9 @@ export const makeDefaultConfig: TemplateFactory = (
       },
     },
   };
-  cfg = addGroup(cfg, providers, GROUPS.SELECT);
-  cfg = addGroup(cfg, providers, GROUPS.AI);
-  cfg = addGroup(cfg, providers, GROUPS.AUTO);
-  cfg = addGroup(cfg, providers, GROUPS.DOWNLOAD);
-  cfg = addGroup(cfg, providers, GROUPS.EMBY);
-  cfg = addGroup(cfg, providers, GROUPS.MEDIA);
-  for (const country of Object.keys(FLAGS))
-    cfg = addGroup(cfg, providers, makeCountryFilter(country));
+  for (const group of allGroups()) {
+    cfg = addGroup(cfg, providers, group);
+  }
   cfg.outbounds?.push(
     ...filterSingboxOutbounds(providers, GROUPS.SELECT.filter),
   );

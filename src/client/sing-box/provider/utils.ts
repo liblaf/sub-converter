@@ -1,18 +1,19 @@
+import * as R from "remeda";
 import type { Outbound } from "../types";
 
-export function appendOutbounds(
+export function appendNameToOutbounds(
   outbounds: Outbound[],
   name?: string,
 ): Outbound[] {
   if (!name) return outbounds;
   return outbounds.map((o: Outbound): Outbound => {
-    const result: Outbound = { ...o };
+    const result: Outbound = R.clone(o);
     if (name) result.tag += ` [${name}]`;
     return result;
   });
 }
 
-export function appendOutboundTags(tags: string[], name?: string): string[] {
+export function appendNameToTags(tags: string[], name?: string): string[] {
   if (!name) return tags;
   return tags.map((tag: string): string => `${tag} [${name}]`);
 }
@@ -25,12 +26,12 @@ export function filterSingboxOutbounds(
   for (const [name, outbounds] of providers) {
     let outs: Outbound[] = outbounds;
     if (filter) outs = outs.filter((o: Outbound): boolean => filter(o.tag));
-    result.push(...appendOutbounds(outs, name));
+    result.push(...appendNameToOutbounds(outs, name));
   }
   return result;
 }
 
-export function filterSingboxOutboundTags(
+export function filterSingboxTags(
   providers: Map<string, Outbound[]>,
   filter?: (tag: string) => boolean,
 ): string[] {
@@ -38,7 +39,7 @@ export function filterSingboxOutboundTags(
   for (const [name, outbounds] of providers) {
     let outs: string[] = outbounds.map((o: Outbound): string => o.tag);
     if (filter) outs = outs.filter(filter);
-    result.push(...appendOutboundTags(outs, name));
+    result.push(...appendNameToTags(outs, name));
   }
   return result;
 }

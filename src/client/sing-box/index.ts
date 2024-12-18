@@ -4,10 +4,10 @@ export {
   singboxFromUriList,
 } from "./exchange";
 export {
-  fetchSingboxOutbounds,
-  fetchSingboxProviders,
+  fetchSingboxOutboundsFromProfile,
+  fetchSingboxOutboundsFromProvider,
   filterSingboxOutbounds,
-  filterSingboxOutboundTags,
+  filterSingboxTags,
 } from "./provider";
 export {
   addGroup,

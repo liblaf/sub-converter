@@ -8,12 +8,23 @@ import {
   isExcluded,
   isLimit,
 } from "./infer";
-import type { ProxyFilter } from "./types";
+import type { ProxyGroup } from "./types";
 
 const AI_COUNTRIES_EXCLUDE = new Set(["HK", "MO", "OT", "TW"]);
 
-export function makeCountryFilter(country: string): ProxyFilter {
+export function makeCountryGroup(country: string): ProxyGroup {
+  if (country === "OT") {
+    return {
+      type: "selector",
+      name: FLAGS[country],
+      filter(name: string): boolean {
+        if (!AUTO.filter(name)) return false;
+        return isCountry(name, country);
+      },
+    };
+  }
   return {
+    type: "urltest",
     name: FLAGS[country],
     filter(name: string): boolean {
       if (!AUTO.filter(name)) return false;
@@ -22,7 +33,8 @@ export function makeCountryFilter(country: string): ProxyFilter {
   };
 }
 
-export const AI: ProxyFilter = {
+export const AI: ProxyGroup = {
+  type: "urltest",
   name: OutboundTag.AI,
   filter(name: string): boolean {
     if (!AUTO.filter(name)) return false;
@@ -32,7 +44,8 @@ export const AI: ProxyFilter = {
   },
 };
 
-export const AUTO: ProxyFilter = {
+export const AUTO: ProxyGroup = {
+  type: "urltest",
   name: OutboundTag.AUTO,
   filter(name: string): boolean {
     if (isExcluded(name)) return false;
@@ -41,7 +54,8 @@ export const AUTO: ProxyFilter = {
   },
 };
 
-export const BALANCED: ProxyFilter = {
+export const BALANCED: ProxyGroup = {
+  type: "urltest",
   name: OutboundTag.BALANCED,
   filter(name: string): boolean {
     if (!AI.filter(name)) return false;
@@ -50,7 +64,8 @@ export const BALANCED: ProxyFilter = {
   },
 };
 
-export const EMBY: ProxyFilter = {
+export const EMBY: ProxyGroup = {
+  type: "urltest",
   name: OutboundTag.EMBY,
   filter(name: string): boolean {
     if (isExcluded(name)) return false;
@@ -61,7 +76,8 @@ export const EMBY: ProxyFilter = {
   },
 };
 
-export const SELECT: ProxyFilter = {
+export const SELECT: ProxyGroup = {
+  type: "selector",
   name: OutboundTag.SELECT,
   filter(name: string): boolean {
     if (isExcluded(name)) return false;
@@ -69,7 +85,8 @@ export const SELECT: ProxyFilter = {
   },
 };
 
-export const MEDIA: ProxyFilter = {
+export const MEDIA: ProxyGroup = {
+  type: "urltest",
   name: OutboundTag.MEDIA,
   filter(name: string): boolean {
     if (!AUTO.filter(name)) return false;
@@ -79,7 +96,8 @@ export const MEDIA: ProxyFilter = {
   },
 };
 
-export const DOWNLOAD: ProxyFilter = {
+export const DOWNLOAD: ProxyGroup = {
+  type: "urltest",
   name: OutboundTag.DOWNLOAD,
   filter(name: string): boolean {
     if (!AUTO.filter(name)) return false;
@@ -89,11 +107,23 @@ export const DOWNLOAD: ProxyFilter = {
 };
 
 export const GROUPS = {
-  AI: AI,
-  AUTO: AUTO,
-  BALANCED: BALANCED,
-  EMBY: EMBY,
-  SELECT: SELECT,
-  MEDIA: MEDIA,
-  DOWNLOAD: DOWNLOAD,
+  AI,
+  AUTO,
+  BALANCED,
+  DOWNLOAD,
+  EMBY,
+  MEDIA,
+  SELECT,
 };
+
+export function allGroups(): ProxyGroup[] {
+  return [
+    SELECT,
+    AI,
+    AUTO,
+    DOWNLOAD,
+    EMBY,
+    MEDIA,
+    ...Object.keys(FLAGS).map(makeCountryGroup),
+  ];
+}

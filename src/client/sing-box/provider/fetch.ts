@@ -1,6 +1,6 @@
 import { renameTag } from "@/filter";
-import type { ProviderOptions } from "@/provider";
-import { jmsSubUrl, subconvert } from "@/utils";
+import type { Profile, ProviderOptions } from "@/provider";
+import { InvalidProviderError, jmsSubUrl, subconvert } from "@/utils";
 import { fetchUnsafe } from "@liblaf/utils";
 import { singboxFromBase64 } from "../exchange";
 import type { Config, Outbound } from "../types";
@@ -13,20 +13,21 @@ const OUTBOUND_EXCLUDE_TYPES = new Set([
   "urltest",
 ]);
 
-export async function fetchSingboxProviders(
-  providers: ProviderOptions[],
-): Promise<Map<string, Outbound[]>> {
+export async function fetchSingboxOutboundsFromProfile({
+  providers,
+}: Profile): Promise<Map<string, Outbound[]>> {
   const result: Map<string, Outbound[]> = new Map();
   await Promise.all(
     providers.map(async (provider: ProviderOptions) => {
-      const outbounds: Outbound[] = await fetchSingboxOutbounds(provider);
+      const outbounds: Outbound[] =
+        await fetchSingboxOutboundsFromProvider(provider);
       result.set(provider.name, outbounds);
     }),
   );
   return result;
 }
 
-export async function fetchSingboxOutbounds(
+export async function fetchSingboxOutboundsFromProvider(
   provider: ProviderOptions,
 ): Promise<Outbound[]> {
   let outbounds: Outbound[] = [];
@@ -81,7 +82,7 @@ async function fetchSingboxOutboundsDirect(
     const base64: string = await resp.text();
     return singboxFromBase64(base64);
   }
-  throw new Error(`Invalid provider: ${provider.name}`);
+  throw new InvalidProviderError(provider);
 }
 
 async function fetchSingboxOutboundsProxy(
@@ -93,7 +94,7 @@ async function fetchSingboxOutboundsProxy(
   if (provider.uri) return await subconvertSingbox(provider.uri.url);
   if (provider.jms)
     return await subconvertSingbox(jmsSubUrl(provider.jms).href);
-  throw new Error(`Invalid provider: ${provider.name}`);
+  throw new InvalidProviderError(provider);
 }
 
 async function subconvertSingbox(url: string): Promise<Outbound[]> {

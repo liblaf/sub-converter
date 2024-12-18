@@ -7,7 +7,18 @@ export {
   OutboundTag,
   RulesetTag,
 } from "./constants";
-export { GROUPS, makeCountryFilter } from "./group";
+export {
+  AI,
+  allGroups,
+  AUTO,
+  BALANCED,
+  DOWNLOAD,
+  EMBY,
+  GROUPS,
+  makeCountryGroup,
+  MEDIA,
+  SELECT,
+} from "./group";
 export {
   FLAGS,
   inferCountry,
@@ -18,4 +29,4 @@ export {
   isLimit,
 } from "./infer";
 export { renameTag } from "./preprocess";
-export type { ProxyFilter } from "./types";
+export type { ProxyGroup } from "./types";

@@ -1,9 +1,11 @@
-import type { ProxyFilter } from "@/filter";
+import type { ProxyGroup } from "@/filter";
 import { OutboundTag } from "@/filter";
-import { filterSingboxOutboundTags } from "../provider";
+import { SubConverterError } from "@/utils";
+import { filterSingboxTags } from "../provider";
 import type {
   Config,
   Outbound,
+  OutboundSelector,
   OutboundUrltest,
   RuleSetRemote,
 } from "../types";
@@ -11,21 +13,37 @@ import type {
 export function addGroup(
   cfg: Config,
   providers: Map<string, Outbound[]>,
-  filter: ProxyFilter,
+  filter: ProxyGroup,
 ): Config {
   let group: Outbound | undefined = cfg.outbounds!.find(
     (o: Outbound): boolean => o.tag === filter.name,
   );
   if (group === undefined) {
-    group = {
-      type: "urltest",
-      tag: filter.name,
-      outbounds: [],
-      url: "https://cp.cloudflare.com",
-    } satisfies OutboundUrltest;
+    switch (filter.type) {
+      case "selector": {
+        group = {
+          type: "selector",
+          tag: filter.name,
+          outbounds: [],
+        } satisfies OutboundSelector;
+        break;
+      }
+      case "urltest": {
+        group = {
+          type: "urltest",
+          tag: filter.name,
+          outbounds: [],
+          url: "https://cp.cloudflare.com",
+        } satisfies OutboundUrltest;
+        break;
+      }
+      default: {
+        throw new SubConverterError(`Unknown group type: ${filter.type}`);
+      }
+    }
     cfg.outbounds!.push(group);
   }
-  group.outbounds = filterSingboxOutboundTags(providers, filter.filter);
+  group.outbounds = filterSingboxTags(providers, filter.filter);
   cfg
     .outbounds!.find((o) => o.tag === OutboundTag.PROXY)!
     .outbounds.push(filter.name);

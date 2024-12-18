@@ -1,7 +1,10 @@
-export { fetchSingboxOutbounds, fetchSingboxProviders } from "./fetch";
 export {
-  appendOutbounds,
-  appendOutboundTags,
+  fetchSingboxOutboundsFromProfile,
+  fetchSingboxOutboundsFromProvider,
+} from "./fetch";
+export {
+  appendNameToOutbounds,
+  appendNameToTags,
   filterSingboxOutbounds,
-  filterSingboxOutboundTags,
+  filterSingboxTags,
 } from "./utils";
