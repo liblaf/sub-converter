@@ -9,9 +9,9 @@ export {
 } from "./constants";
 export {
   AI,
-  allGroups,
   AUTO,
   BALANCED,
+  defaultGroups,
   DOWNLOAD,
   EMBY,
   GROUPS,

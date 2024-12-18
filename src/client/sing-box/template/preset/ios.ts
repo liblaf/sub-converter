@@ -1,9 +1,9 @@
 import { DnsTag, InboundTag } from "@/filter";
 import type { Config, InboundTun, Outbound } from "../../types";
 import { makeDefaultConfig } from "./default";
-import type { TemplateFactory, TemplateOptions } from "./types";
+import type { Template, TemplateOptions } from "./types";
 
-export const makeIosConfig: TemplateFactory = (
+export const makeIosConfig: Template = (
   providers: Map<string, Outbound[]>,
   opts: TemplateOptions,
 ): Config => {

@@ -1,8 +1,12 @@
+import { newLogger } from "@liblaf/utils";
+
+const logger = newLogger();
+
 export function inferCountry(name: string): string {
   for (const [country, pattern] of Object.entries(REGEXPS)) {
     if (pattern.test(name)) return country;
   }
-  console.warn(`inferCountry(): Unable to infer country for name "${name}"`);
+  logger.warn(`inferCountry(): Unable to infer country for name "${name}"`);
   return "OT";
 }
 

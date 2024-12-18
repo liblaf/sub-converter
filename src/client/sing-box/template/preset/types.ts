@@ -7,7 +7,7 @@ export const TEMPLATE_OPTIONS_SCHEMA = z.object({
 
 export type TemplateOptions = z.infer<typeof TEMPLATE_OPTIONS_SCHEMA>;
 
-export type TemplateFactory = (
+export type Template = (
   providers: Map<string, Outbound[]>,
   opts: TemplateOptions,
 ) => Config;

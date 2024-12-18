@@ -116,7 +116,7 @@ export const GROUPS = {
   SELECT,
 };
 
-export function allGroups(): ProxyGroup[] {
+export function defaultGroups(): ProxyGroup[] {
   return [
     SELECT,
     AI,

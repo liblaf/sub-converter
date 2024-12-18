@@ -7,14 +7,14 @@ import {
   InboundTag,
   OutboundTag,
   RulesetTag,
-  allGroups,
+  defaultGroups,
 } from "@/filter";
 import { filterSingboxOutbounds } from "../../provider";
 import type { Config, InboundMixed, Outbound } from "../../types";
 import { addGroup, makeRemoteRuleset } from "../utils";
-import type { TemplateFactory, TemplateOptions } from "./types";
+import type { Template, TemplateOptions } from "./types";
 
-export const makeDefaultConfig: TemplateFactory = (
+export const makeDefaultConfig: Template = (
   providers: Map<string, Outbound[]>,
   opts: TemplateOptions,
 ): Config => {
@@ -127,7 +127,7 @@ export const makeDefaultConfig: TemplateFactory = (
       },
     },
   };
-  for (const group of allGroups()) {
+  for (const group of defaultGroups()) {
     cfg = addGroup(cfg, providers, group);
   }
   cfg.outbounds?.push(

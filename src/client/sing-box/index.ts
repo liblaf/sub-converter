@@ -11,14 +11,15 @@ export {
 } from "./provider";
 export {
   addGroup,
-  getTemplateFactory,
+  getTemplate,
   makeDefaultConfig,
+  makeIosConfig,
   makeRemoteRuleset,
   sanitize,
   TEMPLATE_OPTIONS_SCHEMA,
   TEMPLATES,
 } from "./template";
-export type { TemplateOptions } from "./template";
+export type { Template, TemplateOptions } from "./template";
 export type {
   Config,
   DNS,
