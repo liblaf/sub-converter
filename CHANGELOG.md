@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.0.9](https://github.com/liblaf/sub-converter/compare/v0.0.8...v0.0.9) (2024-12-18)
+
+
+### ♻ Code Refactoring
+
+* consolidate utility functions and improve linting ([8123268](https://github.com/liblaf/sub-converter/commit/81232687bb2e58d5ff424e3d55898ff93046366b))
+* improve sing-box provider handling and group filtering ([4802cbd](https://github.com/liblaf/sub-converter/commit/4802cbd4eca8aad192840110b566b0f1f94e049a))
+* streamline template handling and improve logging ([049ded8](https://github.com/liblaf/sub-converter/commit/049ded857506d57e81b45f2c3fd9af64e239fb0e))
+* update import paths for utility functions ([e59980b](https://github.com/liblaf/sub-converter/commit/e59980b2f7feb99398afd28b0dc3a754fd20817c))
+
 ## [0.0.8](https://github.com/liblaf/sub-converter/compare/v0.0.7...v0.0.8) (2024-12-16)
 
 ### 🐛 Bug Fixes
