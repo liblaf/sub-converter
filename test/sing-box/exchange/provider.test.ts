@@ -1,6 +1,7 @@
 import type { Outbound } from "@/client/sing-box";
 import { singboxFromBase64 } from "@/client/sing-box";
-import { fetchUnsafe, subconvert } from "@/utils";
+import { subconvert } from "@/utils";
+import { fetchUnsafe } from "@liblaf/utils";
 import { expect, test } from "vitest";
 
 test.skipIf(!process.env.SUB_URL)("sing-box", async () => {
