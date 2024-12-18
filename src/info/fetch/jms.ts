@@ -1,4 +1,5 @@
-import { fetchUnsafe, jmsSubInfoUrl } from "@/utils";
+import { jmsSubInfoUrl } from "@/utils";
+import { fetchUnsafe } from "@liblaf/utils";
 import { z } from "zod";
 import type { SubscriptionUserinfo } from "../types";
 

@@ -72,7 +72,11 @@ export const makeDefaultConfig: TemplateFactory = (
       { type: "direct", tag: OutboundTag.DIRECT },
       { type: "block", tag: OutboundTag.REJECT },
       { type: "dns", tag: OutboundTag.DNS },
-      { type: "selector", tag: OutboundTag.PROXY, outbounds: [] },
+      {
+        type: "selector",
+        tag: OutboundTag.PROXY,
+        outbounds: [OutboundTag.AUTO],
+      },
     ],
     route: {
       rules: [

@@ -2,18 +2,16 @@
 
 ## [0.0.8](https://github.com/liblaf/sub-converter/compare/v0.0.7...v0.0.8) (2024-12-16)
 
-
 ### 🐛 Bug Fixes
 
-* correct outbound filtering logic and add Clash provider support ([a7edf0b](https://github.com/liblaf/sub-converter/commit/a7edf0bca4e7e4dd60000666dfb8619df3ef2bf7))
+- correct outbound filtering logic and add Clash provider support ([a7edf0b](https://github.com/liblaf/sub-converter/commit/a7edf0bca4e7e4dd60000666dfb8619df3ef2bf7))
 
 ## [0.0.7](https://github.com/liblaf/sub-converter/compare/v0.0.6...v0.0.7) (2024-12-16)
 
-
 ### ♻ Code Refactoring
 
-* improve fetch logic for provider outbounds ([4169315](https://github.com/liblaf/sub-converter/commit/4169315f153b03fe72be399a76923a951c15f0d1))
-* improve provider info fetching with error handling ([fbdfaed](https://github.com/liblaf/sub-converter/commit/fbdfaed9e843b72f2157742ad99d0735f1725a7b))
+- improve fetch logic for provider outbounds ([4169315](https://github.com/liblaf/sub-converter/commit/4169315f153b03fe72be399a76923a951c15f0d1))
+- improve provider info fetching with error handling ([fbdfaed](https://github.com/liblaf/sub-converter/commit/fbdfaed9e843b72f2157742ad99d0735f1725a7b))
 
 ## [0.0.6](https://github.com/liblaf/sub-converter/compare/v0.0.5...v0.0.6) (2024-12-16)
 

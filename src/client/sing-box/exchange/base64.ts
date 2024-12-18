@@ -1,4 +1,4 @@
-import { tryDecodeBase64 } from "@/utils";
+import { tryDecodeBase64 } from "@liblaf/utils";
 import type { Outbound } from "../types";
 import { singboxFromUriList } from "./uri";
 

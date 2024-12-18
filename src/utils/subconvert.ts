@@ -1,6 +1,6 @@
 import type { SubscriptionUserinfo } from "@/info";
 import { fetchClashInfo } from "@/info/fetch";
-import { fetchUnsafe } from "./fetch";
+import { fetchUnsafe } from "@liblaf/utils";
 
 export async function subconvert(
   target: string,

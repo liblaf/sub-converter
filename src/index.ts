@@ -12,12 +12,9 @@ export {
 } from "./provider";
 export type { Profile, ProviderOptions } from "./provider";
 export {
-  FetchError,
-  fetchUnsafe,
   jmsSubInfoUrl,
   jmsSubUrl,
   subconvert,
-  tryDecodeBase64,
   UnknownUriProtocolError,
   UriParseError,
 } from "./utils";

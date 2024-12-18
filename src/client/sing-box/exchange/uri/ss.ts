@@ -1,5 +1,6 @@
 import type { Outbound } from "@/client/sing-box/types";
-import { UriParseError, tryDecodeBase64 } from "@/utils";
+import { UriParseError } from "@/utils";
+import { tryDecodeBase64 } from "@liblaf/utils";
 
 export function singboxFromSs(uri: string): Outbound {
   // https://github.com/shadowsocks/shadowsocks-org/wiki/SIP002-URI-Scheme

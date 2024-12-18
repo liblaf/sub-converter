@@ -2,14 +2,17 @@ import type { ProviderOptions } from "@/provider";
 import { getProviderUrl } from "@/provider";
 import { subconvertInfo } from "@/utils";
 import { SubConverterError } from "@/utils/errors";
-import inspect from "object-inspect";
+import inspect from "loupe";
+import * as R from "remeda";
 import { fetchClashInfo, fetchJmsInfo } from "./fetch";
 import type { SubscriptionUserinfo } from "./types";
-
 class FetchInfoError extends SubConverterError {
-  readonly name: string = "FetchInfoError";
-  constructor(readonly provider: string) {
-    super(`Failed to fetch info from provider: ${provider}`);
+  name = "FetchInfoError";
+  constructor(
+    readonly provider: string,
+    options?: { cause?: unknown },
+  ) {
+    super(`Failed to fetch info from provider: ${provider}`, options);
   }
 }
 
@@ -44,9 +47,9 @@ export async function fetchInfo(
     url: getProviderUrl(provider),
   };
   try {
-    info = { ...info, ...(await fetchInfoDirect(provider)) };
+    info = R.merge(info, await fetchInfoDirect(provider));
   } catch (error) {
-    info = { ...info, ...(await fetchInfoProxy(provider)) };
+    info = R.merge(info, await fetchInfoProxy(provider));
   }
   return info;
 }

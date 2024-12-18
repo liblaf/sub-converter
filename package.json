@@ -43,7 +43,7 @@
   "repository": "github:liblaf/sub-converter",
   "scripts": {
     "build": "tsup",
-    "lint": "biome check --write",
+    "lint": "prettier --write . && biome check --write",
     "prepack": "pnpm run build",
     "test:prepare": "bun run scripts/prepare-testcases.ts",
     "test:sing-box": "bun run scripts/test-singbox.ts",
@@ -51,9 +51,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "^4.20241216.0",
     "@types/bun": "^1.1.14",
-    "@types/object-inspect": "^1.13.0",
     "dotenv": "^16.4.7",
+    "prettier": "^3.4.2",
     "tsup": "^8.3.5",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^2.1.8"
@@ -67,9 +68,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
+    "@liblaf/utils": "^0.0.1",
     "date-fns": "^4.1.0",
     "js-base64": "^3.7.7",
-    "object-inspect": "^1.13.3",
+    "loupe": "^3.1.2",
+    "remeda": "^2.18.0",
     "zod": "^3.24.1"
   }
 }

@@ -1,3 +1,4 @@
+import * as R from "remeda";
 import type { Config, Outbound } from "../types";
 
 export function sanitize(cfg: Config): Config {
@@ -11,14 +12,13 @@ export function sanitize(cfg: Config): Config {
 
 function cleanGroupOutbounds(cfg: Config): Config {
   if (!cfg.outbounds) return cfg;
-  const outbounds: Set<string> = new Set(
+  const tags: Set<string> = new Set(
     cfg.outbounds.map((o: Outbound): string => o.tag),
   );
   cfg.outbounds = cfg.outbounds.map((o: Outbound): Outbound => {
     if (o.type !== "selector" && o.type !== "urltest") return o;
-    o.outbounds = o.outbounds.filter((tag: string): boolean =>
-      outbounds.has(tag),
-    );
+    o.outbounds = R.unique(o.outbounds);
+    o.outbounds = o.outbounds.filter((tag: string): boolean => tags.has(tag));
     return o;
   });
   return cfg;

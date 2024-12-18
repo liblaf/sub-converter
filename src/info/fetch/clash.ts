@@ -1,4 +1,4 @@
-import { fetchUnsafe } from "@/utils";
+import { fetchUnsafe } from "@liblaf/utils";
 import { addDays, format } from "date-fns";
 import type { SubscriptionUserinfo } from "../types";
 

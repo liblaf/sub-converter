@@ -1,6 +1,7 @@
 import { renameTag } from "@/filter";
 import type { ProviderOptions } from "@/provider";
-import { fetchUnsafe, jmsSubUrl, subconvert } from "@/utils";
+import { jmsSubUrl, subconvert } from "@/utils";
+import { fetchUnsafe } from "@liblaf/utils";
 import { singboxFromBase64 } from "../exchange";
 import type { Config, Outbound } from "../types";
 
