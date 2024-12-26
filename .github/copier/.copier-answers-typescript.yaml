@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+# prettier-ignore
+_commit: 9bc36c8
+_src_path: gh:liblaf/copier-typescript
+author_url: https://github.com/liblaf
+copyright_holder: liblaf
+email: 30631553+liblaf@users.noreply.github.com
+license: MIT
+name: '@liblaf/sub-converter'
+owner: liblaf
+repo: sub-converter
