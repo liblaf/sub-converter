@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import type { Outbound } from "@/client/sing-box/types";
 import { subconvert } from "@/utils";
 import type { BunFile } from "bun";
