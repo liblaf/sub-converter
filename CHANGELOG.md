@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.13](https://github.com/liblaf/sub-converter/compare/v0.0.12...v0.0.13) (2025-01-17)
+
+
+### ⬆️ Dependencies
+
+* **deps:** update dependency @types/bun to v1.1.17 ([#26](https://github.com/liblaf/sub-converter/issues/26)) ([f00d76d](https://github.com/liblaf/sub-converter/commit/f00d76d157aeed7527e745805f7a148d7e052302))
+
 ## [0.0.12](https://github.com/liblaf/sub-converter/compare/v0.0.11...v0.0.12) (2025-01-16)
 
 
