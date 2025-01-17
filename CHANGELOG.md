@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.15](https://github.com/liblaf/sub-converter/compare/v0.0.14...v0.0.15) (2025-01-17)
+
+
+### ⬆️ Dependencies
+
+* **deps:** update dependency remeda to v2.19.2 ([#30](https://github.com/liblaf/sub-converter/issues/30)) ([c3b0824](https://github.com/liblaf/sub-converter/commit/c3b08243da0134dc8f6567902fb3a186b1790d8f))
+
 ## [0.0.14](https://github.com/liblaf/sub-converter/compare/v0.0.13...v0.0.14) (2025-01-17)
 
 
