@@ -68,7 +68,7 @@
             "tool": {
                 "driver": {
                     "informationUri": "https://checkov.io",
-                    "name": "Checkov (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV)",
+                    "name": "Checkov (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV) (MegaLinter REPOSITORY_CHECKOV)",
                     "organization": "bridgecrew",
                     "rules": [
                         {
@@ -273,7 +273,7 @@
                 "driver": {
                     "fullName": "Microsoft DevSkim Command Line Interface",
                     "informationUri": "https://github.com/microsoft/DevSkim/",
-                    "name": "devskim (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM)",
+                    "name": "devskim (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM) (MegaLinter REPOSITORY_DEVSKIM)",
                     "rules": [
                         {
                             "defaultConfiguration": {
@@ -1594,7 +1594,7 @@
             "tool": {
                 "driver": {
                     "informationUri": "https://github.com/anchore/grype",
-                    "name": "grype (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE)",
+                    "name": "grype (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE) (MegaLinter REPOSITORY_GRYPE)",
                     "version": "0.79.5"
                 }
             }
@@ -1786,7 +1786,7 @@
                 "driver": {
                     "fullName": "Keeping Infrastructure as Code Secure",
                     "informationUri": "https://www.kics.io/",
-                    "name": "KICS (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS)",
+                    "name": "KICS (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS) (MegaLinter REPOSITORY_KICS)",
                     "rules": [],
                     "version": "v2.1.3"
                 }
@@ -1805,7 +1805,7 @@
             "tool": {
                 "driver": {
                     "informationUri": "https://github.com/secretlint/secretlint",
-                    "name": "secretlint (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT)",
+                    "name": "secretlint (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT) (MegaLinter REPOSITORY_SECRETLINT)",
                     "rules": [],
                     "version": "1.0.0"
                 }
@@ -17112,7 +17112,7 @@
                         "bomFormat": "CycloneDX",
                         "components": [
                             {
-                                "bom-ref": "47716c00-d277-4f81-9082-f5ec7924ad67",
+                                "bom-ref": "952c87e4-4ca7-4ff7-b2a8-95aef7ca58de",
                                 "name": "pnpm-lock.yaml",
                                 "properties": [
                                     {
@@ -17743,6 +17743,12 @@
                         "dependencies": [
                             {
                                 "dependsOn": [
+                                    "952c87e4-4ca7-4ff7-b2a8-95aef7ca58de"
+                                ],
+                                "ref": "0db5ff61-6edb-433c-8215-f0f41c627e18"
+                            },
+                            {
+                                "dependsOn": [
                                     "pkg:npm/%40liblaf/utils@0.0.5",
                                     "pkg:npm/date-fns@4.1.0",
                                     "pkg:npm/js-base64@3.7.7",
@@ -17752,13 +17758,7 @@
                                     "pkg:npm/typescript@5.7.2",
                                     "pkg:npm/zod@3.24.1"
                                 ],
-                                "ref": "47716c00-d277-4f81-9082-f5ec7924ad67"
-                            },
-                            {
-                                "dependsOn": [
-                                    "47716c00-d277-4f81-9082-f5ec7924ad67"
-                                ],
-                                "ref": "7132d806-4bec-4b23-b878-7e6182a1f35f"
+                                "ref": "952c87e4-4ca7-4ff7-b2a8-95aef7ca58de"
                             },
                             {
                                 "dependsOn": [
@@ -17955,7 +17955,7 @@
                         ],
                         "metadata": {
                             "component": {
-                                "bom-ref": "7132d806-4bec-4b23-b878-7e6182a1f35f",
+                                "bom-ref": "0db5ff61-6edb-433c-8215-f0f41c627e18",
                                 "name": ".",
                                 "properties": [
                                     {
@@ -17965,7 +17965,7 @@
                                 ],
                                 "type": "application"
                             },
-                            "timestamp": "2025-01-26T02:16:03+00:00",
+                            "timestamp": "2025-01-26T02:19:26+00:00",
                             "tools": {
                                 "components": [
                                     {
@@ -17977,7 +17977,7 @@
                                 ]
                             }
                         },
-                        "serialNumber": "urn:uuid:6d56e0e4-b781-489d-bd90-e7e852e19833",
+                        "serialNumber": "urn:uuid:6dd0bcf7-fa92-42c3-9fc4-2d2d8005060f",
                         "specVersion": "1.6",
                         "version": 1,
                         "vulnerabilities": []
