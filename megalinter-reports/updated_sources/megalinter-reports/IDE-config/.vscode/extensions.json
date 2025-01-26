@@ -1,10 +1,10 @@
 {
     "recommendations": [
-        "Bridgecrew.checkov",
         "esbenp.prettier-vscode",
         "timonwong.shellcheck",
-        "foxundermoon.shell-format",
         "AquaSecurityOfficial.trivy-vulnerability-scanner",
+        "foxundermoon.shell-format",
+        "Bridgecrew.checkov",
         "MS-CST-E.vscode-devskim",
         "streetsidesoftware.code-spell-checker"
     ]
