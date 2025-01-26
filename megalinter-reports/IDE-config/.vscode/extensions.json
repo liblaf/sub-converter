@@ -1,11 +1,11 @@
 {
     "recommendations": [
         "MS-CST-E.vscode-devskim",
-        "esbenp.prettier-vscode",
-        "AquaSecurityOfficial.trivy-vulnerability-scanner",
+        "timonwong.shellcheck",
         "streetsidesoftware.code-spell-checker",
-        "foxundermoon.shell-format",
+        "esbenp.prettier-vscode",
         "Bridgecrew.checkov",
-        "timonwong.shellcheck"
+        "foxundermoon.shell-format",
+        "AquaSecurityOfficial.trivy-vulnerability-scanner"
     ]
 }
