@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:77f5912f-2a07-4e4d-99ca-7187ccaa629c",
+  "serialNumber": "urn:uuid:78f663fc-9e9a-4d20-8e36-c905508412b4",
   "version": 1,
   "metadata": {
-    "timestamp": "2025-01-26T03:43:38+00:00",
+    "timestamp": "2025-01-26T03:47:00+00:00",
     "tools": {
       "components": [
         {
@@ -17,7 +17,7 @@
       ]
     },
     "component": {
-      "bom-ref": "bb1fe420-1acc-4f7f-ae7a-9520e8f2ae3f",
+      "bom-ref": "85ed34e1-ec21-470b-b62d-6daa52f211e9",
       "type": "application",
       "name": ".",
       "properties": [
@@ -30,7 +30,7 @@
   },
   "components": [
     {
-      "bom-ref": "0c43fd3c-7fc3-41d5-bd26-09fb53aaedfc",
+      "bom-ref": "4b87b6a7-7902-4723-9b9e-9b6a36aa043f",
       "type": "application",
       "name": "pnpm-lock.yaml",
       "properties": [
@@ -660,7 +660,7 @@
   ],
   "dependencies": [
     {
-      "ref": "0c43fd3c-7fc3-41d5-bd26-09fb53aaedfc",
+      "ref": "4b87b6a7-7902-4723-9b9e-9b6a36aa043f",
       "dependsOn": [
         "pkg:npm/%40liblaf/utils@0.0.5",
         "pkg:npm/date-fns@4.1.0",
@@ -673,9 +673,9 @@
       ]
     },
     {
-      "ref": "bb1fe420-1acc-4f7f-ae7a-9520e8f2ae3f",
+      "ref": "85ed34e1-ec21-470b-b62d-6daa52f211e9",
       "dependsOn": [
-        "0c43fd3c-7fc3-41d5-bd26-09fb53aaedfc"
+        "4b87b6a7-7902-4723-9b9e-9b6a36aa043f"
       ]
     },
     {
