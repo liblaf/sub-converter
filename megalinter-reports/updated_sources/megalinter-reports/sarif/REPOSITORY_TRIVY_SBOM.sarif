@@ -20,10 +20,10 @@
                         "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
                         "bomFormat": "CycloneDX",
                         "specVersion": "1.6",
-                        "serialNumber": "urn:uuid:5d1fd41e-2022-457e-ae45-689089b6bb42",
+                        "serialNumber": "urn:uuid:1118ae38-9834-450a-80e6-0668fa686353",
                         "version": 1,
                         "metadata": {
-                            "timestamp": "2025-01-26T02:29:09+00:00",
+                            "timestamp": "2025-01-26T02:32:22+00:00",
                             "tools": {
                                 "components": [
                                     {
@@ -35,7 +35,7 @@
                                 ]
                             },
                             "component": {
-                                "bom-ref": "823c0a4a-f945-4cb7-bae0-789e8092b26b",
+                                "bom-ref": "e5bf7289-a1a4-4382-9e0a-248a25b25fba",
                                 "type": "application",
                                 "name": ".",
                                 "properties": [
@@ -48,7 +48,7 @@
                         },
                         "components": [
                             {
-                                "bom-ref": "14a55eb2-ebf6-4926-985e-a8474aa875b5",
+                                "bom-ref": "70a1e11d-3db5-49c4-ad84-ec51b9a831d8",
                                 "type": "application",
                                 "name": "pnpm-lock.yaml",
                                 "properties": [
@@ -678,7 +678,7 @@
                         ],
                         "dependencies": [
                             {
-                                "ref": "14a55eb2-ebf6-4926-985e-a8474aa875b5",
+                                "ref": "70a1e11d-3db5-49c4-ad84-ec51b9a831d8",
                                 "dependsOn": [
                                     "pkg:npm/%40liblaf/utils@0.0.5",
                                     "pkg:npm/date-fns@4.1.0",
@@ -691,9 +691,9 @@
                                 ]
                             },
                             {
-                                "ref": "823c0a4a-f945-4cb7-bae0-789e8092b26b",
+                                "ref": "e5bf7289-a1a4-4382-9e0a-248a25b25fba",
                                 "dependsOn": [
-                                    "14a55eb2-ebf6-4926-985e-a8474aa875b5"
+                                    "70a1e11d-3db5-49c4-ad84-ec51b9a831d8"
                                 ]
                             },
                             {
