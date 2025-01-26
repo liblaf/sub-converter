@@ -20,10 +20,10 @@
                         "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
                         "bomFormat": "CycloneDX",
                         "specVersion": "1.6",
-                        "serialNumber": "urn:uuid:ab2a77bb-0016-4795-982d-3f0e256ed4dd",
+                        "serialNumber": "urn:uuid:11d6511d-1871-4c87-a73f-8ac25b1c7b40",
                         "version": 1,
                         "metadata": {
-                            "timestamp": "2025-01-26T02:42:08+00:00",
+                            "timestamp": "2025-01-26T02:45:19+00:00",
                             "tools": {
                                 "components": [
                                     {
@@ -35,7 +35,7 @@
                                 ]
                             },
                             "component": {
-                                "bom-ref": "00eaf513-bd57-4511-b00a-543cb2fa926f",
+                                "bom-ref": "160a41e5-2090-45ab-8103-ce3d3ca439e3",
                                 "type": "application",
                                 "name": ".",
                                 "properties": [
@@ -48,7 +48,7 @@
                         },
                         "components": [
                             {
-                                "bom-ref": "c6790c80-5ee9-4eea-bb43-0704541a9ba8",
+                                "bom-ref": "30213913-9f89-4667-ae38-3447f8520ab4",
                                 "type": "application",
                                 "name": "pnpm-lock.yaml",
                                 "properties": [
@@ -678,13 +678,13 @@
                         ],
                         "dependencies": [
                             {
-                                "ref": "00eaf513-bd57-4511-b00a-543cb2fa926f",
+                                "ref": "160a41e5-2090-45ab-8103-ce3d3ca439e3",
                                 "dependsOn": [
-                                    "c6790c80-5ee9-4eea-bb43-0704541a9ba8"
+                                    "30213913-9f89-4667-ae38-3447f8520ab4"
                                 ]
                             },
                             {
-                                "ref": "c6790c80-5ee9-4eea-bb43-0704541a9ba8",
+                                "ref": "30213913-9f89-4667-ae38-3447f8520ab4",
                                 "dependsOn": [
                                     "pkg:npm/%40liblaf/utils@0.0.5",
                                     "pkg:npm/date-fns@4.1.0",
