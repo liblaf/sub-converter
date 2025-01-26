@@ -20,10 +20,10 @@
                         "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
                         "bomFormat": "CycloneDX",
                         "specVersion": "1.6",
-                        "serialNumber": "urn:uuid:8f0e4c27-6e3a-4998-ab01-8a884dabbd3c",
+                        "serialNumber": "urn:uuid:5e210413-a3e2-4d29-90ed-54543fb0bd84",
                         "version": 1,
                         "metadata": {
-                            "timestamp": "2025-01-26T03:37:14+00:00",
+                            "timestamp": "2025-01-26T03:40:25+00:00",
                             "tools": {
                                 "components": [
                                     {
@@ -35,7 +35,7 @@
                                 ]
                             },
                             "component": {
-                                "bom-ref": "7f05ecaa-bb6b-4fc2-964a-9f1c12b37308",
+                                "bom-ref": "8479ce1c-b592-478a-9bf1-e43fe9232e96",
                                 "type": "application",
                                 "name": ".",
                                 "properties": [
@@ -48,7 +48,7 @@
                         },
                         "components": [
                             {
-                                "bom-ref": "b3309862-2739-4a1b-8117-ca586217718b",
+                                "bom-ref": "40beaada-e0f3-43b5-a0ae-f3a9ea381fe6",
                                 "type": "application",
                                 "name": "pnpm-lock.yaml",
                                 "properties": [
@@ -678,13 +678,7 @@
                         ],
                         "dependencies": [
                             {
-                                "ref": "7f05ecaa-bb6b-4fc2-964a-9f1c12b37308",
-                                "dependsOn": [
-                                    "b3309862-2739-4a1b-8117-ca586217718b"
-                                ]
-                            },
-                            {
-                                "ref": "b3309862-2739-4a1b-8117-ca586217718b",
+                                "ref": "40beaada-e0f3-43b5-a0ae-f3a9ea381fe6",
                                 "dependsOn": [
                                     "pkg:npm/%40liblaf/utils@0.0.5",
                                     "pkg:npm/date-fns@4.1.0",
@@ -694,6 +688,12 @@
                                     "pkg:npm/remeda@2.20.0",
                                     "pkg:npm/typescript@5.7.2",
                                     "pkg:npm/zod@3.24.1"
+                                ]
+                            },
+                            {
+                                "ref": "8479ce1c-b592-478a-9bf1-e43fe9232e96",
+                                "dependsOn": [
+                                    "40beaada-e0f3-43b5-a0ae-f3a9ea381fe6"
                                 ]
                             },
                             {
