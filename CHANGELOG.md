@@ -1,184 +1,207 @@
 # Changelog
 
-## [0.0.16](https://github.com/liblaf/sub-converter/compare/v0.0.15...v0.0.16) (2025-01-26)
+All notable changes to this project will be documented in this file.
 
-
-### ⬆️ Dependencies
-
-* **deps:** update dependency @cloudflare/workers-types to v4.20250121.0 ([#32](https://github.com/liblaf/sub-converter/issues/32)) ([4dcbec2](https://github.com/liblaf/sub-converter/commit/4dcbec25c68c445c9eea5cbd80b4197c1f4914ae))
-* **deps:** update dependency @types/bun to v1.1.18 ([#34](https://github.com/liblaf/sub-converter/issues/34)) ([765e17c](https://github.com/liblaf/sub-converter/commit/765e17ca877ed519542cd9415d82e8ef9e6f7d11))
-* **deps:** update dependency @types/bun to v1.2.0 ([#36](https://github.com/liblaf/sub-converter/issues/36)) ([0110ad2](https://github.com/liblaf/sub-converter/commit/0110ad2d5e0d125dac0d6fc9bf880f357090b054))
-* **deps:** update dependency remeda to v2.20.0 ([#38](https://github.com/liblaf/sub-converter/issues/38)) ([cf3055b](https://github.com/liblaf/sub-converter/commit/cf3055b47aa340778eecada07966a11eb83c7930))
-* **deps:** update dependency vitest to v3.0.3 ([#35](https://github.com/liblaf/sub-converter/issues/35)) ([d0dbc86](https://github.com/liblaf/sub-converter/commit/d0dbc8612de0604109d661600c04f0eb76dbfa16))
-* **deps:** update dependency vitest to v3.0.4 ([#37](https://github.com/liblaf/sub-converter/issues/37)) ([6c597d2](https://github.com/liblaf/sub-converter/commit/6c597d23bb41a413653b964c4e07c3430fafe7bf))
-
-## [0.0.15](https://github.com/liblaf/sub-converter/compare/v0.0.14...v0.0.15) (2025-01-17)
-
-
-### ⬆️ Dependencies
-
-* **deps:** update dependency remeda to v2.19.2 ([#30](https://github.com/liblaf/sub-converter/issues/30)) ([c3b0824](https://github.com/liblaf/sub-converter/commit/c3b08243da0134dc8f6567902fb3a186b1790d8f))
-
-## [0.0.14](https://github.com/liblaf/sub-converter/compare/v0.0.13...v0.0.14) (2025-01-17)
-
-
-### ⬆️ Dependencies
-
-* **deps:** update dependency vitest to v3.0.2 ([#28](https://github.com/liblaf/sub-converter/issues/28)) ([2b705c6](https://github.com/liblaf/sub-converter/commit/2b705c6672ff495545b8d6f525b0db927b1878a2))
-
-## [0.0.13](https://github.com/liblaf/sub-converter/compare/v0.0.12...v0.0.13) (2025-01-17)
-
-
-### ⬆️ Dependencies
-
-* **deps:** update dependency @types/bun to v1.1.17 ([#26](https://github.com/liblaf/sub-converter/issues/26)) ([f00d76d](https://github.com/liblaf/sub-converter/commit/f00d76d157aeed7527e745805f7a148d7e052302))
-
-## [0.0.12](https://github.com/liblaf/sub-converter/compare/v0.0.11...v0.0.12) (2025-01-16)
-
-
-### ⬆️ Dependencies
-
-* **deps:** update dependency vitest to v3.0.1 ([#24](https://github.com/liblaf/sub-converter/issues/24)) ([7148c0e](https://github.com/liblaf/sub-converter/commit/7148c0e359e0cc62113e2d35bfc08c02dbfc0006))
-
-## [0.0.11](https://github.com/liblaf/sub-converter/compare/v0.0.10...v0.0.11) (2025-01-16)
-
-
-### ⬆️ Dependencies
-
-* **deps:** update dependency vitest to v3 ([#22](https://github.com/liblaf/sub-converter/issues/22)) ([cc76e61](https://github.com/liblaf/sub-converter/commit/cc76e61997b85ac1a0a9ad425c9d2877f7a928a8))
-
-## [0.0.10](https://github.com/liblaf/sub-converter/compare/v0.0.9...v0.0.10) (2025-01-13)
-
-
-### ⬆️ Dependencies
-
-* **deps:** update dependency remeda to v2.19.1 ([#20](https://github.com/liblaf/sub-converter/issues/20)) ([13fb9a6](https://github.com/liblaf/sub-converter/commit/13fb9a6eb19de64c6125d731ad36c2aa09e0b382))
-
-## [0.0.9](https://github.com/liblaf/sub-converter/compare/v0.0.8...v0.0.9) (2025-01-12)
-
-
-### ⬆️ Dependencies
-
-* **deps:** update dependency @cloudflare/workers-types to v4.20241230.0 ([#15](https://github.com/liblaf/sub-converter/issues/15)) ([e20ee04](https://github.com/liblaf/sub-converter/commit/e20ee045a8e87d6c122d214aec6a57319d92feb0))
-* **deps:** update dependency @cloudflare/workers-types to v4.20250109.0 ([#19](https://github.com/liblaf/sub-converter/issues/19)) ([c5a8ef8](https://github.com/liblaf/sub-converter/commit/c5a8ef8796b80bc9af528f5480927734deda261b))
-* **deps:** update dependency @liblaf/utils to ^0.0.3 ([#14](https://github.com/liblaf/sub-converter/issues/14)) ([7d414dd](https://github.com/liblaf/sub-converter/commit/7d414dd6f3041aa37e74e9590d0764e39b810809))
-* **deps:** update dependency @liblaf/utils to ^0.0.5 ([#17](https://github.com/liblaf/sub-converter/issues/17)) ([c998bbc](https://github.com/liblaf/sub-converter/commit/c998bbcc0fc46ddb0585995050df60fed8c1c670))
-* **deps:** update dependency @types/bun to v1.1.16 ([#18](https://github.com/liblaf/sub-converter/issues/18)) ([426205a](https://github.com/liblaf/sub-converter/commit/426205a6e564506907ac852d50275abf983bd150))
-
-
-### ♻ Code Refactoring
-
-* consolidate utility functions and improve linting ([8123268](https://github.com/liblaf/sub-converter/commit/81232687bb2e58d5ff424e3d55898ff93046366b))
-* improve sing-box provider handling and group filtering ([4802cbd](https://github.com/liblaf/sub-converter/commit/4802cbd4eca8aad192840110b566b0f1f94e049a))
-* streamline template handling and improve logging ([049ded8](https://github.com/liblaf/sub-converter/commit/049ded857506d57e81b45f2c3fd9af64e239fb0e))
-* update import paths for utility functions ([e59980b](https://github.com/liblaf/sub-converter/commit/e59980b2f7feb99398afd28b0dc3a754fd20817c))
-
-
-### 🔧 Continuous Integration
-
-* update artifact handling and ignore patterns ([1ad176b](https://github.com/liblaf/sub-converter/commit/1ad176b2de0983c11979395d2d9f7b15f7e71958))
-
-## [0.0.8](https://github.com/liblaf/sub-converter/compare/v0.0.7...v0.0.8) (2024-12-16)
+## [0.0.16] - 2025-01-26
 
 ### 🐛 Bug Fixes
 
-- correct outbound filtering logic and add Clash provider support ([a7edf0b](https://github.com/liblaf/sub-converter/commit/a7edf0bca4e7e4dd60000666dfb8619df3ef2bf7))
+- _(deps)_ Update dependency remeda to v2.20.0 (#38)
 
-## [0.0.7](https://github.com/liblaf/sub-converter/compare/v0.0.6...v0.0.7) (2024-12-16)
+### ⚙️ Miscellaneous Tasks
 
-### ♻ Code Refactoring
+- _(copier)_ Update from template
+- _(copier)_ Update from template
+- _(copier)_ Update from template
+- _(copier)_ Update from template
+- _(main)_ Release 0.0.16
 
-- improve fetch logic for provider outbounds ([4169315](https://github.com/liblaf/sub-converter/commit/4169315f153b03fe72be399a76923a951c15f0d1))
-- improve provider info fetching with error handling ([fbdfaed](https://github.com/liblaf/sub-converter/commit/fbdfaed9e843b72f2157742ad99d0735f1725a7b))
-
-## [0.0.6](https://github.com/liblaf/sub-converter/compare/v0.0.5...v0.0.6) (2024-12-16)
-
-### ♻ Code Refactoring
-
-- exclude specific outbound types during fetch ([ab10a56](https://github.com/liblaf/sub-converter/commit/ab10a567cac8426ed4a1b376de23e25167ba5140))
-- improve error handling and logging ([c8632c8](https://github.com/liblaf/sub-converter/commit/c8632c85a00b8e14f48cfe41b7009df4a991f0c7))
-
-## [0.0.5](https://github.com/liblaf/sub-converter/compare/v0.0.4...v0.0.5) (2024-12-15)
+## [0.0.15] - 2025-01-17
 
 ### 🐛 Bug Fixes
 
-- clone response object to prevent mutation during error handling ([cc1570b](https://github.com/liblaf/sub-converter/commit/cc1570b0d933298aa9838dd1cd148e6d3bb771a1))
+- _(deps)_ Update dependency remeda to v2.19.2 (#30)
 
-### ♻ Code Refactoring
+### ⚙️ Miscellaneous Tasks
 
-- simplify fetchClashInfo function signature and error handling ([f73116c](https://github.com/liblaf/sub-converter/commit/f73116c16a5f74649810016d82c7abc178917f29))
+- _(main)_ Release 0.0.15 (#31)
 
-## [0.0.4](https://github.com/liblaf/sub-converter/compare/v0.0.3...v0.0.4) (2024-12-15)
+## [0.0.14] - 2025-01-17
 
-### ♻ Code Refactoring
+### ⚙️ Miscellaneous Tasks
 
-- reorganize and modularize codebase for better maintainability ([7ade227](https://github.com/liblaf/sub-converter/commit/7ade227b8264853fe14c9bbc345ff1c0176c911e))
+- _(main)_ Release 0.0.14 (#29)
 
-## [0.0.3](https://github.com/liblaf/sub-converter/compare/v0.0.2...v0.0.3) (2024-12-15)
+## [0.0.13] - 2025-01-17
 
-### ♻ Code Refactoring
+### ⚙️ Miscellaneous Tasks
 
-- reorganize subscription info fetching logic ([b30ca78](https://github.com/liblaf/sub-converter/commit/b30ca78f5a20c7cede9cfe6591a187e5bce25624))
+- _(main)_ Release 0.0.13 (#27)
 
-## [0.0.2](https://github.com/liblaf/sub-converter/compare/v0.0.1...v0.0.2) (2024-12-15)
+## [0.0.12] - 2025-01-16
 
-### ✨ Features
+### ⚙️ Miscellaneous Tasks
 
-- add subscription info fetching for providers ([c04531a](https://github.com/liblaf/sub-converter/commit/c04531a52be7b55d7dd5f4a1b43110c90cf074a4))
+- _(main)_ Release 0.0.12 (#25)
 
-### ♻ Code Refactoring
+## [0.0.11] - 2025-01-16
 
-- enhance configuration templates and add iOS support ([ee1afdd](https://github.com/liblaf/sub-converter/commit/ee1afdd46b68bddec9810d615a5cf0c0153edbdc))
-- improve module exports and update outbound filter logic ([0ec6b51](https://github.com/liblaf/sub-converter/commit/0ec6b5170a99d0738dda8ce900036625fffd3310))
+### ⚙️ Miscellaneous Tasks
 
-## [0.0.1](https://github.com/liblaf/sub-converter/compare/v0.0.0...v0.0.1) (2024-12-15)
+- _(main)_ Release 0.0.11 (#23)
 
-### ✨ Features
+## [0.0.10] - 2025-01-13
 
-- add DNS and inbound configuration for sing-box ([0473d8f](https://github.com/liblaf/sub-converter/commit/0473d8f2ec56b49127c3d9532d3a1389f0040525))
-- add test case preparation and URI parsing improvements ([81b9cf8](https://github.com/liblaf/sub-converter/commit/81b9cf81d978f49f07e78ed6b648253934ad47c4))
-- enhance URI parsing and add support for new protocols ([7de08ae](https://github.com/liblaf/sub-converter/commit/7de08aecb236debbb85bccde95777369438afafc))
+### 🐛 Bug Fixes
 
-### 📝 Documentation
+- _(deps)_ Update dependency remeda to v2.19.1 (#20)
 
-- update changelog with recent CI workflow improvements ([0df0752](https://github.com/liblaf/sub-converter/commit/0df07524035cf4f3374f4f4415fc0a8818948805))
+### ⚙️ Miscellaneous Tasks
 
-### ♻ Code Refactoring
+- _(main)_ Release 0.0.10 (#21)
 
-- reorganize and enhance sing-box configuration and exchange logic ([9a410da](https://github.com/liblaf/sub-converter/commit/9a410dabd4ce82d614d939a0eb39a9c2e1d6f423))
-- reorganize and modularize sing-box client code ([7ea1edc](https://github.com/liblaf/sub-converter/commit/7ea1edc201573b00ae63459a1dc1b89ad0d81b16))
-- reorganize codebase for better modularity and maintainability ([545a2b3](https://github.com/liblaf/sub-converter/commit/545a2b34afee7cbaf955470103a056405ab656a7))
+## [0.0.9] - 2025-01-12
 
-### 🔧 Continuous Integration
+### 🐛 Bug Fixes
 
-- add GitHub Actions workflow for running tests ([fb8fb66](https://github.com/liblaf/sub-converter/commit/fb8fb66702c6169e6f3f22d45259f202ae4a1f52))
+- _(deps)_ Update dependency @liblaf/utils to ^0.0.3 (#14)
+- _(deps)_ Update dependency @liblaf/utils to ^0.0.5 (#17)
 
-## 0.0.0 (2024-12-02)
+### 🚜 Refactor
 
-### 🔧 Continuous Integration
+- Consolidate utility functions and improve linting
+- Improve sing-box provider handling and group filtering
+- Streamline template handling and improve logging
+- Update import paths for utility functions
 
-- add build step to CI workflow ([37b865c](https://github.com/liblaf/sub-converter/commit/37b865c69a15f1162399a87b9b1da4cbc02448fa))
-- add pre-release job and refactor publish job ([5a143e1](https://github.com/liblaf/sub-converter/commit/5a143e1c33bdfe129d40c4382450d07e975c336b))
-- configure pnpm action to use latest version and skip install ([e4cd3e4](https://github.com/liblaf/sub-converter/commit/e4cd3e4a67ef9ea9233853fdb120bf45c8d85fb7))
-- enhance release workflow permissions and format JSON files ([f9ff16e](https://github.com/liblaf/sub-converter/commit/f9ff16ebfa2c4518d650c8d32467221f3152f668))
-- streamline CI workflow and add publish job ([b158e15](https://github.com/liblaf/sub-converter/commit/b158e152e28204b3753862154903533dc5c20721))
-- update release configuration and CI workflow ([f9c95d3](https://github.com/liblaf/sub-converter/commit/f9c95d348d8d39f82b86be779441f0928e88e60f))
+### ⚙️ Miscellaneous Tasks
 
-## 0.0.0 (2024-12-02)
+- _(copier)_ Update from template
+- Update artifact handling and ignore patterns
+- Update dependencies and GitHub workflows
+- _(copier)_ Update from template
+- _(copier)_ Update from template
+- _(copier)_ Update from template
+- _(main)_ Release 0.0.9 (#13)
 
-### 🔧 Continuous Integration
+## [0.0.8] - 2024-12-16
 
-- add build step to CI workflow ([37b865c](https://github.com/liblaf/sub-converter/commit/37b865c69a15f1162399a87b9b1da4cbc02448fa))
-- add pre-release job and refactor publish job ([5a143e1](https://github.com/liblaf/sub-converter/commit/5a143e1c33bdfe129d40c4382450d07e975c336b))
-- configure pnpm action to use latest version and skip install ([e4cd3e4](https://github.com/liblaf/sub-converter/commit/e4cd3e4a67ef9ea9233853fdb120bf45c8d85fb7))
-- streamline CI workflow and add publish job ([b158e15](https://github.com/liblaf/sub-converter/commit/b158e152e28204b3753862154903533dc5c20721))
-- update release configuration and CI workflow ([f9c95d3](https://github.com/liblaf/sub-converter/commit/f9c95d348d8d39f82b86be779441f0928e88e60f))
+### 🐛 Bug Fixes
 
-## 0.0.0 (2024-12-02)
+- Correct outbound filtering logic and add Clash provider support
 
-### 🔧 Continuous Integration
+### ⚙️ Miscellaneous Tasks
 
-- add build step to CI workflow ([37b865c](https://github.com/liblaf/sub-converter/commit/37b865c69a15f1162399a87b9b1da4cbc02448fa))
-- add pre-release job and refactor publish job ([5a143e1](https://github.com/liblaf/sub-converter/commit/5a143e1c33bdfe129d40c4382450d07e975c336b))
-- configure pnpm action to use latest version and skip install ([e4cd3e4](https://github.com/liblaf/sub-converter/commit/e4cd3e4a67ef9ea9233853fdb120bf45c8d85fb7))
-- streamline CI workflow and add publish job ([b158e15](https://github.com/liblaf/sub-converter/commit/b158e152e28204b3753862154903533dc5c20721))
+- _(main)_ Release 0.0.8 (#12)
+
+## [0.0.7] - 2024-12-16
+
+### 🚜 Refactor
+
+- Improve fetch logic for provider outbounds
+- Improve provider info fetching with error handling
+
+### ⚙️ Miscellaneous Tasks
+
+- _(main)_ Release 0.0.7 (#11)
+
+## [0.0.6] - 2024-12-16
+
+### 🚜 Refactor
+
+- Improve error handling and logging
+- Exclude specific outbound types during fetch
+
+### ⚙️ Miscellaneous Tasks
+
+- _(main)_ Release 0.0.6 (#10)
+
+## [0.0.5] - 2024-12-16
+
+### 🐛 Bug Fixes
+
+- Clone response object to prevent mutation during error handling
+
+### 🚜 Refactor
+
+- Simplify fetchClashInfo function signature and error handling
+
+### ⚙️ Miscellaneous Tasks
+
+- _(main)_ Release 0.0.5 (#9)
+
+## [0.0.4] - 2024-12-15
+
+### 🚜 Refactor
+
+- Reorganize and modularize codebase for better maintainability
+
+### ⚙️ Miscellaneous Tasks
+
+- _(main)_ Release 0.0.4 (#8)
+
+## [0.0.3] - 2024-12-15
+
+### 🚜 Refactor
+
+- Reorganize subscription info fetching logic
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove unused type export
+- _(main)_ Release 0.0.3 (#7)
+
+## [0.0.2] - 2024-12-15
+
+### 🚀 Features
+
+- Add subscription info fetching for providers
+
+### 🚜 Refactor
+
+- Improve module exports and update outbound filter logic
+- Enhance configuration templates and add iOS support
+
+### ⚙️ Miscellaneous Tasks
+
+- _(main)_ Release 0.0.2 (#6)
+
+## [0.0.1] - 2024-12-15
+
+### 🚀 Features
+
+- Add DNS and inbound configuration for sing-box
+- Add test case preparation and URI parsing improvements
+- Enhance URI parsing and add support for new protocols
+
+### 🚜 Refactor
+
+- Reorganize and enhance sing-box configuration and exchange logic
+- Reorganize codebase for better modularity and maintainability
+- Reorganize and modularize sing-box client code
+
+### 📚 Documentation
+
+- Update changelog with recent CI workflow improvements
+
+### ⚙️ Miscellaneous Tasks
+
+- Add GitHub Actions workflow for running tests
+- _(main)_ Release 0.0.1 (#5)
+
+## [0.0.0] - 2024-12-02
+
+### ⚙️ Miscellaneous Tasks
+
+- Initialize project with essential configurations and files
+- Configure pnpm action to use latest version and skip install
+- Add build step to CI workflow
+- Streamline CI workflow and add publish job
+- Add pre-release job and refactor publish job
+- _(main)_ Release sub-converter 0.0.0 (#2)
+- Update release configuration and CI workflow
+- _(main)_ Release 0.0.0 (#3)
+- Enhance release workflow permissions and format JSON files
+- _(main)_ Release 0.0.0 (#4)
+
+<!-- generated by git-cliff -->
