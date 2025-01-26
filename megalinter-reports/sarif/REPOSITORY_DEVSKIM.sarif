@@ -1,0 +1,272 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.6.json",
+  "runs": [
+    {
+      "columnKind": "utf16CodeUnits",
+      "properties": {
+        "megalinter": {
+          "docUrl": "https://megalinter.io/8.3.0/descriptors/repository_devskim",
+          "linterKey": "REPOSITORY_DEVSKIM",
+          "linterVersion": "1.0.44"
+        }
+      },
+      "results": [
+        {
+          "fixes": [
+            {
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "pnpm-lock.yaml"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charLength": 3,
+                        "charOffset": 38275
+                      },
+                      "insertedContent": {
+                        "text": "SHA256"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "description": {
+                "text": "A weak or broken hash algorithm was detected."
+              }
+            },
+            {
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "pnpm-lock.yaml"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charLength": 3,
+                        "charOffset": 38275
+                      },
+                      "insertedContent": {
+                        "text": "SHA512"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "description": {
+                "text": "A weak or broken hash algorithm was detected."
+              }
+            }
+          ],
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pnpm-lock.yaml"
+                },
+                "region": {
+                  "charLength": 3,
+                  "charOffset": 38275,
+                  "endColumn": 78,
+                  "endLine": 943,
+                  "snippet": {
+                    "rendered": {
+                      "markdown": "`MD2`",
+                      "text": "MD2"
+                    },
+                    "text": "MD2"
+                  },
+                  "sourceLanguage": "yaml",
+                  "startColumn": 75,
+                  "startLine": 943
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Weak/Broken Hash Algorithm"
+          },
+          "properties": {
+            "DevSkimConfidence": "High",
+            "DevSkimSeverity": "Critical",
+            "tags": [
+              "Cryptography.BannedHashAlgorithm"
+            ]
+          },
+          "ruleId": "DS126858"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/client/sing-box/template/preset/default.ts"
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 4212,
+                  "endColumn": 39,
+                  "endLine": 122,
+                  "snippet": {
+                    "rendered": {
+                      "markdown": "`127.0.0.1`",
+                      "text": "127.0.0.1"
+                    },
+                    "text": "127.0.0.1"
+                  },
+                  "sourceLanguage": "typescript",
+                  "startColumn": 30,
+                  "startLine": 122
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Do not leave debug code in production"
+          },
+          "properties": {
+            "DevSkimConfidence": "High",
+            "DevSkimSeverity": "ManualReview",
+            "tags": [
+              "Hygiene.Network.AccessingLocalhost"
+            ]
+          },
+          "ruleId": "DS162092"
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "scripts/kv.sh"
+                },
+                "region": {
+                  "charLength": 34,
+                  "charOffset": 141,
+                  "endColumn": 64,
+                  "endLine": 7,
+                  "snippet": {
+                    "rendered": {
+                      "markdown": "`\"8b5259fc13f94d85bc4c7bc316198fa1\"`",
+                      "text": "\"8b5259fc13f94d85bc4c7bc316198fa1\""
+                    },
+                    "text": "\"8b5259fc13f94d85bc4c7bc316198fa1\""
+                  },
+                  "sourceLanguage": "shellscript",
+                  "startColumn": 30,
+                  "startLine": 7
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Do not store tokens or keys in source code."
+          },
+          "properties": {
+            "DevSkimConfidence": "Medium",
+            "DevSkimSeverity": "Important",
+            "tags": [
+              "Implementation.Privacy.Token"
+            ]
+          },
+          "ruleId": "DS173237"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "fullName": "Microsoft DevSkim Command Line Interface",
+          "informationUri": "https://github.com/microsoft/DevSkim/",
+          "name": "devskim (MegaLinter REPOSITORY_DEVSKIM)",
+          "rules": [
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Do not store tokens or keys in source code.: A token or key was found in source code. If this represents a secret, it should be moved somewhere else."
+              },
+              "help": {
+                "markdown": "Visit [https://github.com/Microsoft/DevSkim/blob/main/guidance/DS173237.md](https://github.com/Microsoft/DevSkim/blob/main/guidance/DS173237.md) for guidance on this issue.",
+                "text": "A token or key was found in source code. If this represents a secret, it should be moved somewhere else."
+              },
+              "helpUri": "https://github.com/Microsoft/DevSkim/blob/main/guidance/DS173237.md",
+              "id": "DS173237",
+              "name": "DoNotStoreTokensOrKeysInSourceCode",
+              "properties": {
+                "DevSkimConfidence": "Medium",
+                "DevSkimSeverity": "Important",
+                "precision": "medium",
+                "problem.severity": "warning"
+              },
+              "shortDescription": {
+                "text": "A token or key was found in source code. If this represents a secret, it should be moved somewhere else."
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Weak/Broken Hash Algorithm: A weak or broken hash algorithm was detected."
+              },
+              "help": {
+                "markdown": "Visit [https://github.com/Microsoft/DevSkim/blob/main/guidance/DS126858.md](https://github.com/Microsoft/DevSkim/blob/main/guidance/DS126858.md) for guidance on this issue.",
+                "text": "Consider switching to use SHA-256 or SHA-512 instead."
+              },
+              "helpUri": "https://github.com/Microsoft/DevSkim/blob/main/guidance/DS126858.md",
+              "id": "DS126858",
+              "name": "WeakbrokenHashAlgorithm",
+              "properties": {
+                "DevSkimConfidence": "High",
+                "DevSkimSeverity": "Critical",
+                "precision": "high",
+                "problem.severity": "error"
+              },
+              "shortDescription": {
+                "text": "A weak or broken hash algorithm was detected."
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "fullDescription": {
+                "text": "Do not leave debug code in production: Accessing localhost could indicate debug code, or could hinder scaling."
+              },
+              "help": {
+                "markdown": "Visit [https://github.com/Microsoft/DevSkim/blob/main/guidance/DS162092.md](https://github.com/Microsoft/DevSkim/blob/main/guidance/DS162092.md) for guidance on this issue.",
+                "text": "Accessing localhost could indicate debug code, or could hinder scaling."
+              },
+              "helpUri": "https://github.com/Microsoft/DevSkim/blob/main/guidance/DS162092.md",
+              "id": "DS162092",
+              "name": "DoNotLeaveDebugCodeInProduction",
+              "properties": {
+                "DevSkimConfidence": "High",
+                "DevSkimSeverity": "ManualReview",
+                "precision": "high",
+                "problem.severity": "recommendation"
+              },
+              "shortDescription": {
+                "text": "Accessing localhost could indicate debug code, or could hinder scaling."
+              }
+            }
+          ],
+          "version": "1.0.44+10b85ce690"
+        }
+      },
+      "versionControlProvenance": [
+        {
+          "branch": "release-please--branches--main--components--sub-converter",
+          "repositoryUri": "https://github.com/liblaf/sub-converter",
+          "revisionId": "47bf2178808a2851ab87ce33a62c23e6bf899400"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0"
+}
