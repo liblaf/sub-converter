@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.16](https://github.com/liblaf/sub-converter/compare/v0.0.15...v0.0.16) (2025-01-26)
+
+
+### ⬆️ Dependencies
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20250121.0 ([#32](https://github.com/liblaf/sub-converter/issues/32)) ([4dcbec2](https://github.com/liblaf/sub-converter/commit/4dcbec25c68c445c9eea5cbd80b4197c1f4914ae))
+* **deps:** update dependency @types/bun to v1.1.18 ([#34](https://github.com/liblaf/sub-converter/issues/34)) ([765e17c](https://github.com/liblaf/sub-converter/commit/765e17ca877ed519542cd9415d82e8ef9e6f7d11))
+* **deps:** update dependency @types/bun to v1.2.0 ([#36](https://github.com/liblaf/sub-converter/issues/36)) ([0110ad2](https://github.com/liblaf/sub-converter/commit/0110ad2d5e0d125dac0d6fc9bf880f357090b054))
+* **deps:** update dependency remeda to v2.20.0 ([#38](https://github.com/liblaf/sub-converter/issues/38)) ([cf3055b](https://github.com/liblaf/sub-converter/commit/cf3055b47aa340778eecada07966a11eb83c7930))
+* **deps:** update dependency vitest to v3.0.3 ([#35](https://github.com/liblaf/sub-converter/issues/35)) ([d0dbc86](https://github.com/liblaf/sub-converter/commit/d0dbc8612de0604109d661600c04f0eb76dbfa16))
+* **deps:** update dependency vitest to v3.0.4 ([#37](https://github.com/liblaf/sub-converter/issues/37)) ([6c597d2](https://github.com/liblaf/sub-converter/commit/6c597d23bb41a413653b964c4e07c3430fafe7bf))
+
 ## [0.0.15](https://github.com/liblaf/sub-converter/compare/v0.0.14...v0.0.15) (2025-01-17)
 
 
