@@ -20,10 +20,10 @@
                         "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
                         "bomFormat": "CycloneDX",
                         "specVersion": "1.6",
-                        "serialNumber": "urn:uuid:dddca8e7-de91-4c31-9a60-506276cc1ca8",
+                        "serialNumber": "urn:uuid:c048b7e6-8983-42fa-a02c-50158129ea58",
                         "version": 1,
                         "metadata": {
-                            "timestamp": "2025-01-26T04:12:50+00:00",
+                            "timestamp": "2025-01-26T04:15:57+00:00",
                             "tools": {
                                 "components": [
                                     {
@@ -35,7 +35,7 @@
                                 ]
                             },
                             "component": {
-                                "bom-ref": "268b0a8e-c72b-426e-86b8-1a51036a5d03",
+                                "bom-ref": "6d414ac0-1c16-4432-b3e1-de36452c6fd4",
                                 "type": "application",
                                 "name": ".",
                                 "properties": [
@@ -48,7 +48,7 @@
                         },
                         "components": [
                             {
-                                "bom-ref": "d5e040cb-e213-4fdf-ad9f-2fc28e1675d5",
+                                "bom-ref": "dcb2e4ad-e449-4d52-b23b-57968bfaca41",
                                 "type": "application",
                                 "name": "pnpm-lock.yaml",
                                 "properties": [
@@ -678,13 +678,13 @@
                         ],
                         "dependencies": [
                             {
-                                "ref": "268b0a8e-c72b-426e-86b8-1a51036a5d03",
+                                "ref": "6d414ac0-1c16-4432-b3e1-de36452c6fd4",
                                 "dependsOn": [
-                                    "d5e040cb-e213-4fdf-ad9f-2fc28e1675d5"
+                                    "dcb2e4ad-e449-4d52-b23b-57968bfaca41"
                                 ]
                             },
                             {
-                                "ref": "d5e040cb-e213-4fdf-ad9f-2fc28e1675d5",
+                                "ref": "dcb2e4ad-e449-4d52-b23b-57968bfaca41",
                                 "dependsOn": [
                                     "pkg:npm/%40liblaf/utils@0.0.5",
                                     "pkg:npm/date-fns@4.1.0",
