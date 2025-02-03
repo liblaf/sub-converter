@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.0.16](https://github.com/liblaf/sub-converter/compare/v0.0.15...v0.0.16) (2025-02-03)
+
+
+### ⬆️ Dependencies
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20250121.0 ([#32](https://github.com/liblaf/sub-converter/issues/32)) ([4dcbec2](https://github.com/liblaf/sub-converter/commit/4dcbec25c68c445c9eea5cbd80b4197c1f4914ae))
+* **deps:** update dependency @cloudflare/workers-types to v4.20250129.0 ([#40](https://github.com/liblaf/sub-converter/issues/40)) ([cc9c6e6](https://github.com/liblaf/sub-converter/commit/cc9c6e69f6e3d251e70446e4ee980222914f8461))
+* **deps:** update dependency @types/bun to v1.1.18 ([#34](https://github.com/liblaf/sub-converter/issues/34)) ([765e17c](https://github.com/liblaf/sub-converter/commit/765e17ca877ed519542cd9415d82e8ef9e6f7d11))
+* **deps:** update dependency @types/bun to v1.2.0 ([#36](https://github.com/liblaf/sub-converter/issues/36)) ([0110ad2](https://github.com/liblaf/sub-converter/commit/0110ad2d5e0d125dac0d6fc9bf880f357090b054))
+* **deps:** update dependency @types/bun to v1.2.1 ([#42](https://github.com/liblaf/sub-converter/issues/42)) ([c863824](https://github.com/liblaf/sub-converter/commit/c863824164cbe990bf17eef8980658d1d82b2e75))
+* **deps:** update dependency @types/bun to v1.2.2 ([#44](https://github.com/liblaf/sub-converter/issues/44)) ([e64fb73](https://github.com/liblaf/sub-converter/commit/e64fb73def77272b6da4bd434499d4e744d3088f))
+* **deps:** update dependency loupe to v3.1.3 ([#43](https://github.com/liblaf/sub-converter/issues/43)) ([0a33ce2](https://github.com/liblaf/sub-converter/commit/0a33ce22a76e6f1b60c5777bc6e3476b439c4f97))
+* **deps:** update dependency remeda to v2.20.0 ([#38](https://github.com/liblaf/sub-converter/issues/38)) ([cf3055b](https://github.com/liblaf/sub-converter/commit/cf3055b47aa340778eecada07966a11eb83c7930))
+* **deps:** update dependency remeda to v2.20.1 ([#45](https://github.com/liblaf/sub-converter/issues/45)) ([e3d08cc](https://github.com/liblaf/sub-converter/commit/e3d08ccd225240099963cab889a9396ece8426e7))
+* **deps:** update dependency tsup to v8.3.6 ([#39](https://github.com/liblaf/sub-converter/issues/39)) ([0fc393c](https://github.com/liblaf/sub-converter/commit/0fc393c2c5a75156d689b6ece0f5a929d94c2d29))
+* **deps:** update dependency vitest to v3.0.3 ([#35](https://github.com/liblaf/sub-converter/issues/35)) ([d0dbc86](https://github.com/liblaf/sub-converter/commit/d0dbc8612de0604109d661600c04f0eb76dbfa16))
+* **deps:** update dependency vitest to v3.0.4 ([#37](https://github.com/liblaf/sub-converter/issues/37)) ([6c597d2](https://github.com/liblaf/sub-converter/commit/6c597d23bb41a413653b964c4e07c3430fafe7bf))
+
 ## [0.0.15](https://github.com/liblaf/sub-converter/compare/v0.0.14...v0.0.15) (2025-01-17)
 
 ### ⬆️ Dependencies
