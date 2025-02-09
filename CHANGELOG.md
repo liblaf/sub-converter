@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.17](https://github.com/liblaf/sub-converter/compare/v0.0.16...v0.0.17) (2025-02-09)
+
+
+### ⬆️ Dependencies
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20250204.0 ([#48](https://github.com/liblaf/sub-converter/issues/48)) ([0424516](https://github.com/liblaf/sub-converter/commit/0424516f0075f29ff3fccaf2c8f822bd0f80da7c))
+* **deps:** update dependency @liblaf/utils to ^0.0.7 ([#47](https://github.com/liblaf/sub-converter/issues/47)) ([067609e](https://github.com/liblaf/sub-converter/commit/067609e2a1705918cf1f66b5cf69a6752afb9e2c))
+
 ## [0.0.16](https://github.com/liblaf/sub-converter/compare/v0.0.15..v0.0.16) - 2025-02-03
 
 ### ⬆️ Dependencies
