@@ -1,22 +1,10 @@
 # Changelog
 
-## [0.0.18](https://github.com/liblaf/sub-converter/compare/v0.0.17...v0.0.18) (2025-02-10)
-
-
-### ⬆️ Dependencies
-
-* **deps:** update dependency prettier to v3.5.0 ([#50](https://github.com/liblaf/sub-converter/issues/50)) ([7fd3904](https://github.com/liblaf/sub-converter/commit/7fd390438dd4119a936de133aad45d02387e9663))
-
 ## [0.0.17](https://github.com/liblaf/sub-converter/compare/v0.0.16..v0.0.17) - 2025-02-09
 
 ### ⬆️ Dependencies
 
 - **deps:** update dependency @liblaf/utils to ^0.0.7 (#47) - ([067609e](https://github.com/liblaf/sub-converter/commit/067609e2a1705918cf1f66b5cf69a6752afb9e2c))
-
-### ❤️ New Contributors
-
-- @liblaf made their first contribution
-- @renovate[bot] made their first contribution in [#47](https://github.com/liblaf/sub-converter/pull/47)
 
 ## [0.0.16](https://github.com/liblaf/sub-converter/compare/v0.0.15..v0.0.16) - 2025-02-04
 
