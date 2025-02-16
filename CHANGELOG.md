@@ -1,26 +1,22 @@
 # Changelog
 
-## [0.0.18](https://github.com/liblaf/sub-converter/compare/v0.0.17...v0.0.18) (2025-02-16)
-
+## [0.0.18](https://github.com/liblaf/sub-converter/compare/v0.0.17..v0.0.18) - 2025-02-16
 
 ### ⬆️ Dependencies
 
-* **deps:** update dependency @cloudflare/workers-types to v4.20250214.0 ([#54](https://github.com/liblaf/sub-converter/issues/54)) ([18785b5](https://github.com/liblaf/sub-converter/commit/18785b55a6367e20fc7a6bdefbb76acc8c1ae2e8))
-* **deps:** update dependency @liblaf/utils to ^0.0.16 ([#55](https://github.com/liblaf/sub-converter/issues/55)) ([be3ca20](https://github.com/liblaf/sub-converter/commit/be3ca207327adaeff4f292b2337374e2b113a41c))
-* **deps:** update dependency prettier to v3.5.0 ([#50](https://github.com/liblaf/sub-converter/issues/50)) ([7fd3904](https://github.com/liblaf/sub-converter/commit/7fd390438dd4119a936de133aad45d02387e9663))
-* **deps:** update dependency prettier to v3.5.1 ([#53](https://github.com/liblaf/sub-converter/issues/53)) ([bc29174](https://github.com/liblaf/sub-converter/commit/bc29174e430a8ee73eb97b41ef57e70161e35316))
-* **deps:** update dependency zod to v3.24.2 ([#52](https://github.com/liblaf/sub-converter/issues/52)) ([9ad34e8](https://github.com/liblaf/sub-converter/commit/9ad34e8b04fe2d70839335130ae8dc297e3d1b5b))
+- **deps:** update dependency @liblaf/utils to ^0.0.16 (#55) - ([be3ca20](https://github.com/liblaf/sub-converter/commit/be3ca207327adaeff4f292b2337374e2b113a41c))
+- **deps:** update dependency zod to v3.24.2 (#52) - ([9ad34e8](https://github.com/liblaf/sub-converter/commit/9ad34e8b04fe2d70839335130ae8dc297e3d1b5b))
+
+### ❤️ New Contributors
+
+- @renovate[bot] made their first contribution in [#55](https://github.com/liblaf/sub-converter/pull/55)
+- @liblaf made their first contribution
 
 ## [0.0.17](https://github.com/liblaf/sub-converter/compare/v0.0.16..v0.0.17) - 2025-02-09
 
 ### ⬆️ Dependencies
 
 - **deps:** update dependency @liblaf/utils to ^0.0.7 (#47) - ([067609e](https://github.com/liblaf/sub-converter/commit/067609e2a1705918cf1f66b5cf69a6752afb9e2c))
-
-### ❤️ New Contributors
-
-- @liblaf made their first contribution
-- @renovate[bot] made their first contribution in [#47](https://github.com/liblaf/sub-converter/pull/47)
 
 ## [0.0.16](https://github.com/liblaf/sub-converter/compare/v0.0.15..v0.0.16) - 2025-02-04
 
