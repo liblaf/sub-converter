@@ -1,15 +1,22 @@
 # Changelog
 
+## [0.0.18](https://github.com/liblaf/sub-converter/compare/v0.0.17..v0.0.18) - 2025-02-16
+
+### ⬆️ Dependencies
+
+- **deps:** update dependency @liblaf/utils to ^0.0.16 (#55) - ([be3ca20](https://github.com/liblaf/sub-converter/commit/be3ca207327adaeff4f292b2337374e2b113a41c))
+- **deps:** update dependency zod to v3.24.2 (#52) - ([9ad34e8](https://github.com/liblaf/sub-converter/commit/9ad34e8b04fe2d70839335130ae8dc297e3d1b5b))
+
+### ❤️ New Contributors
+
+- @renovate[bot] made their first contribution in [#55](https://github.com/liblaf/sub-converter/pull/55)
+- @liblaf made their first contribution
+
 ## [0.0.17](https://github.com/liblaf/sub-converter/compare/v0.0.16..v0.0.17) - 2025-02-09
 
 ### ⬆️ Dependencies
 
 - **deps:** update dependency @liblaf/utils to ^0.0.7 (#47) - ([067609e](https://github.com/liblaf/sub-converter/commit/067609e2a1705918cf1f66b5cf69a6752afb9e2c))
-
-### ❤️ New Contributors
-
-- @liblaf made their first contribution
-- @renovate[bot] made their first contribution in [#47](https://github.com/liblaf/sub-converter/pull/47)
 
 ## [0.0.16](https://github.com/liblaf/sub-converter/compare/v0.0.15..v0.0.16) - 2025-02-04
 
