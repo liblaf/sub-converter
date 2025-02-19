@@ -1,23 +1,12 @@
 # Changelog
 
-## [0.0.19](https://github.com/liblaf/sub-converter/compare/v0.0.18...v0.0.19) (2025-02-19)
-
-
-### ⬆️ Dependencies
-
-* **deps:** update dependency vitest to v3.0.6 ([#57](https://github.com/liblaf/sub-converter/issues/57)) ([d013c8d](https://github.com/liblaf/sub-converter/commit/d013c8dd36319d1f85b4b462e846bc31cea411dc))
-
-## [0.0.18](https://github.com/liblaf/sub-converter/compare/v0.0.17..v0.0.18) - 2025-02-16
+## [0.0.18](https://github.com/liblaf/sub-converter/compare/v0.0.17..v0.0.18) - 2025-02-17
 
 ### ⬆️ Dependencies
 
+- **deps:** update dependency remeda to v2.20.2 (#56) - ([494a564](https://github.com/liblaf/sub-converter/commit/494a56461c034c615da639aa024288f08dbb5550))
 - **deps:** update dependency @liblaf/utils to ^0.0.16 (#55) - ([be3ca20](https://github.com/liblaf/sub-converter/commit/be3ca207327adaeff4f292b2337374e2b113a41c))
 - **deps:** update dependency zod to v3.24.2 (#52) - ([9ad34e8](https://github.com/liblaf/sub-converter/commit/9ad34e8b04fe2d70839335130ae8dc297e3d1b5b))
-
-### ❤️ New Contributors
-
-- @renovate[bot] made their first contribution in [#55](https://github.com/liblaf/sub-converter/pull/55)
-- @liblaf made their first contribution
 
 ## [0.0.17](https://github.com/liblaf/sub-converter/compare/v0.0.16..v0.0.17) - 2025-02-09
 
