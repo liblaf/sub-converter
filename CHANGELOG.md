@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.19](https://github.com/liblaf/sub-converter/compare/v0.0.18...v0.0.19) (2025-02-19)
+
+
+### ⬆️ Dependencies
+
+* **deps:** update dependency vitest to v3.0.6 ([#57](https://github.com/liblaf/sub-converter/issues/57)) ([d013c8d](https://github.com/liblaf/sub-converter/commit/d013c8dd36319d1f85b4b462e846bc31cea411dc))
+
 ## [0.0.18](https://github.com/liblaf/sub-converter/compare/v0.0.17..v0.0.18) - 2025-02-16
 
 ### ⬆️ Dependencies
