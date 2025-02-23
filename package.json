@@ -40,40 +40,43 @@
       }
     }
   },
+  "type": "module",
   "repository": "github:liblaf/sub-converter",
   "scripts": {
     "build": "tsup",
-    "lint": "prettier --write . && biome check --write",
-    "prepack": "pnpm run build",
+    "check": "biome check --write",
+    "prepack": "tsup",
     "test:prepare": "bun run scripts/prepare-testcases.ts",
     "test:sing-box": "bun run scripts/test-singbox.ts",
     "test": "vitest"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@cloudflare/workers-types": "^4.20241224.0",
-    "@types/bun": "^1.1.14",
-    "dotenv": "^16.4.7",
-    "pino-pretty": "^13.0.0",
-    "prettier": "^3.4.2",
-    "tsup": "^8.3.5",
-    "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.0.0"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true,
-    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "@liblaf/utils": "^0.0.16",
     "date-fns": "^4.1.0",
     "js-base64": "^3.7.7",
-    "loupe": "^3.1.2",
-    "remeda": "^2.19.0",
-    "zod": "^3.24.1"
-  }
+    "loupe": "^3.1.3",
+    "remeda": "^2.20.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "@tsconfig/bun": "^1.0.7",
+    "@types/bun": "^1.2.3",
+    "dotenv": "^16.4.7",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.5.2",
+    "tsup": "^8.3.6",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.6"
+  },
+  "peerDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "provenance": true
+  },
+  "readme": "README.md"
 }
