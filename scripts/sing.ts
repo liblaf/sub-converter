@@ -1,14 +1,20 @@
 import { CONFIG_SCHEMA, type Config, fetchSingboxFromProviders } from "@lib";
-import type { Outbound } from "@liblaf/sing-box-schema";
+import type { GeneratorSingboxOptions } from "@lib/client/sing-box";
+import {
+  DEFAULT,
+  GENERATOR_OPTIONS_SCHEMA,
+  type Singbox,
+} from "@lib/client/sing-box";
 
-async function main(): Promise<void> {
-  const config: Config = CONFIG_SCHEMA.parse(
-    await Bun.file(".private/config.json").json(),
-  );
-  const providers: Map<string, Outbound[]> = await fetchSingboxFromProviders(
+async function main() {
+  const CONFIG_FILE = Bun.file(".private/config.json");
+  const config: Config = CONFIG_SCHEMA.parse(await CONFIG_FILE.json());
+  const providers: Map<string, Singbox> = await fetchSingboxFromProviders(
     config.providers,
   );
-  console.log(providers);
+  const options: GeneratorSingboxOptions = GENERATOR_OPTIONS_SCHEMA.parse({});
+  const singbox: Singbox = DEFAULT.generate(providers, options);
+  await Bun.file(".private/sing-box.json").write(JSON.stringify(singbox));
 }
 
 await main();

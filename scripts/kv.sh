@@ -1,26 +1,40 @@
 #!/bin/bash
+# shellcheck disable=SC2154
 set -o errexit
 set -o nounset
 set -o pipefail
 
-LOCAL_FILE="${LOCAL_FILE:-".private/profile.json"}"
-NAMESPACE_ID="${NAMESPACE_ID:-"8b5259fc13f94d85bc4c7bc316198fa1"}"
+# @cmd
+# @option --namespace-id=`_default_namespace_id`
+function put() {
+  _put "config.json"
+  _put "sing-box.json"
+}
 
-action="$1"
-id=$(rbw get --raw Telegram | jq --raw-output '.fields.[] | select(.name == "chat_id").value')
-case "$action" in
-  get)
-    mkdir --parents --verbose "$(dirname -- "$LOCAL_FILE")"
-    wrangler kv key get "$id" --namespace-id "$NAMESPACE_ID" "${@:2}" |
-      sd --fixed-strings "Proxy environment variables detected. We'll use your proxy for fetch requests." "" > "$LOCAL_FILE"
-    prettier --write --ignore-path "" "$LOCAL_FILE"
-    ;;
-  put)
-    prettier --write --ignore-path "" "$LOCAL_FILE"
-    wrangler kv key put "$id" --namespace-id "$NAMESPACE_ID" --path "$LOCAL_FILE" "${@:2}"
-    ;;
-  *)
-    echo "Usage: $0 {get|put}" >&2
-    exit 1
-    ;;
-esac
+# @cmd
+# @option --namespace-id=`_default_namespace_id`
+function list() {
+  wrangler kv key list --namespace-id "$argc_namespace_id"
+}
+
+# @cmd
+# @option --namespace-id=`_default_namespace_id`
+function get() {
+  _get "config.json"
+  _get "sing-box.json"
+}
+
+function _default_namespace_id() {
+  rbw get --field "namespace-id" "Cloudflare KV"
+}
+
+function _put() {
+  wrangler kv key put "$1" --namespace-id "$argc_namespace_id" --path ".private/$1"
+}
+
+function _get() {
+  wrangler kv key get "$1" --namespace-id "$argc_namespace_id" |
+    sd --fixed-strings "Proxy environment variables detected. We'll use your proxy for fetch requests." "" > ".private/$1"
+}
+
+eval "$(argc --argc-eval "$0" "$@")"

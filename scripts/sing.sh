@@ -4,5 +4,6 @@ set -o nounset
 set -o pipefail
 
 ./scripts/kv.sh get
-bun run scripts/sing.ts | pnpm exec pino-pretty
-prettier --write --ignore-path "" ".private/config.json"
+bun run scripts/sing.ts
+prettier --write --ignore-path "" ".private/"
+./scripts/kv.sh put

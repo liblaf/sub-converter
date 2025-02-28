@@ -39,8 +39,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@liblaf/sing-box-schema": "^0.0.2",
-    "@liblaf/utils": "^0.0.16",
+    "pino": "^9.6.0",
     "remeda": "^2.21.0",
     "zod": "^3.24.2"
   },
