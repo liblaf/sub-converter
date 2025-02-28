@@ -1,27 +1,14 @@
-import type {
-  Config,
-  Outbound,
-  Template,
-  TemplateOptions,
-} from "@/client/sing-box";
-import {
-  TEMPLATE_OPTIONS_SCHEMA,
-  fetchSingboxOutboundsFromProfile,
-  getTemplate,
-  sanitize,
-} from "@/client/sing-box";
-import { PROFILE_SCHEMA, type Profile } from "@/provider";
+import { CONFIG_SCHEMA, type Config, fetchSingboxFromProviders } from "@lib";
+import type { Outbound } from "@liblaf/sing-box-schema";
 
 async function main(): Promise<void> {
-  const profile: Profile = PROFILE_SCHEMA.parse(
-    await Bun.file(".private/profile.json").json(),
+  const config: Config = CONFIG_SCHEMA.parse(
+    await Bun.file(".private/config.json").json(),
   );
-  const opts: TemplateOptions = TEMPLATE_OPTIONS_SCHEMA.parse({ port: 64393 });
-  const providers: Map<string, Outbound[]> =
-    await fetchSingboxOutboundsFromProfile(profile);
-  const template: Template = getTemplate("default");
-  const cfg: Config = sanitize(template(providers, opts));
-  Bun.write(".private/config.json", JSON.stringify(cfg));
+  const providers: Map<string, Outbound[]> = await fetchSingboxFromProviders(
+    config.providers,
+  );
+  console.log(providers);
 }
 
 await main();

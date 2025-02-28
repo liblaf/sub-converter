@@ -1,3 +1,2 @@
-export { PROFILE_SCHEMA, PROVIDER_OPTIONS_SCHEMA } from "./types";
-export type { Profile, ProviderOptions } from "./types";
-export { getProviderUrl } from "./utils";
+export { CONFIG_SCHEMA, PROVIDER_SCHEMA } from "./types";
+export type { Config, Provider } from "./types";

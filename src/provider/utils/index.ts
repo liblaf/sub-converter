@@ -1,1 +1,0 @@
-export { getProviderUrl } from "./url";

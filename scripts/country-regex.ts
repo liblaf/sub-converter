@@ -1,4 +1,4 @@
-import { FLAGS } from "@/filter/infer/country";
+import { FLAGS } from "@lib/filter/infer/country";
 
 const PATTERNS: Record<string, string[]> = {
   DE: ["German"],
