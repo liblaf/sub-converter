@@ -7,7 +7,7 @@ import { OUTBOUND } from "./outbound";
 import { ROUTE } from "./route";
 
 export { INBOUND } from "./inbound";
-export type { Inbound } from "./inbound";
+export type { Inbound, InboundMixed, InboundTun } from "./inbound";
 export { OUTBOUND } from "./outbound";
 export type {
   Outbound,

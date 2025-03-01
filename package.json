@@ -39,6 +39,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "commander": "^13.1.0",
     "pino": "^9.6.0",
     "remeda": "^2.21.0",
     "zod": "^3.24.2"

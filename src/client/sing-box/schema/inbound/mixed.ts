@@ -8,4 +8,6 @@ export const INBOUND_MIXED = z
   })
   .merge(SHARED_LISTEN)
   .partial()
-  .required({ type: true, tag: true });
+  .required({ type: true, tag: true, listen: true, listen_port: true });
+
+export type InboundMixed = z.infer<typeof INBOUND_MIXED>;
