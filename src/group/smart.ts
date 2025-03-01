@@ -17,7 +17,7 @@ export function makeCountryGroup(country: string): ProxyGroup {
       type: "selector",
       name: FLAGS[country],
       filter(name: string): boolean {
-        if (!AUTO.filter(name)) return false;
+        if (!SELECT.filter(name)) return false;
         return isCountry(name, country);
       },
     };
