@@ -1,38 +1,15 @@
 export {
-  singboxFromBase64,
-  singboxFromUri,
-  singboxFromUriList,
-} from "./exchange";
+  fetchSingboxFromProvider,
+  fetchSingboxFromProviders,
+  fetchSingboxFromUrl,
+} from "./fetch";
 export {
-  fetchSingboxOutboundsFromProfile,
-  fetchSingboxOutboundsFromProvider,
-  filterSingboxOutbounds,
-  filterSingboxTags,
-} from "./provider";
-export {
-  addGroup,
-  getTemplate,
-  makeDefaultConfig,
-  makeIosConfig,
-  makeRemoteRuleset,
-  sanitize,
-  TEMPLATE_OPTIONS_SCHEMA,
-  TEMPLATES,
-} from "./template";
-export type { Template, TemplateOptions } from "./template";
-export type {
-  Config,
-  DNS,
-  DNSServer,
-  Inbound,
-  InboundMixed,
-  InboundTun,
-  ListenFields,
-  Outbound,
-  OutboundSelector,
-  OutboundUrltest,
-  Route,
-  RouteRule,
-  RuleSet,
-  RuleSetRemote,
-} from "./types";
+  DEFAULT,
+  GENERATOR_OPTIONS_SCHEMA,
+  GENERATORS,
+  getGenerator,
+  IOS,
+} from "./gen";
+export type { GeneratorSingbox, GeneratorSingboxOptions } from "./gen";
+export { SINGBOX_SCHEMA } from "./schema";
+export type { Singbox } from "./schema";

@@ -1,12 +1,12 @@
 {
   "extends": "@tsconfig/bun/tsconfig.json",
   "compilerOptions": {
+    "noPropertyAccessFromIndexSignature": false,
     "baseUrl": ".",
     "paths": {
-      "@": ["src"],
-      "@/*": ["src/*"],
-      "@data/*": ["data/*"],
-      "@test/*": ["test/*"]
+      "@/*": ["*"],
+      "@lib": ["src/"],
+      "@lib/*": ["src/*"]
     }
   }
 }

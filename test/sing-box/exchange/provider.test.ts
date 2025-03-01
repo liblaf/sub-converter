@@ -1,6 +1,6 @@
-import type { Outbound } from "@/client/sing-box";
-import { singboxFromBase64 } from "@/client/sing-box";
-import { subconvert } from "@/utils";
+import type { Outbound } from "@lib/client/sing-box";
+import { singboxFromBase64 } from "@lib/client/sing-box";
+import { subconvert } from "@lib/utils";
 import { fetchUnsafe } from "@liblaf/utils";
 import { expect, test } from "vitest";
 
