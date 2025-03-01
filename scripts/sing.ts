@@ -1,3 +1,4 @@
+import * as path from "node:path";
 import { CONFIG_SCHEMA, type Config, fetchSingboxFromProviders } from "@lib";
 import type { GeneratorSingboxOptions } from "@lib/client/sing-box";
 import {
@@ -7,7 +8,6 @@ import {
 } from "@lib/client/sing-box";
 import type { BunFile } from "bun";
 import { Command, type OptionValues } from "commander";
-import * as path from "node:path";
 import { z } from "zod";
 
 function parseArgs(): OptionValues {
