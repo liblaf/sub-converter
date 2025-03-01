@@ -45,6 +45,8 @@ export const AI: ProxyGroup = {
   },
 };
 
+const AUTO_COUNTRIES_EXCLUDE = new Set(["VN"]);
+
 export const AUTO: ProxyGroup = {
   type: "urltest",
   name: OutboundTag.AUTO,
@@ -52,6 +54,8 @@ export const AUTO: ProxyGroup = {
     if (isDirect(name)) return false;
     if (isEmby(name)) return false;
     if (isExcluded(name)) return false;
+    const country: string = inferCountry(name);
+    if (AUTO_COUNTRIES_EXCLUDE.has(country)) return false;
     return true;
   },
 };
