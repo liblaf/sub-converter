@@ -17,7 +17,8 @@ export function makeCountryGroup(country: string): ProxyGroup {
       type: "selector",
       name: FLAGS[country],
       filter(name: string): boolean {
-        if (!SELECT.filter(name)) return false;
+        if (isEmby(name)) return false;
+        if (isExcluded(name)) return false;
         return isCountry(name, country);
       },
     };
@@ -26,7 +27,8 @@ export function makeCountryGroup(country: string): ProxyGroup {
     type: "urltest",
     name: FLAGS[country],
     filter(name: string): boolean {
-      if (!AUTO.filter(name)) return false;
+      if (isEmby(name)) return false;
+      if (isExcluded(name)) return false;
       return isCountry(name, country);
     },
   };
@@ -45,7 +47,7 @@ export const AI: ProxyGroup = {
   },
 };
 
-const AUTO_COUNTRIES_EXCLUDE = new Set(["VN"]);
+const AUTO_COUNTRIES_EXCLUDE: Set<string> = new Set([]);
 
 export const AUTO: ProxyGroup = {
   type: "urltest",
