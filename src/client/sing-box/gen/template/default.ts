@@ -1,5 +1,5 @@
 import type {
-  Inbound,
+  InboundMixed,
   OutboundSelector,
   OutboundUrltest,
   Singbox,
@@ -106,7 +106,7 @@ export const TEMPLATE: Singbox = {
       store_rdrc: true,
     },
     clash_api: {
-      external_controller: "127.0.0.1:9091",
+      external_controller: "127.0.0.1:9090",
       external_ui: "ui",
       external_ui_download_url: "https://api.liblaf.me/assets/metacubexd.zip",
       external_ui_download_detour: OutboundTag.DIRECT,
@@ -120,7 +120,7 @@ export const DEFAULT: GeneratorSingbox = {
     options: GeneratorSingboxOptions,
   ): Singbox {
     const singbox: Singbox = R.clone(TEMPLATE);
-    const inbound: Inbound = findInbound(singbox, InboundTag.MIXED)!;
+    const inbound = findInbound(singbox, InboundTag.MIXED)! as InboundMixed;
     inbound.listen_port = options.port;
 
     const groups: ProxyGroup[] = defaultGroups();

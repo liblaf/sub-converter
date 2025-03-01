@@ -4,6 +4,7 @@
     "noPropertyAccessFromIndexSignature": false,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["*"],
       "@lib": ["src/"],
       "@lib/*": ["src/*"]
     }

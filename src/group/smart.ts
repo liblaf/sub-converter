@@ -4,6 +4,7 @@ import {
   inferCountry,
   inferRate,
   isCountry,
+  isDirect,
   isEmby,
   isExcluded,
   isLimit,
@@ -48,8 +49,9 @@ export const AUTO: ProxyGroup = {
   type: "urltest",
   name: OutboundTag.AUTO,
   filter(name: string): boolean {
-    if (isExcluded(name)) return false;
+    if (isDirect(name)) return false;
     if (isEmby(name)) return false;
+    if (isExcluded(name)) return false;
     return true;
   },
 };

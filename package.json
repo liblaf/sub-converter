@@ -35,6 +35,7 @@
   "scripts": {
     "build": "tsup",
     "check": "biome check --write",
+    "compile": "bun build --compile --outfile='./dist/sing' ./src/bin/sing.ts",
     "prepack": "tsup",
     "test": "vitest"
   },

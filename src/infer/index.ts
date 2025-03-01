@@ -1,2 +1,2 @@
 export { FLAGS, inferCountry, isCountry } from "./country";
-export { inferRate, isEmby, isExcluded, isLimit } from "./misc";
+export { inferRate, isDirect, isEmby, isExcluded, isLimit } from "./misc";

@@ -8,6 +8,10 @@ export function inferRate(name: string): number {
   return 1.0;
 }
 
+export function isDirect(name: string): boolean {
+  return !!name.match(/直连/);
+}
+
 export function isExcluded(name: string): boolean {
   return !!name.match(/到期|剩余|套餐|网址|过期/);
 }
