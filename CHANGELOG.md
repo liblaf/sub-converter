@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/liblaf/sub-converter/compare/v0.1.2...v0.1.3) (2025-03-02)
+
+
+### 🐛 Bug Fixes
+
+* switch from node to bun runtime in sing.ts ([042d80b](https://github.com/liblaf/sub-converter/commit/042d80b148b2c6bb2d102ee7e6b8f66fd1f87e2b))
+
 ## [0.1.2](https://github.com/liblaf/sub-converter/compare/v0.1.1..v0.1.2) - 2025-03-02
 
 ### 🐛 Bug Fixes
