@@ -1,20 +1,35 @@
 # Changelog
 
-## [0.1.1](https://github.com/liblaf/sub-converter/compare/v0.1.0...v0.1.1) (2025-03-02)
+## [0.1.2](https://github.com/liblaf/sub-converter/compare/v0.1.1..v0.1.2) - 2025-03-02
 
 ### 🐛 Bug Fixes
 
-- update DNS configuration to prevent hijacking and improve privacy ([53068f8](https://github.com/liblaf/sub-converter/commit/53068f8d38217145cdc561586785100a3db6b658))
+- add shebang to sing.ts for direct execution - ([e127ac6](https://github.com/liblaf/sub-converter/commit/e127ac669466ba8c432c625cfb62b8b5f5fd13bd))
+
+### ❤️ New Contributors
+
+- @liblaf made their first contribution
+- @mergery[bot] made their first contribution
+
+## [0.1.1](https://github.com/liblaf/sub-converter/compare/v0.1.0..v0.1.1) - 2025-03-02
+
+### 🐛 Bug Fixes
+
+- update DNS configuration to prevent hijacking and improve privacy - ([53068f8](https://github.com/liblaf/sub-converter/commit/53068f8d38217145cdc561586785100a3db6b658))
 
 ### ♻ Code Refactoring
 
-- **sing-box:** simplify iOS template generation ([80c31f2](https://github.com/liblaf/sub-converter/commit/80c31f25f27706f4e213cabffe748b9bcad17353))
+- **sing-box:** simplify iOS template generation - ([80c31f2](https://github.com/liblaf/sub-converter/commit/80c31f25f27706f4e213cabffe748b9bcad17353))
 
 ### 👷 Build System
 
-- simplify package exports and add CLI entry ([e5b7cdb](https://github.com/liblaf/sub-converter/commit/e5b7cdbf7ca955c611be5aedf8bcbecdd5df51b4))
+- simplify package exports and add CLI entry - ([e5b7cdb](https://github.com/liblaf/sub-converter/commit/e5b7cdbf7ca955c611be5aedf8bcbecdd5df51b4))
 
-## [0.1.0](https://github.com/liblaf/sub-converter/compare/v0.0.19..v0.1.0) - 2025-03-01
+### ❤️ New Contributors
+
+- @mergery[bot] made their first contribution
+
+## [0.1.0](https://github.com/liblaf/sub-converter/compare/v0.0.19..v0.1.0) - 2025-03-02
 
 ### 💥 BREAKING CHANGES
 
@@ -35,10 +50,6 @@
 - add write permissions to release job - ([8bd72ee](https://github.com/liblaf/sub-converter/commit/8bd72ee97a39ec2f82b9cdcea44ab268f299328c))
 - refactor release workflow to use Just for builds - ([e2ad1e3](https://github.com/liblaf/sub-converter/commit/e2ad1e33adb02ed82add7f4ba50a64fbd4b8296c))
 - add GitHub Actions workflow for binary release - ([35d68aa](https://github.com/liblaf/sub-converter/commit/35d68aa9fe49a5f947ba0a2f1d768bb519aab872))
-
-### ❤️ New Contributors
-
-- @liblaf made their first contribution
 
 ## [0.0.18](https://github.com/liblaf/sub-converter/compare/v0.0.17..v0.0.18) - 2025-02-17
 
