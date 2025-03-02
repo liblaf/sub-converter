@@ -6,12 +6,6 @@
     ".": "./src/index.ts"
   },
   "publish": {
-    "include": [
-      "jsr.json",
-      "LICENSE",
-      "package.json",
-      "README.md",
-      "src/"
-    ]
+    "include": ["jsr.json", "LICENSE", "package.json", "README.md", "src/"]
   }
 }
