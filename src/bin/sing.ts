@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 import * as pkg from "@/package.json";
 import {
   GENERATOR_OPTIONS_SCHEMA,
