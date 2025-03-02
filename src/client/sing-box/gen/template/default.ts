@@ -28,8 +28,15 @@ export const TEMPLATE: Singbox = {
   log: { level: "warn" },
   dns: {
     servers: [
-      { tag: DnsTag.LOCAL, address: "local", detour: OutboundTag.DIRECT },
-      { tag: DnsTag.PROXY, address: "https://8.8.8.8/dns-query" },
+      // `8.8.8.8` is often hijacked
+      { tag: DnsTag.LOCAL, address: "8.8.8.8", detour: OutboundTag.DIRECT },
+      // 1.1.1.1 does not send EDNS Client Subnet header
+      // so use 8.8.8.8 instead
+      {
+        tag: DnsTag.PROXY,
+        address: "https://8.8.8.8/dns-query",
+        detour: OutboundTag.PROXY,
+      },
     ],
     rules: [
       { outbound: ["any"], server: DnsTag.LOCAL },
