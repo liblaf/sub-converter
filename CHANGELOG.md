@@ -1,15 +1,21 @@
 # Changelog
 
-## [0.1.2](https://github.com/liblaf/sub-converter/compare/v0.1.1..v0.1.2) - 2025-03-02
+## [0.1.3](https://github.com/liblaf/sub-converter/compare/v0.1.2..v0.1.3) - 2025-03-02
 
 ### 🐛 Bug Fixes
 
-- add shebang to sing.ts for direct execution - ([e127ac6](https://github.com/liblaf/sub-converter/commit/e127ac669466ba8c432c625cfb62b8b5f5fd13bd))
+- switch from node to bun runtime in sing.ts - ([042d80b](https://github.com/liblaf/sub-converter/commit/042d80b148b2c6bb2d102ee7e6b8f66fd1f87e2b))
 
 ### ❤️ New Contributors
 
 - @liblaf made their first contribution
 - @mergery[bot] made their first contribution
+
+## [0.1.2](https://github.com/liblaf/sub-converter/compare/v0.1.1..v0.1.2) - 2025-03-02
+
+### 🐛 Bug Fixes
+
+- add shebang to sing.ts for direct execution - ([e127ac6](https://github.com/liblaf/sub-converter/commit/e127ac669466ba8c432c625cfb62b8b5f5fd13bd))
 
 ## [0.1.1](https://github.com/liblaf/sub-converter/compare/v0.1.0..v0.1.1) - 2025-03-02
 
