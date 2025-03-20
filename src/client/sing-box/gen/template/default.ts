@@ -80,7 +80,7 @@ export const TEMPLATE: Singbox = {
       { clash_mode: ClashMode.DIRECT, outbound: OutboundTag.DIRECT },
       { clash_mode: ClashMode.GLOBAL, outbound: OutboundTag.PROXY },
       { rule_set: [RulesetTag.CN], outbound: OutboundTag.DIRECT },
-      { rule_set: [RulesetTag.ADS], outbound: OutboundTag.AI },
+      { rule_set: [RulesetTag.AI], outbound: OutboundTag.AI },
       { rule_set: [RulesetTag.DOWNLOAD], outbound: OutboundTag.DOWNLOAD },
       { rule_set: [RulesetTag.EMBY], outbound: OutboundTag.EMBY },
       { rule_set: [RulesetTag.MEDIA], outbound: OutboundTag.MEDIA },
