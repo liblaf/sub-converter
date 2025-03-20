@@ -1,22 +1,22 @@
 # Changelog
 
-## [0.1.4](https://github.com/liblaf/sub-converter/compare/v0.1.3...v0.1.4) (2025-03-20)
-
-
-### 🐛 Bug Fixes
-
-* correct rule set tag from ADS to AI ([855f254](https://github.com/liblaf/sub-converter/commit/855f254777b6bcfc065edfaaabbea81d895bb192))
-
-## [0.1.3](https://github.com/liblaf/sub-converter/compare/v0.1.2..v0.1.3) - 2025-03-02
+## [0.1.4](https://github.com/liblaf/sub-converter/compare/v0.1.3..v0.1.4) - 2025-03-20
 
 ### 🐛 Bug Fixes
 
-- switch from node to bun runtime in sing.ts - ([042d80b](https://github.com/liblaf/sub-converter/commit/042d80b148b2c6bb2d102ee7e6b8f66fd1f87e2b))
+- correct rule set tag from ADS to AI - ([855f254](https://github.com/liblaf/sub-converter/commit/855f254777b6bcfc065edfaaabbea81d895bb192))
 
 ### ❤️ New Contributors
 
 - @liblaf made their first contribution
+- @renovate[bot] made their first contribution in [#66](https://github.com/liblaf/sub-converter/pull/66)
 - @mergery[bot] made their first contribution
+
+## [0.1.3](https://github.com/liblaf/sub-converter/compare/v0.1.2..v0.1.3) - 2025-03-04
+
+### 🐛 Bug Fixes
+
+- switch from node to bun runtime in sing.ts - ([042d80b](https://github.com/liblaf/sub-converter/commit/042d80b148b2c6bb2d102ee7e6b8f66fd1f87e2b))
 
 ## [0.1.2](https://github.com/liblaf/sub-converter/compare/v0.1.1..v0.1.2) - 2025-03-02
 
