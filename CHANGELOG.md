@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/liblaf/sub-converter/compare/v0.1.3...v0.1.4) (2025-03-20)
+
+
+### 🐛 Bug Fixes
+
+* correct rule set tag from ADS to AI ([855f254](https://github.com/liblaf/sub-converter/commit/855f254777b6bcfc065edfaaabbea81d895bb192))
+
 ## [0.1.3](https://github.com/liblaf/sub-converter/compare/v0.1.2..v0.1.3) - 2025-03-02
 
 ### 🐛 Bug Fixes
