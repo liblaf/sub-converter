@@ -1,10 +1,7 @@
-default: check
+default: lint
 
 build:
     tsup
-
-check:
-    biome check --write
 
 compile:
     bun build --compile --outfile="./dist/sing" "./src/bin/sing.ts"
@@ -16,6 +13,9 @@ dist: compile
 [windows]
 dist: compile
     mv "./dist/sing.exe" "./dist/sing-{{ os() }}-{{ arch() }}.exe"
+
+lint:
+    biome check --write
 
 test:
     vitest
