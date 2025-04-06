@@ -75,29 +75,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # <https://github.com/npm/cli/issues/1637#issuecomment-1888709776>
 
-  publish-jsr:
-    name: Publish (JSR)
-    permissions:
-      id-token: write
-    needs:
-      - detect
-    if: (github.event_name == 'release' || startsWith(github.ref, 'refs/tags/v')) && needs.detect.outputs.jsr == 'true'
-    runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}-publish-jsr
-      cancel-in-progress: true
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-      - name: Install Dependencies
-        run: |-
-          bun install
-          bun pm bin >> "$GITHUB_PATH"
-      - name: Publish
-        run: bunx jsr publish
-
   pre-release:
     name: Pre-Release
     permissions:
@@ -110,6 +87,12 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}-pre-release
       cancel-in-progress: true
     steps:
+      - id: auth
+        name: Auth App
+        uses: liblaf/actions/auth-app@main
+        with:
+          app-id: ${{ secrets.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
       - name: Checkout
         uses: actions/checkout@v4
       - name: Download Artifacts
@@ -124,6 +107,7 @@ jobs:
           files: pack/*
           prerelease: true
           tag: dev
+          token: ${{ steps.auth.outputs.token }}
 
   release:
     name: Release
