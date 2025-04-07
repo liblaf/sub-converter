@@ -1,9 +1,3 @@
-import type {
-  InboundMixed,
-  OutboundSelector,
-  OutboundUrltest,
-  Singbox,
-} from "@lib/client/sing-box/schema";
 import {
   ClashMode,
   DnsTag,
@@ -13,16 +7,24 @@ import {
   OutboundTag,
   RulesetTag,
 } from "@lib/const";
-import { type ProxyGroup, SELECT, defaultGroups } from "@lib/group";
+import { type Group, defaultGroups } from "@lib/group";
+import type { ProviderOutbound } from "@lib/outbound";
+import type {
+  InboundMixed,
+  OutboundGroup,
+  OutboundSelector,
+  Singbox,
+} from "@lib/schema";
 import * as R from "remeda";
-import { sanitize } from "../sanitize";
-import type { GeneratorSingbox, GeneratorSingboxOptions } from "../types";
-import { findInbound, findOrCreateGroup, findOutbound } from "../utils";
+import type { Template, TemplateOptions } from "../typed";
 import {
   filterSingboxOutbounds,
   filterSingboxTags,
+  findInbound,
+  findOrCreateGroup,
+  findOutbound,
   makeRemoteRuleSet,
-} from "./utils";
+} from "../utils";
 
 export const TEMPLATE: Singbox = {
   log: { level: "warn" },
@@ -121,29 +123,24 @@ export const TEMPLATE: Singbox = {
   },
 };
 
-export const DEFAULT: GeneratorSingbox = {
-  generate(
-    providers: Map<string, Singbox>,
-    options: GeneratorSingboxOptions,
-  ): Singbox {
+export const DEFAULT: Template = {
+  generate(outbounds: ProviderOutbound[], options: TemplateOptions): Singbox {
     const singbox: Singbox = R.clone(TEMPLATE);
     const inbound = findInbound(singbox, InboundTag.MIXED)! as InboundMixed;
     inbound.listen_port = options.port;
-
-    const groups: ProxyGroup[] = defaultGroups();
-    const proxy = findOutbound(singbox, OutboundTag.PROXY) as OutboundSelector;
-
+    const groups: Group[] = defaultGroups();
+    const proxy = findOutbound(singbox, OutboundTag.PROXY)! as OutboundSelector;
     for (const group of groups) {
-      const outbound: OutboundSelector | OutboundUrltest = findOrCreateGroup(
-        singbox,
-        group,
-      );
-      outbound.outbounds = filterSingboxTags(providers, group.filter);
-      proxy.outbounds.push(group.name);
+      const outbound: OutboundGroup = findOrCreateGroup(singbox, group);
+      outbound.outbounds = filterSingboxTags(outbounds, group.filter);
+      proxy.outbounds.push(outbound.tag);
     }
     singbox.outbounds!.push(
-      ...filterSingboxOutbounds(providers, SELECT.filter),
+      ...filterSingboxOutbounds(
+        outbounds,
+        (o: ProviderOutbound): boolean => !o.dummy,
+      ),
     );
-    return sanitize(singbox);
+    return singbox;
   },
 };

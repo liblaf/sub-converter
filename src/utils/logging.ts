@@ -1,6 +1,5 @@
-import pino from "pino";
-import PinoPretty from "pino-pretty";
+import { type ILogObj, Logger } from "tslog";
 
-export function newLogger() {
-  return pino({ level: "debug" }, PinoPretty());
+export function getLogger(): Logger<ILogObj> {
+  return new Logger();
 }

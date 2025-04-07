@@ -1,0 +1,1 @@
+export { fetchSingbox } from "./fetch";

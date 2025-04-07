@@ -1,2 +1,2 @@
 export { FetchError, fetchWithUA } from "./fetch";
-export { newLogger } from "./logging";
+export { getLogger } from "./logging";

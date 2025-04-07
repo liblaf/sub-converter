@@ -12,6 +12,7 @@ export { OUTBOUND } from "./outbound";
 export type {
   Outbound,
   OutboundDirect,
+  OutboundGroup,
   OutboundSelector,
   OutboundUrltest,
 } from "./outbound";
@@ -19,7 +20,7 @@ export type { RouteRule } from "./route";
 export { PORT } from "./rule-set";
 export type { RuleSet, RuleSetRemote } from "./rule-set";
 
-export const SINGBOX_SCHEMA = z
+export const SINGBOX = z
   .object({
     $schema: z.string(),
     log: LOG,
@@ -30,5 +31,4 @@ export const SINGBOX_SCHEMA = z
     experimental: EXPERIMENTAL,
   })
   .partial();
-
-export type Singbox = z.infer<typeof SINGBOX_SCHEMA>;
+export type Singbox = z.infer<typeof SINGBOX>;
