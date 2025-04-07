@@ -1,28 +1,25 @@
 # Changelog
 
-## [0.1.5](https://github.com/liblaf/sub-converter/compare/v0.1.4...v0.1.5) (2025-04-07)
-
+## [0.1.5](https://github.com/liblaf/sub-converter/compare/v0.1.4..v0.1.5) - 2025-04-07
 
 ### ✨ Features
 
-* migrate CLI to clipanion and enhance outbound filtering ([2a76af9](https://github.com/liblaf/sub-converter/commit/2a76af95869f0df29267539f3a59df9942cb4894))
-
+- migrate CLI to clipanion and enhance outbound filtering - ([2a76af9](https://github.com/liblaf/sub-converter/commit/2a76af95869f0df29267539f3a59df9942cb4894))
 
 ### ♻ Code Refactoring
 
-* restructure sing-box client implementation ([4579e6c](https://github.com/liblaf/sub-converter/commit/4579e6cb002beb1b55fb7823025fdbe3accbbde5))
-
-## [0.1.4](https://github.com/liblaf/sub-converter/compare/v0.1.3..v0.1.4) - 2025-03-20
-
-### 🐛 Bug Fixes
-
-- correct rule set tag from ADS to AI - ([855f254](https://github.com/liblaf/sub-converter/commit/855f254777b6bcfc065edfaaabbea81d895bb192))
+- restructure sing-box client implementation - ([4579e6c](https://github.com/liblaf/sub-converter/commit/4579e6cb002beb1b55fb7823025fdbe3accbbde5))
 
 ### ❤️ New Contributors
 
 - @liblaf made their first contribution
-- @renovate[bot] made their first contribution in [#66](https://github.com/liblaf/sub-converter/pull/66)
 - @mergery[bot] made their first contribution
+
+## [0.1.4](https://github.com/liblaf/sub-converter/compare/v0.1.3..v0.1.4) - 2025-03-23
+
+### 🐛 Bug Fixes
+
+- correct rule set tag from ADS to AI - ([855f254](https://github.com/liblaf/sub-converter/commit/855f254777b6bcfc065edfaaabbea81d895bb192))
 
 ## [0.1.3](https://github.com/liblaf/sub-converter/compare/v0.1.2..v0.1.3) - 2025-03-04
 
