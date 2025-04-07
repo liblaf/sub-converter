@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.1.6](https://github.com/liblaf/sub-converter/compare/v0.1.5...v0.1.6) (2025-04-07)
+
+
+### ✨ Features
+
+* enhance provider support and country inference ([b3fae37](https://github.com/liblaf/sub-converter/commit/b3fae374fd8951b3c8aef394707e3f2cc53460a0))
+
+
+### 🐛 Bug Fixes
+
+* **fetch:** handle errors when fetching singbox outbounds ([8c351d0](https://github.com/liblaf/sub-converter/commit/8c351d01d5e51fa2c2ffa4079bbd55cc9f1eb659))
+
+
+### ♻ Code Refactoring
+
+* reorganize imports and make Sing class private ([4489e3f](https://github.com/liblaf/sub-converter/commit/4489e3f0ecc9122f6c2b0850d3271306cd137206))
+
 ## [0.1.5](https://github.com/liblaf/sub-converter/compare/v0.1.4..v0.1.5) - 2025-04-07
 
 ### ✨ Features
