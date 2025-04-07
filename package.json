@@ -37,10 +37,12 @@
     "test": "vitest"
   },
   "dependencies": {
+    "clipanion": "^4.0.0-rc.4",
     "commander": "^13.1.0",
     "lru-cache": "^11.1.0",
     "remeda": "^2.21.0",
     "tslog": "^4.9.3",
+    "typanion": "^3.14.0",
     "world-countries": "^5.1.0",
     "zod": "^3.24.2"
   },

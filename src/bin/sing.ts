@@ -1,49 +1,50 @@
-#!/usr/bin/env bun
-import * as pkg from "@/package.json";
+import { version } from "@/package.json";
+import { fetchSingbox } from "@lib/fetch";
 import {
-  GENERATOR_OPTIONS_SCHEMA,
-  type GeneratorSingbox,
-  type GeneratorSingboxOptions,
-  type Singbox,
-  fetchSingboxFromProviders,
-  getGenerator,
-} from "@lib/client/sing-box";
-import { CONFIG_SCHEMA, type Config } from "@lib/provider";
-import { type Command, type OptionValues, createCommand } from "commander";
-import { z } from "zod";
+  TEMPLATE_OPTIONS,
+  type Template,
+  type TemplateOptions,
+  sanitize,
+  template,
+} from "@lib/gen";
+import type { ProviderOutbound } from "@lib/outbound";
+import { CONFIG, type Config } from "@lib/provider";
+import type { Singbox } from "@lib/schema";
+import { Builtins, Cli, Command, Option } from "clipanion";
 
-function parsePort(value: string): number {
-  const PORT_SCHEMA = z.coerce.number().int().min(0).max(65535);
-  const result: number = PORT_SCHEMA.parse(value);
-  return result;
-}
+import * as t from "typanion";
 
-function parse(): OptionValues {
-  const program: Command = createCommand();
-  program
-    .version(pkg.version)
-    .requiredOption("-c, --config <FILE>", "", "config.json")
-    .requiredOption("-g, --generator <NAME>", "", "default")
-    .requiredOption("-o, --output <FILE>", "", "sing-box.json")
-    .requiredOption("-p, --port <PORT>", "", parsePort);
-  program.parse();
-  return program.opts();
-}
-
-async function main(): Promise<void> {
-  const opts: OptionValues = parse();
-  const config: Config = CONFIG_SCHEMA.parse(
-    await Bun.file(opts.config).json(),
-  );
-  const providers: Map<string, Singbox> = await fetchSingboxFromProviders(
-    config.providers,
-  );
-  const generator: GeneratorSingbox = getGenerator(opts.generator);
-  const options: GeneratorSingboxOptions = GENERATOR_OPTIONS_SCHEMA.parse({
-    port: opts.port,
+export class Sing extends Command {
+  static paths = [Command.Default];
+  static usage = Command.Usage({});
+  config: string = Option.String("-c,--config", "config.json");
+  output: string = Option.String("-o,--output", "sing-box.json");
+  port: number = Option.String("-p,--port", "5353", {
+    validator: t.isNumber(),
   });
-  const singbox: Singbox = generator.generate(providers, options);
-  await Bun.file(opts.output).write(JSON.stringify(singbox));
+  template: string = Option.String("-t,--template", "default");
+  async execute(): Promise<void> {
+    const config: Config = CONFIG.parse(await Bun.file(this.config).json());
+    const outbounds: ProviderOutbound[] = (
+      await fetchSingbox(config.providers)
+    ).filter((o: ProviderOutbound): boolean => !o.dummy);
+    const generator: Template = template(this.template);
+    const options: TemplateOptions = TEMPLATE_OPTIONS.parse({
+      port: this.port,
+    });
+    const generated: Singbox = generator.generate(outbounds, options);
+    const singbox: Singbox = sanitize(generated);
+    await Bun.write(this.output, JSON.stringify(singbox));
+  }
 }
 
-await main();
+const cli = new Cli({
+  binaryLabel: "Sing",
+  binaryName: "sing",
+  binaryVersion: version,
+});
+cli.register(Builtins.DefinitionsCommand);
+cli.register(Builtins.HelpCommand);
+cli.register(Builtins.VersionCommand);
+cli.register(Sing);
+cli.runExit(process.argv.slice(2));

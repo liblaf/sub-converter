@@ -1,25 +1,11 @@
-import { LRUCache } from "lru-cache";
 import countries, { type Country } from "world-countries";
 
-const CACHE = new LRUCache<string, Country>({ max: 128 });
-
 export function inferCountry(name: string): Country | undefined {
-  if (CACHE.has(name)) return CACHE.get(name);
   for (const country of countries) {
-    for (const pattern of names(country)) {
-      // console.debug(
-      //   `inferCountry: ${name} -> ${pattern} (${country.name.common})`,
-      // );
-      if (name.toLocaleLowerCase().includes(pattern.toLocaleLowerCase())) {
-        console.debug(
-          `inferCountry: ${name} -> ${pattern} (${country.name.common})`,
-        );
-        CACHE.set(name, country);
-        return country;
-      }
+    for (const pattern of patterns(country)) {
+      if (name.match(pattern)) return country;
     }
   }
-  CACHE.set(name, undefined);
 }
 
 function name(
@@ -31,9 +17,11 @@ function name(
   return display.of(country.cca2);
 }
 
-function* names(country: Country): Generator<string> {
+function* patterns(country: Country): Generator<RegExp> {
   for (const name of namesMaybeEmpty(country)) {
-    if (name) yield name;
+    if (!name) continue;
+    if (name.length < 4) yield new RegExp(name);
+    else yield new RegExp(name, "i");
   }
 }
 

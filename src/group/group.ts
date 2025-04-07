@@ -8,20 +8,22 @@ export function makeCountryGroup(country: Country | undefined): Group {
   if (!country) {
     return {
       type: "selector",
-      name: "OT",
+      name: "🏳️‍🌈 Unknown",
       filter(outbound: ProviderOutbound): boolean {
         if (outbound.dummy) return false;
         if (outbound.emby) return false;
+        if (outbound.info) return true;
         return !outbound.country;
       },
     };
   }
   return {
     type: "urltest",
-    name: country.flag + country.name.common,
+    name: `${country.flag} ${country.name.common}`,
     filter(outbound: ProviderOutbound): boolean {
       if (outbound.dummy) return false;
       if (outbound.emby) return false;
+      if (outbound.info) return false;
       return outbound.country?.cca2 === country.cca2;
     },
   };
@@ -31,9 +33,10 @@ export const AUTO: Group = {
   type: "urltest",
   name: OutboundTag.AUTO,
   filter(outbound: ProviderOutbound): boolean {
-    if (outbound.dummy) return false;
     if (outbound.direct) return false;
+    if (outbound.dummy) return false;
     if (outbound.emby) return false;
+    if (outbound.info) return false;
     if (outbound.rate > 2.0) return false;
     return true;
   },
@@ -54,6 +57,7 @@ export const AI: Group = {
   filter(outbound: ProviderOutbound): boolean {
     if (outbound.dummy) return false;
     if (outbound.emby) return false;
+    if (outbound.info) return false;
     return outbound.ai;
   },
 };
@@ -64,6 +68,7 @@ export const DOWNLOAD: Group = {
   filter(outbound: ProviderOutbound): boolean {
     if (outbound.dummy) return false;
     if (outbound.emby) return false;
+    if (outbound.info) return false;
     return outbound.rate < 1.5;
   },
 };
@@ -73,7 +78,8 @@ export const EMBY: Group = {
   name: OutboundTag.EMBY,
   filter(outbound: ProviderOutbound): boolean {
     if (outbound.dummy) return false;
-    if (outbound.emby) return true;
+    if (outbound.emby) return false;
+    if (outbound.info) return false;
     if (outbound.rate < 2.0) return true;
     return true;
   },
@@ -85,6 +91,7 @@ export const MEDIA: Group = {
   filter(outbound: ProviderOutbound): boolean {
     if (outbound.dummy) return false;
     if (outbound.emby) return false;
+    if (outbound.info) return false;
     return outbound.rate < 2.0;
   },
 };
@@ -97,6 +104,7 @@ export function defaultGroups(): Group[] {
     DOWNLOAD,
     EMBY,
     MEDIA,
+    makeCountryGroup(undefined),
     ...countries.map(makeCountryGroup),
   ];
 }

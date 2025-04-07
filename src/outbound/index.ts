@@ -7,6 +7,7 @@ import { inferCountry } from "./country";
 export class ProviderOutbound {
   public readonly provider: Provider;
   private readonly _outbound: Outbound;
+  private _country: Country | null | undefined = null;
 
   constructor(provider: Provider, outbound: Outbound) {
     this.provider = provider;
@@ -22,7 +23,9 @@ export class ProviderOutbound {
   }
 
   get country(): Country | undefined {
-    return inferCountry(this._outbound.tag);
+    if (this._country === null)
+      this._country = inferCountry(this._outbound.tag);
+    return this._country;
   }
 
   get direct(): boolean {
@@ -42,6 +45,10 @@ export class ProviderOutbound {
 
   get emby(): boolean {
     return !!this.tag.match(/emby/i);
+  }
+
+  get info(): boolean {
+    return !!this.tag.match(/到期|剩余|套餐/i);
   }
 
   get outbound(): Outbound {
