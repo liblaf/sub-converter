@@ -7,8 +7,8 @@ export const PROVIDER_SINGBOX = z.object({
 export type ProviderSingbox = z.infer<typeof PROVIDER_SINGBOX>;
 
 export const PROVIDER_JMS = z.object({
-  service: z.string(),
-  id: z.string(),
+  url: z.string().url(),
+  ua: z.string().optional(),
 });
 export type ProviderJms = z.infer<typeof PROVIDER_JMS>;
 

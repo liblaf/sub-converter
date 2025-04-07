@@ -2,12 +2,11 @@ import type { Provider } from "@lib/provider";
 import type { Outbound } from "@lib/schema";
 import * as R from "remeda";
 import type { Country } from "world-countries";
-import { inferCountry } from "./country";
-
+import { inferCountry, inferDirect } from "./country";
 export class ProviderOutbound {
   public readonly provider: Provider;
   private readonly _outbound: Outbound;
-  private _country: Country | null | undefined = null;
+  private _country: Country | null | undefined = undefined;
 
   constructor(provider: Provider, outbound: Outbound) {
     this.provider = provider;
@@ -16,20 +15,21 @@ export class ProviderOutbound {
 
   get ai(): boolean {
     const AI_EXCLUDE_COUNTRY = new Set(["CN", "HK", "MO", "TW"]);
-    const country: Country | undefined = this.country;
+    const country: Country | null = this.country;
     if (!country) return false;
     if (AI_EXCLUDE_COUNTRY.has(country.cca2)) return false;
-    return false;
+    return true;
   }
 
-  get country(): Country | undefined {
-    if (this._country === null)
-      this._country = inferCountry(this._outbound.tag);
+  get country(): Country | null {
+    if (this._country === undefined)
+      this._country = inferCountry(this._outbound);
     return this._country;
   }
 
   get direct(): boolean {
-    return !!this.tag.match(/直连/);
+    const direct: boolean = inferDirect(this._outbound);
+    return direct;
   }
 
   get dummy(): boolean {
@@ -55,6 +55,18 @@ export class ProviderOutbound {
     const outbound: Outbound = R.clone(this._outbound);
     outbound.tag = this.tag;
     return outbound;
+  }
+
+  get pretty(): string {
+    let result = `${this.tag} -> `;
+    const country: Country | null = this.country;
+    const prettyCountry: string = country
+      ? `${country.flag} ${country.name.common}`
+      : "🏳️‍🌈 Unknown";
+    result += prettyCountry;
+    result += this.direct ? " [Direct]" : " [Transit]";
+    result += ` [${this.rate}x]`;
+    return result;
   }
 
   get rate(): number {

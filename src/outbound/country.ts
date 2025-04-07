@@ -1,11 +1,43 @@
+import type { Outbound } from "@lib/schema";
+import * as geoip from "geoip-lite";
 import countries, { type Country } from "world-countries";
 
-export function inferCountry(name: string): Country | undefined {
+export function inferCountry(outbound: Outbound): Country | null {
+  if ("server" in outbound) {
+    const server = outbound.server as string;
+    const country: Country | null = matchCountryByIp(server);
+    if (country?.cca2 !== "CN") return country;
+  }
+  return matchCountryByTag(outbound.tag);
+}
+
+export function inferDirect(outbound: Outbound): boolean {
+  if ("server" in outbound) {
+    const server = outbound.server as string;
+    const country: Country | null = matchCountryByIp(server);
+    if (country) return country.cca2 !== "CN";
+  }
+  return !!outbound.tag.match(/直连/);
+}
+
+export function matchCountryByIp(ip: string): Country | null {
+  const lookup: geoip.Lookup | null = geoip.lookup(ip);
+  if (lookup) {
+    const country: Country | undefined = countries.find(
+      (c: Country): boolean => c.cca2 === lookup.country,
+    );
+    if (country) return country;
+  }
+  return null;
+}
+
+export function matchCountryByTag(tag: string): Country | null {
   for (const country of countries) {
     for (const pattern of patterns(country)) {
-      if (name.match(pattern)) return country;
+      if (tag.match(pattern)) return country;
     }
   }
+  return null;
 }
 
 function name(

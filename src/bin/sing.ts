@@ -15,21 +15,29 @@ import type { Singbox } from "@lib/schema";
 import { Builtins, Cli, Command, Option } from "clipanion";
 
 import * as t from "typanion";
+import { getLogger } from "../utils";
 
 export class Sing extends Command {
   static paths = [Command.Default];
   static usage = Command.Usage({});
   config: string = Option.String("-c,--config", "config.json");
+  debug: boolean = Option.Boolean("--debug", false);
   output: string = Option.String("-o,--output", "sing-box.json");
   port: number = Option.String("-p,--port", "5353", {
     validator: t.isNumber(),
   });
   template: string = Option.String("-t,--template", "default");
   async execute(): Promise<void> {
+    const logger = getLogger();
     const config: Config = CONFIG.parse(await Bun.file(this.config).json());
     const outbounds: ProviderOutbound[] = (
       await fetchSingbox(config.providers)
     ).filter((o: ProviderOutbound): boolean => !o.dummy);
+    if (this.debug) {
+      for (const outbound of outbounds) {
+        logger.debug(outbound.pretty);
+      }
+    }
     const generator: Template = template(this.template);
     const options: TemplateOptions = TEMPLATE_OPTIONS.parse({
       port: this.port,
