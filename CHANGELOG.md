@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/liblaf/sub-converter/compare/v0.1.6...v0.1.7) (2025-04-07)
+
+
+### 🐛 Bug Fixes
+
+* remove direct outbound filter from AUTO group ([0b0287e](https://github.com/liblaf/sub-converter/commit/0b0287ef8e5f28b48c8c1b32632e88c820f26b0a))
+
 ## [0.1.6](https://github.com/liblaf/sub-converter/compare/v0.1.5..v0.1.6) - 2025-04-07
 
 ### ✨ Features
