@@ -33,7 +33,6 @@ export const AUTO: Group = {
   type: "urltest",
   name: OutboundTag.AUTO,
   filter(outbound: ProviderOutbound): boolean {
-    if (outbound.direct) return false;
     if (outbound.dummy) return false;
     if (outbound.emby) return false;
     if (outbound.info) return false;
