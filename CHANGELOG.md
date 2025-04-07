@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.5](https://github.com/liblaf/sub-converter/compare/v0.1.4...v0.1.5) (2025-04-07)
+
+
+### ✨ Features
+
+* migrate CLI to clipanion and enhance outbound filtering ([2a76af9](https://github.com/liblaf/sub-converter/commit/2a76af95869f0df29267539f3a59df9942cb4894))
+
+
+### ♻ Code Refactoring
+
+* restructure sing-box client implementation ([4579e6c](https://github.com/liblaf/sub-converter/commit/4579e6cb002beb1b55fb7823025fdbe3accbbde5))
+
 ## [0.1.4](https://github.com/liblaf/sub-converter/compare/v0.1.3..v0.1.4) - 2025-03-20
 
 ### 🐛 Bug Fixes
