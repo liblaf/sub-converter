@@ -12,12 +12,11 @@ import {
 import type { ProviderOutbound } from "@lib/outbound";
 import { CONFIG, type Config } from "@lib/provider";
 import type { Singbox } from "@lib/schema";
+import { getLogger } from "@lib/utils";
 import { Builtins, Cli, Command, Option } from "clipanion";
-
 import * as t from "typanion";
-import { getLogger } from "../utils";
 
-export class Sing extends Command {
+class Sing extends Command {
   static paths = [Command.Default];
   static usage = Command.Usage({});
   config: string = Option.String("-c,--config", "config.json");
