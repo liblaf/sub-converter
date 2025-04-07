@@ -18,15 +18,20 @@ async function fetchSingboxFromProvider(
   p: Provider,
 ): Promise<ProviderOutbound[]> {
   if (p.singbox) {
-    const singbox: Singbox = await fetchSingboxFromUrl(
-      p.singbox.url,
-      p.singbox.ua,
-    );
-    const outbounds: Outbound[] = singbox.outbounds ?? [];
-    return outbounds.map(
-      (outbound: Outbound): ProviderOutbound =>
-        new ProviderOutbound(p, outbound),
-    );
+    try {
+      const singbox: Singbox = await fetchSingboxFromUrl(
+        p.singbox.url,
+        p.singbox.ua,
+      );
+      const outbounds: Outbound[] = singbox.outbounds ?? [];
+      return outbounds.map(
+        (outbound: Outbound): ProviderOutbound =>
+          new ProviderOutbound(p, outbound),
+      );
+    } catch (err) {
+      console.error(`${p.name}: ${err}`);
+      return [];
+    }
   }
   logger.warn(`Provider ${p.name} does not have a Singbox URL. Skipping...`);
   return [];

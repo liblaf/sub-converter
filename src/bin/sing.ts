@@ -1,3 +1,5 @@
+#!/usr/bin/env bun
+
 import { version } from "@/package.json";
 import { fetchSingbox } from "@lib/fetch";
 import {
