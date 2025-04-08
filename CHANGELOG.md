@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.7](https://github.com/liblaf/sub-converter/compare/v0.1.6..v0.1.7) - 2025-04-07
+
+### 🐛 Bug Fixes
+
+- remove direct outbound filter from AUTO group - ([0b0287e](https://github.com/liblaf/sub-converter/commit/0b0287ef8e5f28b48c8c1b32632e88c820f26b0a))
+
+### ❤️ New Contributors
+
+- @liblaf made their first contribution
+
 ## [0.1.6](https://github.com/liblaf/sub-converter/compare/v0.1.5..v0.1.6) - 2025-04-07
 
 ### ✨ Features
@@ -13,10 +23,6 @@
 ### ♻ Code Refactoring
 
 - reorganize imports and make Sing class private - ([4489e3f](https://github.com/liblaf/sub-converter/commit/4489e3f0ecc9122f6c2b0850d3271306cd137206))
-
-### ❤️ New Contributors
-
-- @liblaf made their first contribution
 
 ## [0.1.5](https://github.com/liblaf/sub-converter/compare/v0.1.4..v0.1.5) - 2025-04-07
 
