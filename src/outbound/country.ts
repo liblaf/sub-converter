@@ -6,7 +6,7 @@ export function inferCountry(outbound: Outbound): Country | null {
   if ("server" in outbound) {
     const server = outbound.server as string;
     const country: Country | null = matchCountryByIp(server);
-    if (country?.cca2 !== "CN") return country;
+    if (country && country.cca2 !== "CN") return country;
   }
   return matchCountryByTag(outbound.tag);
 }
@@ -70,7 +70,7 @@ function* namesMaybeEmpty(country: Country): Generator<string | undefined> {
     yield country.name.native[lang].official;
   }
   yield country.cca2;
-  yield country.ccn3;
+  if (country.ccn3.matchAll(/^[a-zA-Z]+$/g)) yield country.ccn3;
   yield country.cca3;
   yield country.cioc;
   for (const capital of country.capital) yield capital;

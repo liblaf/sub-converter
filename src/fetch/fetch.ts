@@ -33,7 +33,7 @@ async function fetchSingboxFromProvider(
   } catch (err) {
     logger.error(`${p.name}: ${err}`);
   }
-  return outbounds.map(
-    (o: Outbound): ProviderOutbound => new ProviderOutbound(p, o),
-  );
+  return outbounds
+    .map((o: Outbound): ProviderOutbound => new ProviderOutbound(p, o))
+    .filter((o: ProviderOutbound): boolean => !(o.dummy || o.info));
 }

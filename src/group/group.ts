@@ -12,7 +12,7 @@ export function makeCountryGroup(country: Country | undefined): Group {
       filter(outbound: ProviderOutbound): boolean {
         if (outbound.dummy) return false;
         if (outbound.emby) return false;
-        if (outbound.info) return true;
+        if (outbound.info) return false;
         return !outbound.country;
       },
     };
@@ -46,6 +46,7 @@ export const SELECT: Group = {
   name: OutboundTag.SELECT,
   filter(outbound: ProviderOutbound): boolean {
     if (outbound.dummy) return false;
+    if (outbound.info) return false;
     return true;
   },
 };

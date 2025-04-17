@@ -37,6 +37,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "chalk": "^5.4.1",
     "clipanion": "^4.0.0-rc.4",
     "commander": "^13.1.0",
     "geoip-lite": "^1.4.10",
