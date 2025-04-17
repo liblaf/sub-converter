@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/liblaf/sub-converter/compare/v0.1.7...v0.1.8) (2025-04-17)
+
+
+### ♻ Code Refactoring
+
+* **cli:** migrate from clipanion to commander with chalk styling ([31278af](https://github.com/liblaf/sub-converter/commit/31278af6996166b5e4c696308c6a5dd2dcb6a8ef))
+
 ## [0.1.7](https://github.com/liblaf/sub-converter/compare/v0.1.6..v0.1.7) - 2025-04-07
 
 ### 🐛 Bug Fixes
