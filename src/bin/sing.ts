@@ -10,13 +10,14 @@ import {
 } from "@lib/gen";
 import type { ProviderOutbound } from "@lib/outbound";
 import { CONFIG, type Config } from "@lib/provider";
-import { PORT, type Singbox } from "@lib/schema";
+import type { Singbox } from "@lib/schema";
 import { getLogger } from "@lib/utils";
 import chalk from "chalk";
 import { Command } from "commander";
+import { z } from "zod";
 
 function parsePort(value: string, _previous: any): number {
-  return PORT.parse(value);
+  return z.coerce.number().int().min(0).max(65535).parse(value);
 }
 
 const program = new Command("sing");
