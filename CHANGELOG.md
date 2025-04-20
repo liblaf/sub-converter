@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/liblaf/sub-converter/compare/v0.1.8...v0.1.9) (2025-04-20)
+
+
+### 🐛 Bug Fixes
+
+* **sing:** replace PORT schema with direct zod validation ([f93ab86](https://github.com/liblaf/sub-converter/commit/f93ab862cddd6563836818ea4ac6a35f7929e104))
+
 ## [0.1.8](https://github.com/liblaf/sub-converter/compare/v0.1.7..v0.1.8) - 2025-04-17
 
 ### ♻ Code Refactoring
