@@ -25,13 +25,13 @@
     }
   },
   "bin": {
-    "sing": "./dist/bin/sing.js"
+    "sub-converter": "./dist/bin/sub-converter.js"
   },
   "type": "module",
   "repository": "github:liblaf/sub-converter",
   "scripts": {
     "build": "tsup",
-    "compile": "bun build --compile --outfile='./dist/sub-converter' ./src/bin/cli.ts",
+    "compile": "bun build --compile --outfile='./dist/sub-converter' ./src/bin/sub-converter.ts",
     "lint": "biome check --write",
     "prepack": "tsup",
     "test": "vitest"

@@ -4,7 +4,7 @@ build:
     tsup
 
 compile:
-    bun build --compile --outfile="./dist/sub-converter" "./src/bin/cli.ts"
+    bun build --compile --outfile="./dist/sub-converter" "./src/bin/sub-converter.ts"
 
 [unix]
 dist: compile
