@@ -1,0 +1,220 @@
+url-test: &url-test
+  url: https://cp.cloudflare.com
+  interval: 300
+  timeout: 5000
+  lazy: true
+  expected-status: 204
+domain: &domain
+  type: http
+  behavior: domain
+  format: text
+  interval: 86400
+classical: &classical
+  type: http
+  behavior: classical
+  format: text
+  interval: 86400
+ipcidr: &ipcidr
+  type: http
+  behavior: ipcidr
+  format: text
+  interval: 86400
+
+allow-lan: true
+bind-address: "*"
+lan-allowed-ips:
+  - 10.0.0.0/8
+  - 100.64.0.0/10
+  - 127.0.0.0/8
+  - 172.16.0.0/12
+  - 192.168.0.0/16
+  - ::1/128
+authentication:
+  - username:password
+skip-auth-prefixes:
+  - 127.0.0.0/8
+  - ::1/128
+log-level: info
+external-controller: 127.0.0.1:9090
+external-ui: ui
+external-ui-url: https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip
+profile:
+  store-selected: true
+  store-fake-ip: true
+unified-delay: true
+tcp-concurrent: true
+geo-auto-update: true
+geo-update-interval: 24 # hours
+
+dns:
+  enable: true
+  cache-algorithm: arc
+  prefer-h3: false
+  use-hosts: true
+  use-system-hosts: true
+  respect-rules: true
+  ipv6: true
+  default-nameserver:
+    - system
+    - 101.6.6.6
+  enhanced-mode: redir-host
+  nameserver: &nameserver
+    - system
+    - 101.6.6.6
+  fallback: &fallback
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+  proxy-server-nameserver: *nameserver
+  direct-nameserver: *nameserver
+  direct-nameserver-follow-policy: false
+  nameserver-policy:
+    rule-set:domainset-cdn: *fallback
+    rule-set:domainset-apple-cdn: *nameserver
+    rule-set:domainset-download: *fallback
+    rule-set:non-ip-cdn: *fallback
+    rule-set:non-ip-stream: *fallback
+    rule-set:non-ip-ai: *fallback
+    rule-set:non-ip-apple-cn: *nameserver
+    rule-set:non-ip-microsoft-cdn: *nameserver
+    rule-set:non-ip-download: *fallback
+    rule-set:non-ip-lan:
+      - system
+    rule-set:non-ip-domestic: *nameserver
+    rule-set:non-ip-direct: *nameserver
+    rule-set:non-ip-global: *fallback
+
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  skip-domain:
+    - rule-set:non-ip-lan
+
+mixed-port: 7892
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - 🚀 Auto
+      - DIRECT
+      - REJECT
+      - REJECT-DROP
+    <<: *url-test
+  - name: 🚀 Auto
+    type: url-test
+    <<: *url-test
+    include-all: true
+
+rules:
+  - RULE-SET,domainset-cdn,📥 Download
+  - RULE-SET,domainset-apple-cdn,DIRECT
+  - RULE-SET,domainset-download,📥 Download
+
+  - RULE-SET,non-ip-cdn,📥 Download
+  - RULE-SET,non-ip-stream,📺 Stream
+  - RULE-SET,non-ip-ai,🤖 AI
+  - RULE-SET,non-ip-apple-cn,DIRECT
+  - RULE-SET,non-ip-microsoft-cdn,DIRECT
+  - RULE-SET,non-ip-download,📥 Download
+  - RULE-SET,non-ip-lan,DIRECT
+  - RULE-SET,non-ip-domestic,DIRECT
+  - RULE-SET,non-ip-direct,DIRECT
+  - RULE-SET,non-ip-global,PROXY
+
+  # custom rules
+  - DOMAIN-SUFFIX,archlinux.org,DIRECT
+  - DOMAIN-SUFFIX,gjm20.top,DIRECT
+
+  - RULE-SET,ip-stream,📺 Stream
+  - RULE-SET,ip-telegram,PROXY
+  - RULE-SET,ip-lan,DIRECT
+  - RULE-SET,ip-domestic,DIRECT
+  - RULE-SET,ip-china-ip,DIRECT
+  - RULE-SET,ip-china-ipv6,DIRECT
+
+  - MATCH,PROXY
+
+rule-providers:
+  domainset-cdn:
+    <<: *domain
+    url: https://ruleset.skk.moe/Clash/domainset/cdn.txt
+    path: ./ruleset.skk.moe/Clash/domainset/cdn.txt
+  domainset-apple-cdn:
+    <<: *domain
+    url: https://ruleset.skk.moe/Clash/domainset/apple_cdn.txt
+    path: ./ruleset.skk.moe/Clash/domainset/apple-cdn.txt
+  domainset-download:
+    <<: *domain
+    url: https://ruleset.skk.moe/Clash/domainset/download.txt
+    path: ./ruleset.skk.moe/Clash/domainset/download.txt
+  non-ip-cdn:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/non_ip/cdn.txt
+    path: ./ruleset.skk.moe/Clash/non-ip/cdn.txt
+  non-ip-stream:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/non_ip/stream.txt
+    path: ./ruleset.skk.moe/Clash/non-ip/stream.txt
+  non-ip-ai:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/non_ip/ai.txt
+    path: ./ruleset.skk.moe/Clash/non-ip/ai.txt
+  non-ip-apple-cn:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/non_ip/apple_cn.txt
+    path: ./ruleset.skk.moe/Clash/non-ip/apple-cn.txt
+  non-ip-microsoft-cdn:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/non_ip/microsoft_cdn.txt
+    path: ./ruleset.skk.moe/Clash/non-ip/microsoft-cdn.txt
+  non-ip-download:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/non_ip/download.txt
+    path: ./ruleset.skk.moe/Clash/non-ip/download.txt
+  non-ip-lan:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/non_ip/lan.txt
+    path: ./ruleset.skk.moe/Clash/non-ip/lan.txt
+  non-ip-domestic:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/non_ip/domestic.txt
+    path: ./ruleset.skk.moe/Clash/non-ip/domestic.txt
+  non-ip-direct:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/non_ip/direct.txt
+    path: ./ruleset.skk.moe/Clash/non-ip/direct.txt
+  non-ip-global:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/non_ip/global.txt
+    path: ./ruleset.skk.moe/Clash/non-ip/global.txt
+  ip-stream:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/ip/stream.txt
+    path: ./ruleset.skk.moe/Clash/ip/stream.txt
+  ip-telegram:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/ip/telegram.txt
+    path: ./ruleset.skk.moe/Clash/ip/telegram.txt
+  ip-lan:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/ip/lan.txt
+    path: ./ruleset.skk.moe/Clash/ip/lan.txt
+  ip-domestic:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/ip/domestic.txt
+    path: ./ruleset.skk.moe/Clash/ip/domestic.txt
+  ip-china-ip:
+    <<: *ipcidr
+    url: https://ruleset.skk.moe/Clash/ip/china_ip.txt
+    path: ./ruleset.skk.moe/Clash/ip/china-ip.txt
+  ip-china-ipv6:
+    <<: *ipcidr
+    url: https://ruleset.skk.moe/Clash/ip/china_ip_ipv6.txt
+    path: ./ruleset.skk.moe/Clash/ip/china-ipv6.txt

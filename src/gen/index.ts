@@ -1,7 +1,3 @@
-export { sanitize } from "./sanitize";
-export { DEFAULT, GENERATORS, IOS, template } from "./template";
-export { TEMPLATE_OPTIONS } from "./typed";
-export type {
-  Template,
-  TemplateOptions,
-} from "./typed";
+export { genMihomo } from "./mihomo";
+export { SCHEMA_GEN_OPTIONS, SCHEMA_PORT } from "./typed";
+export type { GenOptions, GenOptionsInput } from "./typed";

@@ -1,10 +1,11 @@
-import type { ProviderOutbound } from "@lib/outbound";
-import { PORT, type Singbox } from "@lib/schema";
 import { z } from "zod";
 
-export const TEMPLATE_OPTIONS = z.object({ port: PORT.default(5353) });
-export type TemplateOptions = z.infer<typeof TEMPLATE_OPTIONS>;
+export const SCHEMA_PORT = z.coerce.number().int().min(0).max(65535);
 
-export type Template = {
-  generate(outbounds: ProviderOutbound[], options: TemplateOptions): Singbox;
-};
+export const SCHEMA_GEN_OPTIONS = z.object({
+  port: SCHEMA_PORT.default(7892),
+});
+
+export type GenOptions = z.infer<typeof SCHEMA_GEN_OPTIONS>;
+
+export type GenOptionsInput = z.input<typeof SCHEMA_GEN_OPTIONS>;
