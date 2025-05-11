@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.1.10](https://github.com/liblaf/sub-converter/compare/v0.1.9...v0.1.10) (2025-05-11)
+
+
+### ✨ Features
+
+* **mihomo:** add new direct domains and yaml dependency ([b986a92](https://github.com/liblaf/sub-converter/commit/b986a92c629a17f798f06bde9787a5ca45c8adf8))
+
+
+### 🐛 Bug Fixes
+
+* rename CLI entry point from sing to sub-converter ([021dd64](https://github.com/liblaf/sub-converter/commit/021dd640e4f77b92ec3ab3cd9fbf13aa4c168c3d))
+
+
+### ♻ Code Refactoring
+
+* migrate from sing-box to mihomo configuration ([#74](https://github.com/liblaf/sub-converter/issues/74)) ([947658c](https://github.com/liblaf/sub-converter/commit/947658c48f7fc34e7e5cc299b56044119ef7f95b))
+* **mihomo:** reorganize anchors in default config ([fedd2df](https://github.com/liblaf/sub-converter/commit/fedd2df24555fbee38ea3b01d3631d58129f8af1))
+
 ## [0.1.9](https://github.com/liblaf/sub-converter/compare/v0.1.8..v0.1.9) - 2025-04-20
 
 ### 🐛 Bug Fixes
