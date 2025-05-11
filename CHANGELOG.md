@@ -1,32 +1,30 @@
 # Changelog
 
-## [0.1.10](https://github.com/liblaf/sub-converter/compare/v0.1.9...v0.1.10) (2025-05-11)
-
+## [0.1.10](https://github.com/liblaf/sub-converter/compare/v0.1.9..v0.1.10) - 2025-05-11
 
 ### ✨ Features
 
-* **mihomo:** add new direct domains and yaml dependency ([b986a92](https://github.com/liblaf/sub-converter/commit/b986a92c629a17f798f06bde9787a5ca45c8adf8))
-
+- **mihomo:** add new direct domains and yaml dependency - ([b986a92](https://github.com/liblaf/sub-converter/commit/b986a92c629a17f798f06bde9787a5ca45c8adf8))
 
 ### 🐛 Bug Fixes
 
-* rename CLI entry point from sing to sub-converter ([021dd64](https://github.com/liblaf/sub-converter/commit/021dd640e4f77b92ec3ab3cd9fbf13aa4c168c3d))
-
+- rename CLI entry point from sing to sub-converter - ([021dd64](https://github.com/liblaf/sub-converter/commit/021dd640e4f77b92ec3ab3cd9fbf13aa4c168c3d))
 
 ### ♻ Code Refactoring
 
-* migrate from sing-box to mihomo configuration ([#74](https://github.com/liblaf/sub-converter/issues/74)) ([947658c](https://github.com/liblaf/sub-converter/commit/947658c48f7fc34e7e5cc299b56044119ef7f95b))
-* **mihomo:** reorganize anchors in default config ([fedd2df](https://github.com/liblaf/sub-converter/commit/fedd2df24555fbee38ea3b01d3631d58129f8af1))
+- **mihomo:** reorganize anchors in default config - ([fedd2df](https://github.com/liblaf/sub-converter/commit/fedd2df24555fbee38ea3b01d3631d58129f8af1))
+- migrate from sing-box to mihomo configuration (#74) - ([947658c](https://github.com/liblaf/sub-converter/commit/947658c48f7fc34e7e5cc299b56044119ef7f95b))
+
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
 
 ## [0.1.9](https://github.com/liblaf/sub-converter/compare/v0.1.8..v0.1.9) - 2025-04-20
 
 ### 🐛 Bug Fixes
 
 - **sing:** replace PORT schema with direct zod validation - ([f93ab86](https://github.com/liblaf/sub-converter/commit/f93ab862cddd6563836818ea4ac6a35f7929e104))
-
-### ❤️ New Contributors
-
-- @liblaf made their first contribution
 
 ## [0.1.8](https://github.com/liblaf/sub-converter/compare/v0.1.7..v0.1.8) - 2025-04-17
 
@@ -98,7 +96,7 @@
 
 ### ❤️ New Contributors
 
-- @mergery[bot] made their first contribution
+- [@mergery[bot]](https://github.com/apps/mergery) made their first contribution
 
 ## [0.1.0](https://github.com/liblaf/sub-converter/compare/v0.0.19..v0.1.0) - 2025-03-02
 
@@ -146,7 +144,7 @@
 
 ### ❤️ New Contributors
 
-- @github-actions[bot] made their first contribution in [#41](https://github.com/liblaf/sub-converter/pull/41)
+- [@github-actions[bot]](https://github.com/apps/github-actions) made their first contribution in [#41](https://github.com/liblaf/sub-converter/pull/41)
 
 ## [0.0.15](https://github.com/liblaf/sub-converter/compare/v0.0.14..v0.0.15) - 2025-01-17
 
@@ -180,8 +178,8 @@
 
 ### ❤️ New Contributors
 
-- @renovate[bot] made their first contribution in [#19](https://github.com/liblaf/sub-converter/pull/19)
-- @liblaf-bot[bot] made their first contribution
+- [@renovate[bot]](https://github.com/apps/renovate) made their first contribution in [#19](https://github.com/liblaf/sub-converter/pull/19)
+- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
 
 ## [0.0.8](https://github.com/liblaf/sub-converter/compare/v0.0.7..v0.0.8) - 2024-12-16
 
@@ -271,5 +269,5 @@
 
 ### ❤️ New Contributors
 
-- @release-please[bot] made their first contribution in [#4](https://github.com/liblaf/sub-converter/pull/4)
-- @liblaf made their first contribution
+- [@release-please[bot]](https://github.com/apps/release-please) made their first contribution in [#4](https://github.com/liblaf/sub-converter/pull/4)
+- [@liblaf](https://github.com/liblaf) made their first contribution
