@@ -1,110 +1,99 @@
-import { OutboundTag } from "@lib/const";
-import type { ProviderOutbound } from "@lib/outbound";
-import type { Country } from "world-countries";
-import countries from "world-countries";
-import type { Group } from "./typed";
+import countries, { type Country } from "world-countries";
+import { Connection, type Node, UNKNOWN } from "../infer";
 
-export function makeCountryGroup(country: Country | undefined): Group {
-  if (!country) {
-    return {
-      type: "selector",
-      name: "🏳️‍🌈 Unknown",
-      filter(outbound: ProviderOutbound): boolean {
-        if (outbound.dummy) return false;
-        if (outbound.emby) return false;
-        if (outbound.info) return false;
-        return !outbound.country;
-      },
-    };
-  }
+export type Group = {
+  name: string;
+  type: "select" | "url-test";
+  url?: string;
+  interval?: number;
+  lazy?: boolean;
+  timeout?: number;
+  icon?: string;
+
+  filter(node: Node): boolean;
+};
+
+export function defineGroup(options: Group): Group {
   return {
-    type: "urltest",
-    name: `${country.flag} ${country.name.common}`,
-    filter(outbound: ProviderOutbound): boolean {
-      if (outbound.dummy) return false;
-      if (outbound.emby) return false;
-      if (outbound.info) return false;
-      return outbound.country?.cca2 === country.cca2;
-    },
+    url: "https://cp.cloudflare.com",
+    interval: 300,
+    lazy: true,
+    timeout: 5000,
+    ...options,
   };
 }
 
-export const AUTO: Group = {
-  type: "urltest",
-  name: OutboundTag.AUTO,
-  filter(outbound: ProviderOutbound): boolean {
-    if (outbound.dummy) return false;
-    if (outbound.emby) return false;
-    if (outbound.info) return false;
-    if (outbound.rate > 2.0) return false;
+export function defineRegionGroup(region: Country): Group {
+  return defineGroup({
+    name: `${region.flag} ${region.name.common}`,
+    type: region.cca2 === UNKNOWN.cca2 ? "select" : "url-test",
+    filter(node: Node): boolean {
+      return node.region.cca2 === region.cca2 && !node.emby;
+    },
+  });
+}
+
+export const PROXY: Group = defineGroup({
+  name: "PROXY",
+  type: "select",
+  filter(_node: Node): boolean {
+    return false;
+  },
+});
+
+export const SELECT: Group = defineGroup({
+  name: "SELECT",
+  type: "select",
+  filter(_node: Node): boolean {
     return true;
   },
-};
+});
 
-export const SELECT: Group = {
-  type: "selector",
-  name: OutboundTag.SELECT,
-  filter(outbound: ProviderOutbound): boolean {
-    if (outbound.dummy) return false;
-    if (outbound.info) return false;
-    return true;
+export const AUTO: Group = defineGroup({
+  name: "🚀 Auto",
+  type: "url-test",
+  filter(node: Node): boolean {
+    return (
+      node.connection !== Connection.DIRECT && !node.emby && node.rate < 2.0
+    );
   },
-};
+});
 
-export const AI: Group = {
-  type: "urltest",
-  name: OutboundTag.AI,
-  filter(outbound: ProviderOutbound): boolean {
-    if (outbound.dummy) return false;
-    if (outbound.emby) return false;
-    if (outbound.info) return false;
-    return outbound.ai;
+const AI_EXCLUDE_REGIONS = new Set([UNKNOWN.cca2, "CN", "HK", "MO"]);
+export const AI: Group = defineGroup({
+  name: "🤖 AI",
+  type: "url-test",
+  filter(node: Node): boolean {
+    return !node.emby && !AI_EXCLUDE_REGIONS.has(node.region.cca2);
   },
-};
+});
 
-export const DOWNLOAD: Group = {
-  type: "urltest",
-  name: OutboundTag.DOWNLOAD,
-  filter(outbound: ProviderOutbound): boolean {
-    if (outbound.dummy) return false;
-    if (outbound.emby) return false;
-    if (outbound.info) return false;
-    return outbound.rate < 1.5;
+export const DOWNLOAD: Group = defineGroup({
+  name: "📥 Download",
+  type: "url-test",
+  filter(node: Node): boolean {
+    return !node.emby && node.rate <= 1.0;
   },
-};
+});
 
-export const EMBY: Group = {
-  type: "urltest",
-  name: OutboundTag.EMBY,
-  filter(outbound: ProviderOutbound): boolean {
-    if (outbound.dummy) return false;
-    if (outbound.emby) return false;
-    if (outbound.info) return false;
-    if (outbound.rate < 2.0) return true;
-    return true;
+export const EMBY: Group = defineGroup({
+  name: "📺 Emby",
+  type: "url-test",
+  filter(node: Node): boolean {
+    return node.emby || node.rate <= 1.0;
   },
-};
+});
 
-export const MEDIA: Group = {
-  type: "urltest",
-  name: OutboundTag.MEDIA,
-  filter(outbound: ProviderOutbound): boolean {
-    if (outbound.dummy) return false;
-    if (outbound.emby) return false;
-    if (outbound.info) return false;
-    return outbound.rate < 2.0;
+export const STREAM: Group = defineGroup({
+  name: "📺 Stream",
+  type: "url-test",
+  filter(node: Node): boolean {
+    return !node.emby && node.rate < 2.0;
   },
-};
+});
 
-export function defaultGroups(): Group[] {
-  return [
-    AUTO,
-    SELECT,
-    AI,
-    DOWNLOAD,
-    EMBY,
-    MEDIA,
-    makeCountryGroup(undefined),
-    ...countries.map(makeCountryGroup),
-  ];
+export function groups(): Group[] {
+  const groups: Group[] = [AUTO, SELECT, AI, DOWNLOAD, EMBY, STREAM];
+  groups.push(...countries.map(defineRegionGroup));
+  return groups;
 }

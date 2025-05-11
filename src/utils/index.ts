@@ -1,3 +1,2 @@
-export { tryDecodeBase64 } from "./base64";
-export { FetchError, fetchWithUA } from "./fetch";
-export { getLogger } from "./logging";
+export { get, FetchError } from "./fetch";
+export type { FetchErrorOptions } from "./fetch";

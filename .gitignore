@@ -145,3 +145,6 @@ dist
 
 .private
 playground/
+
+config.yaml
+profile.yaml

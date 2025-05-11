@@ -1,0 +1,65 @@
+import { type CommandContext, buildCommand } from "@stricli/core";
+import YAML from "yaml";
+import { SCHEMA_PORT, genMihomo } from "../gen";
+import { groups } from "../group";
+import { type Node, inferMihomo } from "../infer";
+import { type MihomoProxy, Profile, type ProfileOptions } from "../provider";
+
+interface Flags {
+  output: string;
+  port: number;
+  profile: Profile;
+  template: string;
+}
+
+export const mihomo = buildCommand({
+  async func(
+    this: CommandContext,
+    { output, port, profile, template }: Flags,
+  ): Promise<void> {
+    const nodes: Node[] = [];
+    for (const provider of profile.providers) {
+      const proxies: MihomoProxy[] = await provider.fetchMihomo();
+      nodes.push(...inferMihomo(provider, proxies));
+    }
+    const config: string = genMihomo(template, nodes, groups(), { port });
+    await Bun.write(output, config);
+  },
+  parameters: {
+    flags: {
+      output: {
+        kind: "parsed",
+        parse: String,
+        brief: "output",
+        default: "config.yaml",
+      },
+      port: {
+        kind: "parsed",
+        parse: SCHEMA_PORT.parse,
+        brief: "port",
+        default: "7892",
+      },
+      profile: {
+        kind: "parsed",
+        parse: async (profile: string): Promise<Profile> => {
+          const text: string = await Bun.file(profile).text();
+          const options: ProfileOptions = YAML.parse(text);
+          return new Profile(options);
+        },
+        brief: "profile",
+        default: "profile.yaml",
+      },
+      template: {
+        kind: "parsed",
+        parse: async (template: string): Promise<string> => {
+          return await Bun.file(template).text();
+        },
+        brief: "template",
+        default: "templates/mihomo/default.yaml",
+      },
+    },
+  },
+  docs: {
+    brief: "mihomo",
+  },
+});

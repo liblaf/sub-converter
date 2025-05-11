@@ -4,15 +4,15 @@ build:
     tsup
 
 compile:
-    bun build --compile --outfile="./dist/sing" "./src/bin/sing.ts"
+    bun build --compile --outfile="./dist/sub-converter" "./src/bin/cli.ts"
 
 [unix]
 dist: compile
-    mv "./dist/sing" "./dist/sing-{{ os() }}-{{ arch() }}"
+    mv "./dist/sub-converter" "./dist/sub-converter-{{ os() }}-{{ arch() }}"
 
 [windows]
 dist: compile
-    mv "./dist/sing.exe" "./dist/sing-{{ os() }}-{{ arch() }}.exe"
+    mv "./dist/sub-converter.exe" "./dist/sub-converter-{{ os() }}-{{ arch() }}.exe"
 
 lint:
     biome check --write
