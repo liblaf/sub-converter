@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.11](https://github.com/liblaf/sub-converter/compare/v0.1.10...v0.1.11) (2025-05-19)
+
+
+### ♻ Code Refactoring
+
+* rename Node to ProxyNode for clarity ([fabbb8d](https://github.com/liblaf/sub-converter/commit/fabbb8dcc912cd34dde007c6f4189c41ea80c74c))
+
 ## [0.1.10](https://github.com/liblaf/sub-converter/compare/v0.1.9..v0.1.10) - 2025-05-11
 
 ### ✨ Features
