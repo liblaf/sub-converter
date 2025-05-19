@@ -5,19 +5,19 @@ import {
   PROXY,
   mihomoProxyGroup,
 } from "../group";
-import type { Node } from "../infer";
+import type { ProxyNode } from "../infer";
 import type { MihomoProxy } from "../provider";
 import { type GenOptionsInput, SCHEMA_GEN_OPTIONS } from "./typed";
 
 export function genMihomo(
   template: string,
-  nodes: Node[],
+  nodes: ProxyNode[],
   groups: Group[],
   options: GenOptionsInput,
 ): string {
   const { port } = SCHEMA_GEN_OPTIONS.parse(options);
   const config = YAML.parse(template);
-  config.proxies = nodes.map((node: Node): MihomoProxy => node.mihomo);
+  config.proxies = nodes.map((node: ProxyNode): MihomoProxy => node.mihomo);
   const proxy: MihomoProxyGroup = mihomoProxyGroup(PROXY, nodes);
   config["proxy-groups"] = [proxy];
   for (const group of groups) {

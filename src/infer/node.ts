@@ -11,7 +11,7 @@ export type NodeOptions = {
   mihomo?: MihomoProxy;
 };
 
-export class Node {
+export class ProxyNode {
   public provider: Provider;
   public _mihomo?: MihomoProxy;
   private _connection?: Connection;
@@ -25,7 +25,7 @@ export class Node {
   }
 
   get name(): string {
-    return `[${this.provider.name}] ${this._name}`;
+    return `[${this.provider.name}]${this._name}`;
   }
 
   get server(): string | undefined {
@@ -75,9 +75,10 @@ export class Node {
 export function inferMihomo(
   provider: Provider,
   proxies: MihomoProxy[],
-): Node[] {
-  const nodes: Node[] = proxies.map(
-    (proxy: MihomoProxy): Node => new Node({ provider, mihomo: proxy }),
+): ProxyNode[] {
+  const nodes: ProxyNode[] = proxies.map(
+    (proxy: MihomoProxy): ProxyNode =>
+      new ProxyNode({ provider, mihomo: proxy }),
   );
   return nodes;
 }

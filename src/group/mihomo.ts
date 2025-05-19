@@ -1,4 +1,4 @@
-import type { Node } from "../infer";
+import type { ProxyNode } from "../infer";
 import type { Group } from "./group";
 
 export type MihomoProxyGroup = {
@@ -14,12 +14,14 @@ export type MihomoProxyGroup = {
 
 export function mihomoProxyGroup(
   group: Group,
-  nodes: Node[] = [],
+  nodes: ProxyNode[] = [],
 ): MihomoProxyGroup {
   return {
     name: group.name,
     type: group.type,
-    proxies: nodes.filter(group.filter).map((node: Node): string => node.name),
+    proxies: nodes
+      .filter(group.filter)
+      .map((node: ProxyNode): string => node.name),
     url: group.url,
     interval: group.interval,
     lazy: group.lazy,

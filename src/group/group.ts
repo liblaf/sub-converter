@@ -1,5 +1,5 @@
 import countries, { type Country } from "world-countries";
-import { Connection, type Node, UNKNOWN } from "../infer";
+import { Connection, type ProxyNode, UNKNOWN } from "../infer";
 
 export type Group = {
   name: string;
@@ -10,7 +10,7 @@ export type Group = {
   timeout?: number;
   icon?: string;
 
-  filter(node: Node): boolean;
+  filter(node: ProxyNode): boolean;
 };
 
 export function defineGroup(options: Group): Group {
@@ -27,7 +27,7 @@ export function defineRegionGroup(region: Country): Group {
   return defineGroup({
     name: `${region.flag} ${region.name.common}`,
     type: region.cca2 === UNKNOWN.cca2 ? "select" : "url-test",
-    filter(node: Node): boolean {
+    filter(node: ProxyNode): boolean {
       return node.region.cca2 === region.cca2 && !node.emby;
     },
   });
@@ -36,7 +36,7 @@ export function defineRegionGroup(region: Country): Group {
 export const PROXY: Group = defineGroup({
   name: "PROXY",
   type: "select",
-  filter(_node: Node): boolean {
+  filter(_node: ProxyNode): boolean {
     return false;
   },
 });
@@ -44,7 +44,7 @@ export const PROXY: Group = defineGroup({
 export const SELECT: Group = defineGroup({
   name: "SELECT",
   type: "select",
-  filter(_node: Node): boolean {
+  filter(_node: ProxyNode): boolean {
     return true;
   },
 });
@@ -52,7 +52,7 @@ export const SELECT: Group = defineGroup({
 export const AUTO: Group = defineGroup({
   name: "🚀 Auto",
   type: "url-test",
-  filter(node: Node): boolean {
+  filter(node: ProxyNode): boolean {
     return (
       node.connection !== Connection.DIRECT && !node.emby && node.rate < 2.0
     );
@@ -63,7 +63,7 @@ const AI_EXCLUDE_REGIONS = new Set([UNKNOWN.cca2, "CN", "HK", "MO"]);
 export const AI: Group = defineGroup({
   name: "🤖 AI",
   type: "url-test",
-  filter(node: Node): boolean {
+  filter(node: ProxyNode): boolean {
     return !node.emby && !AI_EXCLUDE_REGIONS.has(node.region.cca2);
   },
 });
@@ -71,7 +71,7 @@ export const AI: Group = defineGroup({
 export const DOWNLOAD: Group = defineGroup({
   name: "📥 Download",
   type: "url-test",
-  filter(node: Node): boolean {
+  filter(node: ProxyNode): boolean {
     return !node.emby && node.rate <= 1.0;
   },
 });
@@ -79,7 +79,7 @@ export const DOWNLOAD: Group = defineGroup({
 export const EMBY: Group = defineGroup({
   name: "📺 Emby",
   type: "url-test",
-  filter(node: Node): boolean {
+  filter(node: ProxyNode): boolean {
     return node.emby || node.rate <= 1.0;
   },
 });
@@ -87,7 +87,7 @@ export const EMBY: Group = defineGroup({
 export const STREAM: Group = defineGroup({
   name: "📺 Stream",
   type: "url-test",
-  filter(node: Node): boolean {
+  filter(node: ProxyNode): boolean {
     return !node.emby && node.rate < 2.0;
   },
 });

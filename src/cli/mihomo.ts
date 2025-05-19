@@ -2,7 +2,7 @@ import { type CommandContext, buildCommand } from "@stricli/core";
 import YAML from "yaml";
 import { SCHEMA_PORT, genMihomo } from "../gen";
 import { groups } from "../group";
-import { type Node, inferMihomo } from "../infer";
+import { type ProxyNode, inferMihomo } from "../infer";
 import { type MihomoProxy, Profile, type ProfileOptions } from "../provider";
 
 interface Flags {
@@ -17,7 +17,7 @@ export const mihomo = buildCommand({
     this: CommandContext,
     { output, port, profile, template }: Flags,
   ): Promise<void> {
-    const nodes: Node[] = [];
+    const nodes: ProxyNode[] = [];
     for (const provider of profile.providers) {
       const proxies: MihomoProxy[] = await provider.fetchMihomo();
       nodes.push(...inferMihomo(provider, proxies));
