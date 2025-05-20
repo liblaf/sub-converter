@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.11](https://github.com/liblaf/sub-converter/compare/v0.1.10..v0.1.11) - 2025-05-19
+
+### ♻ Code Refactoring
+
+- rename Node to ProxyNode for clarity - ([fabbb8d](https://github.com/liblaf/sub-converter/commit/fabbb8dcc912cd34dde007c6f4189c41ea80c74c))
+
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
 ## [0.1.10](https://github.com/liblaf/sub-converter/compare/v0.1.9..v0.1.10) - 2025-05-11
 
 ### ✨ Features
@@ -14,11 +24,6 @@
 
 - **mihomo:** reorganize anchors in default config - ([fedd2df](https://github.com/liblaf/sub-converter/commit/fedd2df24555fbee38ea3b01d3631d58129f8af1))
 - migrate from sing-box to mihomo configuration (#74) - ([947658c](https://github.com/liblaf/sub-converter/commit/947658c48f7fc34e7e5cc299b56044119ef7f95b))
-
-### ❤️ New Contributors
-
-- [@liblaf](https://github.com/liblaf) made their first contribution
-- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
 
 ## [0.1.9](https://github.com/liblaf/sub-converter/compare/v0.1.8..v0.1.9) - 2025-04-20
 
