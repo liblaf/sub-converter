@@ -1,0 +1,24 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+
+[env]
+_.path = ["./node_modules/bin"]
+
+[tasks.build]
+run = "tsup"
+
+[tasks.compile]
+run = 'bun build --compile --outfile="./dist/sub-converter" "./src/bin/sub-converter.ts"'
+
+[tasks.dist]
+depends = ["compile"]
+run = 'mv "./dist/sub-converter" "./dist/sub-converter-{{ os() }}-{{ arch() }}"'
+run_windows = 'mv "./dist/sub-converter.exe" "./dist/sub-converter-{{ os() }}-{{ arch() }}.exe"'
+
+[tasks.install]
+run = ["bun install"]
+
+[tasks.lint]
+run = "biome check --write"
+
+[tasks.test]
+run = "vitest"
