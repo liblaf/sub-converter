@@ -1,7 +1,7 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [env]
-_.path = ["./node_modules/bin"]
+_.path = ["{{ config_root }}/node_modules/.bin"]
 
 [tasks.build]
 run = "tsup"
