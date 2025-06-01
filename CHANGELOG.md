@@ -1,15 +1,15 @@
 # Changelog
 
-## [0.2.0](https://github.com/liblaf/sub-converter/compare/v0.1.12...v0.2.0) (2025-06-01)
+## [0.2.0](https://github.com/liblaf/sub-converter/compare/v0.1.12..v0.2.0) - 2025-06-01
 
+### 💥 BREAKING CHANGES
 
-### ⚠ BREAKING CHANGES
+- migrate from tsup to bunup - ([4c3a2a9](https://github.com/liblaf/sub-converter/commit/4c3a2a964c16b0c1e8712933ae8cb6a529cbdace))
 
-* This changes the build system from tsup to bunup and removes JSR support. Update build configurations accordingly. The task runner has also changed from just to mise.
+### ❤️ New Contributors
 
-### 👷 Build System
-
-* migrate from tsup to bunup ([4c3a2a9](https://github.com/liblaf/sub-converter/commit/4c3a2a964c16b0c1e8712933ae8cb6a529cbdace))
+- [@liblaf](https://github.com/liblaf) made their first contribution
+- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
 
 ## [0.1.12](https://github.com/liblaf/sub-converter/compare/v0.1.11..v0.1.12) - 2025-06-01
 
@@ -24,11 +24,6 @@
 ### 👷 Build System
 
 - migrate from Justfile to mise config - ([848a835](https://github.com/liblaf/sub-converter/commit/848a835b8b147f89f2931a1d0ffb14cf51da25da))
-
-### ❤️ New Contributors
-
-- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
-- [@liblaf](https://github.com/liblaf) made their first contribution
 
 ## [0.1.11](https://github.com/liblaf/sub-converter/compare/v0.1.10..v0.1.11) - 2025-05-20
 
