@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.2.1](https://github.com/liblaf/sub-converter/compare/v0.2.0...v0.2.1) (2025-06-01)
+
+
+### ✨ Features
+
+* add KV storage scripts for profile management ([d9906b7](https://github.com/liblaf/sub-converter/commit/d9906b772eaf7fc3c6ca9802387878059202438a))
+
+
+### ♻ Code Refactoring
+
+* **config:** move direct domains to external ruleset ([86dd8eb](https://github.com/liblaf/sub-converter/commit/86dd8eb21edb4b21b1cf43dccc3f2ab710beed17))
+
+
+### 🔧 Continuous Integration
+
+* standardize path references and temporarily disable Windows builds ([004fd47](https://github.com/liblaf/sub-converter/commit/004fd474f70015a6fa53d9d6e46f9fc866df2bdf))
+
 ## [0.2.0](https://github.com/liblaf/sub-converter/compare/v0.1.12..v0.2.0) - 2025-06-01
 
 ### 💥 BREAKING CHANGES
