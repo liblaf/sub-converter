@@ -236,17 +236,6 @@ rule-providers:
 
   # Custom Rules
   domain-direct:
-    type: inline
-    behavior: domain
-    format: yaml
-    payload:
-      - +.archlinux.org
-      - +.gjm20.top
-      - +.jax.dev
-      - +.numpy.org
-      - +.pola.rs
-      - +.pydata.org
-      - +.pyvista.org
-      - +.readthedocs.io
-      - +.scipy.org
-      - +.trimesh.org
+    <<: *domain
+    url: https://api.liblaf.me/rules/mihomo/domain/direct.txt
+    path: ./rules/mihomo/domain/direct.txt
