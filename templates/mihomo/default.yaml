@@ -59,36 +59,23 @@ dns:
   respect-rules: true
   ipv6: true
   default-nameserver:
+    - 101.6.6.6 # TUNA DNS666
+    - 114.114.115.115
+    - 119.28.28.28 # 腾讯 DNSPod
+    - 223.6.6.6 # 阿里云公共 DNS
     - system
-    - 101.6.6.6
-    - 8.8.8.8
   enhanced-mode: redir-host
   nameserver: &nameserver
+    - https://101.6.6.6/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
     - system
-    - 101.6.6.6
-    - 8.8.8.8
-  fallback: &fallback
+  fallback:
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
   proxy-server-nameserver: *nameserver
   direct-nameserver: *nameserver
   direct-nameserver-follow-policy: false
-  nameserver-policy:
-    rule-set:domainset-cdn: *fallback
-    rule-set:domainset-apple-cdn: *nameserver
-    rule-set:domainset-download: *fallback
-    rule-set:non-ip-cdn: *fallback
-    rule-set:non-ip-stream: *fallback
-    rule-set:non-ip-ai: *fallback
-    rule-set:non-ip-apple-cn: *nameserver
-    rule-set:non-ip-microsoft-cdn: *nameserver
-    rule-set:non-ip-download: *fallback
-    rule-set:non-ip-lan:
-      - system
-    rule-set:non-ip-domestic: *nameserver
-    rule-set:non-ip-direct: *nameserver
-    rule-set:non-ip-global: *fallback
-    rule-set:domain-direct: *nameserver
 
 sniffer:
   enable: true
@@ -101,7 +88,8 @@ sniffer:
     QUIC:
       ports: [443, 8443]
   skip-domain:
-    - rule-set:non-ip-lan
+    - "Mijia Cloud"
+    - "+.push.apple.com"
 
 mixed-port: 7892
 

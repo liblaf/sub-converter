@@ -1,0 +1,17 @@
+#########################################
+# liblaf's Ruleset - DIRECT
+# GitHub: https://github.com/liblaf/sub-converter
+#
+# behavior: domain
+# format: yaml
+#########################################
++.archlinux.org
++.gjm20.top
++.jax.dev
++.numpy.org
++.pola.rs
++.pydata.org
++.pyvista.org
++.readthedocs.io
++.scipy.org
++.trimesh.org
