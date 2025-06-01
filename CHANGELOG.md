@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.0](https://github.com/liblaf/sub-converter/compare/v0.1.12...v0.2.0) (2025-06-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* This changes the build system from tsup to bunup and removes JSR support. Update build configurations accordingly. The task runner has also changed from just to mise.
+
+### 👷 Build System
+
+* migrate from tsup to bunup ([4c3a2a9](https://github.com/liblaf/sub-converter/commit/4c3a2a964c16b0c1e8712933ae8cb6a529cbdace))
+
 ## [0.1.12](https://github.com/liblaf/sub-converter/compare/v0.1.11..v0.1.12) - 2025-06-01
 
 ### ✨ Features
