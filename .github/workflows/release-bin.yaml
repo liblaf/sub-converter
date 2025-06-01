@@ -27,13 +27,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: bin-${{ runner.arch }}-${{ runner.os }}
-          path: ./dist/
+          path: dist/
     strategy:
       matrix:
         os:
           - macos-latest
           - ubuntu-latest
-          - windows-latest
+          # - windows-latest # TODO: support Windows
 
   release:
     name: Release
@@ -51,13 +51,13 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
-          path: ./dist/
+          path: dist/
           pattern: bin-*
           merge-multiple: true
       - name: Release
         uses: liblaf/actions/release@main
         with:
           clobber: true
-          files: ./dist/*
+          files: dist/*
           prerelease: true
           tag: dev

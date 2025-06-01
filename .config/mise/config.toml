@@ -7,12 +7,12 @@ _.path = ["{{ config_root }}/node_modules/.bin"]
 run = "bunup"
 
 [tasks.compile]
-run = 'bun build --compile --outfile="./dist/sub-converter" "./src/bin/sub-converter.ts"'
+run = 'bun build --compile --outfile="dist/sub-converter" "src/bin/sub-converter.ts"'
 
 [tasks.dist]
 depends = ["compile"]
-run = 'mv "./dist/sub-converter" "./dist/sub-converter-{{ os() }}-{{ arch() }}"'
-run_windows = 'mv "./dist/sub-converter.exe" "./dist/sub-converter-{{ os() }}-{{ arch() }}.exe"'
+run = 'mv "dist/sub-converter" "dist/sub-converter-{{ os() }}-{{ arch() }}"'
+run_windows = 'mv "dist/sub-converter.exe" "dist/sub-converter-{{ os() }}-{{ arch() }}.exe"'
 
 [tasks.install]
 run = ["bun install"]
