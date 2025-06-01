@@ -1,31 +1,29 @@
 # Changelog
 
-## [0.1.12](https://github.com/liblaf/sub-converter/compare/v0.1.11...v0.1.12) (2025-06-01)
-
+## [0.1.12](https://github.com/liblaf/sub-converter/compare/v0.1.11..v0.1.12) - 2025-06-01
 
 ### ✨ Features
 
-* **mihomo:** add geox-url configuration with default sources ([2b57fe2](https://github.com/liblaf/sub-converter/commit/2b57fe2e1aaba0b7b502933dccb46145f3d20592))
-
+- **mihomo:** add geox-url configuration with default sources - ([2b57fe2](https://github.com/liblaf/sub-converter/commit/2b57fe2e1aaba0b7b502933dccb46145f3d20592))
 
 ### 🐛 Bug Fixes
 
-* correct node_modules bin path in mise config ([8652f30](https://github.com/liblaf/sub-converter/commit/8652f301d244e466e26b2aa6b5469e62927518f1))
-
+- correct node_modules bin path in mise config - ([8652f30](https://github.com/liblaf/sub-converter/commit/8652f301d244e466e26b2aa6b5469e62927518f1))
 
 ### 👷 Build System
 
-* migrate from Justfile to mise config ([848a835](https://github.com/liblaf/sub-converter/commit/848a835b8b147f89f2931a1d0ffb14cf51da25da))
+- migrate from Justfile to mise config - ([848a835](https://github.com/liblaf/sub-converter/commit/848a835b8b147f89f2931a1d0ffb14cf51da25da))
 
-## [0.1.11](https://github.com/liblaf/sub-converter/compare/v0.1.10..v0.1.11) - 2025-05-19
+### ❤️ New Contributors
+
+- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
+## [0.1.11](https://github.com/liblaf/sub-converter/compare/v0.1.10..v0.1.11) - 2025-05-20
 
 ### ♻ Code Refactoring
 
 - rename Node to ProxyNode for clarity - ([fabbb8d](https://github.com/liblaf/sub-converter/commit/fabbb8dcc912cd34dde007c6f4189c41ea80c74c))
-
-### ❤️ New Contributors
-
-- [@liblaf](https://github.com/liblaf) made their first contribution
 
 ## [0.1.10](https://github.com/liblaf/sub-converter/compare/v0.1.9..v0.1.10) - 2025-05-11
 
