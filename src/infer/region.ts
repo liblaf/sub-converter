@@ -14,7 +14,12 @@ export const UNKNOWN = {
 export function region(node: NodeInfo): Country {
   if (node.server) {
     const country: Country | undefined = regionByIp(node.server);
-    if (country && country.cca2 !== "CN") return country;
+    if (country && country.cca2 !== "CN") {
+      console.debug(
+        `${node.name} (${node.server}) => ${country.flag} ${country.name.common}`,
+      );
+      return country;
+    }
   }
   const country: Country | undefined = regionByName(node.name);
   if (country) return country;

@@ -25,6 +25,13 @@ export class ProxyNode {
   }
 
   get name(): string {
+    if (this.provider.name === "JMS") {
+      const match = this._name.match(/@(?<name>[\w-]+)/);
+      if (match) {
+        const name: string = match.groups?.name ?? this._name;
+        return `[${this.provider.name}]${name}`;
+      }
+    }
     return `[${this.provider.name}]${this._name}`;
   }
 

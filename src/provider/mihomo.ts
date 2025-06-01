@@ -5,7 +5,11 @@ import { get } from "../utils";
 
 const logger = new Logger();
 
-export const SCHEMA_MIMOHO_PROXY = z.object({
+export const SCHEMA_MIMOHO_PROXY: z.ZodObject<{
+  name: z.ZodString;
+  server: z.ZodString;
+  type: z.ZodString;
+}> = z.object({
   name: z.string(),
   server: z.string(),
   type: z.string(),
@@ -19,7 +23,7 @@ export type MihomoConfig = {
 
 export async function fetchMihomo(
   url: string,
-  ua: string,
+  ua?: string,
 ): Promise<MihomoProxy[]> {
   try {
     const resp: Response = await get(url, ua);

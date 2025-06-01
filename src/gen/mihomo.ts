@@ -27,5 +27,5 @@ export function genMihomo(
     proxy.proxies.push(group.name);
   }
   config["mixed-port"] = port;
-  return YAML.stringify(config);
+  return YAML.stringify(config, { aliasDuplicateObjects: false });
 }

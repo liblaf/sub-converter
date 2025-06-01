@@ -1,8 +1,14 @@
 import { z } from "zod";
 
-export const SCHEMA_PORT = z.coerce.number().int().min(0).max(65535);
+export const SCHEMA_PORT: z.ZodNumber = z.coerce
+  .number()
+  .int()
+  .min(0)
+  .max(65535);
 
-export const SCHEMA_GEN_OPTIONS = z.object({
+export const SCHEMA_GEN_OPTIONS: z.ZodObject<{
+  port: z.ZodDefault<z.ZodNumber>;
+}> = z.object({
   port: SCHEMA_PORT.default(7892),
 });
 

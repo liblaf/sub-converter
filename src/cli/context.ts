@@ -1,3 +1,5 @@
+// ref: <https://github.com/bloomberg/stricli/blob/beb8584382948ab8898e973d6a13dbbc21d274cb/packages/create-app/src/files.ts#L48-L68>
+
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

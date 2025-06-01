@@ -1,7 +1,23 @@
 {
   "name": "@liblaf/sub-converter",
-  "version": "0.1.12",
   "description": "TODO",
+  "version": "0.1.12",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./bin/sub-converter": {
+      "import": "./dist/bin/sub-converter.js",
+      "types": "./dist/bin/sub-converter.d.ts"
+    }
+  },
   "keywords": [
     "TODO"
   ],
@@ -15,26 +31,18 @@
     "url": "https://github.com/liblaf",
     "email": "30631553+liblaf@users.noreply.github.com"
   },
-  "files": [
-    "./dist"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
-  },
   "bin": {
-    "sub-converter": "./dist/bin/sub-converter.js"
+    "sub-converter": "dist/bin/sub-converter.js"
   },
-  "type": "module",
   "repository": "github:liblaf/sub-converter",
+  "funding": {
+    "url": "https://github.com/liblaf/sub-converter?sponsor=1",
+    "type": "github"
+  },
   "scripts": {
-    "build": "tsup",
-    "compile": "bun build --compile --outfile='./dist/sub-converter' ./src/bin/sub-converter.ts",
+    "build": "bunup",
     "lint": "biome check --write",
-    "prepack": "tsup",
-    "test": "vitest"
+    "prepack": "npm run build"
   },
   "dependencies": {
     "@stricli/auto-complete": "^1.1.2",
@@ -51,9 +59,7 @@
     "@tsconfig/bun": "^1.0.7",
     "@types/bun": "^1.2.13",
     "@types/geoip-lite": "^1.4.4",
-    "tsup": "^8.4.0",
-    "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.1.3"
+    "bunup": "^0.8.22"
   },
   "peerDependencies": {
     "typescript": "^5.8.3"

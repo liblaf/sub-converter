@@ -1,6 +1,0 @@
-+.archlinux.org
-+.gjm20.top
-+.jax.dev
-+.numpy.org
-+.pyvista.org
-+.trimesh.org

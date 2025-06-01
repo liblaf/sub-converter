@@ -1,7 +1,9 @@
 import { z } from "zod";
 import { Provider, SCHEMA_PROVIDER } from "./provider";
 
-export const SCHEMA_PROFILE = z.object({
+export const SCHEMA_PROFILE: z.ZodObject<{
+  providers: z.ZodArray<typeof SCHEMA_PROVIDER>;
+}> = z.object({
   providers: z.array(SCHEMA_PROVIDER),
 });
 

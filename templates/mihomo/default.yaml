@@ -5,14 +5,14 @@ __anchors:
     timeout: 5000
     lazy: true
     expected-status: 204
-  domain: &domain
-    type: http
-    behavior: domain
-    format: text
-    interval: 86400
   classical: &classical
     type: http
     behavior: classical
+    format: text
+    interval: 86400
+  domain: &domain
+    type: http
+    behavior: domain
     format: text
     interval: 86400
   ipcidr: &ipcidr
@@ -30,8 +30,6 @@ lan-allowed-ips:
   - 172.16.0.0/12
   - 192.168.0.0/16
   - ::1/128
-authentication:
-  - username:password
 skip-auth-prefixes:
   - 127.0.0.0/8
   - ::1/128
@@ -63,10 +61,12 @@ dns:
   default-nameserver:
     - system
     - 101.6.6.6
+    - 8.8.8.8
   enhanced-mode: redir-host
   nameserver: &nameserver
     - system
     - 101.6.6.6
+    - 8.8.8.8
   fallback: &fallback
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
@@ -88,6 +88,7 @@ dns:
     rule-set:non-ip-domestic: *nameserver
     rule-set:non-ip-direct: *nameserver
     rule-set:non-ip-global: *fallback
+    rule-set:domain-direct: *nameserver
 
 sniffer:
   enable: true
@@ -135,12 +136,7 @@ rules:
   - RULE-SET,non-ip-global,PROXY
 
   # custom rules
-  - DOMAIN-SUFFIX,archlinux.org,DIRECT
-  - DOMAIN-SUFFIX,gjm20.top,DIRECT
-  - DOMAIN-SUFFIX,jax.dev,DIRECT
-  - DOMAIN-SUFFIX,numpy.org,DIRECT
-  - DOMAIN-SUFFIX,pyvista.org,DIRECT
-  - DOMAIN-SUFFIX,trimesh.org,DIRECT
+  - RULE-SET,domain-direct,DIRECT
 
   - RULE-SET,ip-stream,📺 Stream
   - RULE-SET,ip-telegram,PROXY
@@ -152,46 +148,77 @@ rules:
   - MATCH,PROXY
 
 rule-providers:
+  # 常见静态 CDN
   domainset-cdn:
     <<: *domain
     url: https://ruleset.skk.moe/Clash/domainset/cdn.txt
     path: ./ruleset.skk.moe/Clash/domainset/cdn.txt
-  domainset-apple-cdn:
-    <<: *domain
-    url: https://ruleset.skk.moe/Clash/domainset/apple_cdn.txt
-    path: ./ruleset.skk.moe/Clash/domainset/apple-cdn.txt
-  domainset-download:
-    <<: *domain
-    url: https://ruleset.skk.moe/Clash/domainset/download.txt
-    path: ./ruleset.skk.moe/Clash/domainset/download.txt
   non-ip-cdn:
     <<: *classical
     url: https://ruleset.skk.moe/Clash/non_ip/cdn.txt
     path: ./ruleset.skk.moe/Clash/non-ip/cdn.txt
+
+  # 流媒体
   non-ip-stream:
     <<: *classical
     url: https://ruleset.skk.moe/Clash/non_ip/stream.txt
     path: ./ruleset.skk.moe/Clash/non-ip/stream.txt
+  ip-stream:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/ip/stream.txt
+    path: ./ruleset.skk.moe/Clash/ip/stream.txt
+
+  # AI
   non-ip-ai:
     <<: *classical
     url: https://ruleset.skk.moe/Clash/non_ip/ai.txt
     path: ./ruleset.skk.moe/Clash/non-ip/ai.txt
+
+  # Telegram
+  ip-telegram:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/ip/telegram.txt
+    path: ./ruleset.skk.moe/Clash/ip/telegram.txt
+
+  # Apple CDN
+  domainset-apple-cdn:
+    <<: *domain
+    url: https://ruleset.skk.moe/Clash/domainset/apple_cdn.txt
+    path: ./ruleset.skk.moe/Clash/domainset/apple-cdn.txt
+
+  # Apple CN
   non-ip-apple-cn:
     <<: *classical
     url: https://ruleset.skk.moe/Clash/non_ip/apple_cn.txt
     path: ./ruleset.skk.moe/Clash/non-ip/apple-cn.txt
+
+  # Microsoft CDN
   non-ip-microsoft-cdn:
     <<: *classical
     url: https://ruleset.skk.moe/Clash/non_ip/microsoft_cdn.txt
     path: ./ruleset.skk.moe/Clash/non-ip/microsoft-cdn.txt
+
+  # 软件更新、操作系统等大文件下载
+  domainset-download:
+    <<: *domain
+    url: https://ruleset.skk.moe/Clash/domainset/download.txt
+    path: ./ruleset.skk.moe/Clash/domainset/download.txt
   non-ip-download:
     <<: *classical
     url: https://ruleset.skk.moe/Clash/non_ip/download.txt
     path: ./ruleset.skk.moe/Clash/non-ip/download.txt
+
+  # 内网域名和局域网 IP
   non-ip-lan:
     <<: *classical
     url: https://ruleset.skk.moe/Clash/non_ip/lan.txt
     path: ./ruleset.skk.moe/Clash/non-ip/lan.txt
+  ip-lan:
+    <<: *classical
+    url: https://ruleset.skk.moe/Clash/ip/lan.txt
+    path: ./ruleset.skk.moe/Clash/ip/lan.txt
+
+  # Misc
   non-ip-domestic:
     <<: *classical
     url: https://ruleset.skk.moe/Clash/non_ip/domestic.txt
@@ -204,22 +231,12 @@ rule-providers:
     <<: *classical
     url: https://ruleset.skk.moe/Clash/non_ip/global.txt
     path: ./ruleset.skk.moe/Clash/non-ip/global.txt
-  ip-stream:
-    <<: *classical
-    url: https://ruleset.skk.moe/Clash/ip/stream.txt
-    path: ./ruleset.skk.moe/Clash/ip/stream.txt
-  ip-telegram:
-    <<: *classical
-    url: https://ruleset.skk.moe/Clash/ip/telegram.txt
-    path: ./ruleset.skk.moe/Clash/ip/telegram.txt
-  ip-lan:
-    <<: *classical
-    url: https://ruleset.skk.moe/Clash/ip/lan.txt
-    path: ./ruleset.skk.moe/Clash/ip/lan.txt
   ip-domestic:
     <<: *classical
     url: https://ruleset.skk.moe/Clash/ip/domestic.txt
     path: ./ruleset.skk.moe/Clash/ip/domestic.txt
+
+  # chnroute CIDR
   ip-china-ip:
     <<: *ipcidr
     url: https://ruleset.skk.moe/Clash/ip/china_ip.txt
@@ -228,3 +245,20 @@ rule-providers:
     <<: *ipcidr
     url: https://ruleset.skk.moe/Clash/ip/china_ip_ipv6.txt
     path: ./ruleset.skk.moe/Clash/ip/china-ipv6.txt
+
+  # Custom Rules
+  domain-direct:
+    type: inline
+    behavior: domain
+    format: yaml
+    payload:
+      - +.archlinux.org
+      - +.gjm20.top
+      - +.jax.dev
+      - +.numpy.org
+      - +.pola.rs
+      - +.pydata.org
+      - +.pyvista.org
+      - +.readthedocs.io
+      - +.scipy.org
+      - +.trimesh.org

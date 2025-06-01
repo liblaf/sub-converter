@@ -1,5 +1,5 @@
 import countries, { type Country } from "world-countries";
-import { Connection, type ProxyNode, UNKNOWN } from "../infer";
+import { type ProxyNode, UNKNOWN } from "../infer";
 
 export type Group = {
   name: string;
@@ -53,9 +53,7 @@ export const AUTO: Group = defineGroup({
   name: "🚀 Auto",
   type: "url-test",
   filter(node: ProxyNode): boolean {
-    return (
-      node.connection !== Connection.DIRECT && !node.emby && node.rate < 2.0
-    );
+    return !node.emby && node.rate < 2.0;
   },
 });
 

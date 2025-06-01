@@ -4,7 +4,7 @@
 _.path = ["{{ config_root }}/node_modules/.bin"]
 
 [tasks.build]
-run = "tsup"
+run = "bunup"
 
 [tasks.compile]
 run = 'bun build --compile --outfile="./dist/sub-converter" "./src/bin/sub-converter.ts"'
@@ -18,7 +18,4 @@ run_windows = 'mv "./dist/sub-converter.exe" "./dist/sub-converter-{{ os() }}-{{
 run = ["bun install"]
 
 [tasks.lint]
-run = "biome check --write"
-
-[tasks.test]
-run = "vitest"
+run = ["prettier --write .", "biome check --write"]
