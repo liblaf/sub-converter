@@ -1,3 +1,4 @@
+import type { GenOptions } from "../gen";
 import type { ProxyNode } from "../infer";
 import type { Group } from "./group";
 
@@ -14,9 +15,10 @@ export type MihomoProxyGroup = {
 
 export function mihomoProxyGroup(
   group: Group,
-  nodes: ProxyNode[] = [],
+  nodes: ProxyNode[],
+  options: GenOptions,
 ): MihomoProxyGroup {
-  return {
+  const proxy: MihomoProxyGroup = {
     name: group.name,
     type: group.type,
     proxies: nodes
@@ -26,6 +28,12 @@ export function mihomoProxyGroup(
     interval: group.interval,
     lazy: group.lazy,
     timeout: group.timeout,
-    icon: group.icon,
   };
+  if (options.emoji && group.emoji) {
+    proxy.name = `${group.emoji} ${proxy.name}`;
+  }
+  if (options.icon && group.icon) {
+    proxy.icon = group.icon;
+  }
+  return proxy;
 }

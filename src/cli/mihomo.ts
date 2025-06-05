@@ -6,6 +6,8 @@ import { type ProxyNode, inferMihomo } from "../infer";
 import { type MihomoProxy, Profile, type ProfileOptions } from "../provider";
 
 interface Flags {
+  emoji: boolean;
+  icon: boolean;
   output: string;
   port: number;
   profile: Profile;
@@ -15,18 +17,32 @@ interface Flags {
 export const mihomo = buildCommand({
   async func(
     this: CommandContext,
-    { output, port, profile, template }: Flags,
+    { emoji, icon, output, port, profile, template }: Flags,
   ): Promise<void> {
     const nodes: ProxyNode[] = [];
     for (const provider of profile.providers) {
       const proxies: MihomoProxy[] = await provider.fetchMihomo();
       nodes.push(...inferMihomo(provider, proxies));
     }
-    const config: string = genMihomo(template, nodes, groups(), { port });
+    const config: string = genMihomo(template, nodes, groups(), {
+      emoji,
+      icon,
+      port,
+    });
     await Bun.write(output, config);
   },
   parameters: {
     flags: {
+      emoji: {
+        kind: "boolean",
+        brief: "emoji",
+        default: false,
+      },
+      icon: {
+        kind: "boolean",
+        brief: "icon",
+        default: true,
+      },
       output: {
         kind: "parsed",
         parse: String,

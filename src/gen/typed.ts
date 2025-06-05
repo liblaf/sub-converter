@@ -7,8 +7,12 @@ export const SCHEMA_PORT: z.ZodNumber = z.coerce
   .max(65535);
 
 export const SCHEMA_GEN_OPTIONS: z.ZodObject<{
+  emoji: z.ZodDefault<z.ZodBoolean>;
+  icon: z.ZodDefault<z.ZodBoolean>;
   port: z.ZodDefault<z.ZodNumber>;
 }> = z.object({
+  emoji: z.boolean().default(false),
+  icon: z.boolean().default(true),
   port: SCHEMA_PORT.default(7892),
 });
 
