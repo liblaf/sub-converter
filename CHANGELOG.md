@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/liblaf/sub-converter/compare/v0.2.1...v0.2.2) (2025-06-05)
+
+
+### ✨ Features
+
+* **config:** add emoji and icon display configuration ([e0aff24](https://github.com/liblaf/sub-converter/commit/e0aff243f0dbd173c595202b0780227b670066b1))
+* **groups:** add icons to proxy groups ([e2a023b](https://github.com/liblaf/sub-converter/commit/e2a023b35e99fd59d8bfc26e126f3b5d8c039fee))
+
 ## [0.2.1](https://github.com/liblaf/sub-converter/compare/v0.2.0..v0.2.1) - 2025-06-01
 
 ### ✨ Features
