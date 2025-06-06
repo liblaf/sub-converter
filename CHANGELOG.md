@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.2](https://github.com/liblaf/sub-converter/compare/v0.2.1..v0.2.2) - 2025-06-05
+
+### ✨ Features
+
+- **config:** add emoji and icon display configuration - ([e0aff24](https://github.com/liblaf/sub-converter/commit/e0aff243f0dbd173c595202b0780227b670066b1))
+- **groups:** add icons to proxy groups - ([e2a023b](https://github.com/liblaf/sub-converter/commit/e2a023b35e99fd59d8bfc26e126f3b5d8c039fee))
+
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
 ## [0.2.1](https://github.com/liblaf/sub-converter/compare/v0.2.0..v0.2.1) - 2025-06-01
 
 ### ✨ Features
@@ -13,10 +24,6 @@
 ### 🔧 Continuous Integration
 
 - standardize path references and temporarily disable Windows builds - ([004fd47](https://github.com/liblaf/sub-converter/commit/004fd474f70015a6fa53d9d6e46f9fc866df2bdf))
-
-### ❤️ New Contributors
-
-- [@liblaf](https://github.com/liblaf) made their first contribution
 
 ## [0.2.0](https://github.com/liblaf/sub-converter/compare/v0.1.12..v0.2.0) - 2025-06-01
 
