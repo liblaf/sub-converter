@@ -1,22 +1,21 @@
 # Changelog
 
-## [0.2.3](https://github.com/liblaf/sub-converter/compare/v0.2.2...v0.2.3) (2025-06-07)
-
+## [0.2.3](https://github.com/liblaf/sub-converter/compare/v0.2.2..v0.2.3) - 2025-06-07
 
 ### ♻ Code Refactoring
 
-* **group:** update flag icon URL format ([b284367](https://github.com/liblaf/sub-converter/commit/b284367b1bc0b656bc7f73d04e8bf22527e657db))
+- **group:** update flag icon URL format - ([b284367](https://github.com/liblaf/sub-converter/commit/b284367b1bc0b656bc7f73d04e8bf22527e657db))
 
-## [0.2.2](https://github.com/liblaf/sub-converter/compare/v0.2.1..v0.2.2) - 2025-06-05
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
+## [0.2.2](https://github.com/liblaf/sub-converter/compare/v0.2.1..v0.2.2) - 2025-06-06
 
 ### ✨ Features
 
 - **config:** add emoji and icon display configuration - ([e0aff24](https://github.com/liblaf/sub-converter/commit/e0aff243f0dbd173c595202b0780227b670066b1))
 - **groups:** add icons to proxy groups - ([e2a023b](https://github.com/liblaf/sub-converter/commit/e2a023b35e99fd59d8bfc26e126f3b5d8c039fee))
-
-### ❤️ New Contributors
-
-- [@liblaf](https://github.com/liblaf) made their first contribution
 
 ## [0.2.1](https://github.com/liblaf/sub-converter/compare/v0.2.0..v0.2.1) - 2025-06-01
 
