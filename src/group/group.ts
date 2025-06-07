@@ -28,7 +28,7 @@ export function defineRegionGroup(region: Country): Group {
   return defineGroup({
     name: region.name.common,
     type: region.cca2 === UNKNOWN.cca2 ? "select" : "url-test",
-    icon: `https://flagicons.lipis.dev/flags/4x3/${region.cca2.toLowerCase()}.svg`,
+    icon: `https://flagcdn.com/256x192/${region.cca2.toLowerCase()}.png`,
     emoji: region.flag,
     filter(node: ProxyNode): boolean {
       return node.region.cca2 === region.cca2 && !node.emby;
