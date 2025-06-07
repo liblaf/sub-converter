@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/liblaf/sub-converter/compare/v0.2.2...v0.2.3) (2025-06-07)
+
+
+### ♻ Code Refactoring
+
+* **group:** update flag icon URL format ([b284367](https://github.com/liblaf/sub-converter/commit/b284367b1bc0b656bc7f73d04e8bf22527e657db))
+
 ## [0.2.2](https://github.com/liblaf/sub-converter/compare/v0.2.1..v0.2.2) - 2025-06-05
 
 ### ✨ Features
