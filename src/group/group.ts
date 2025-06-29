@@ -107,8 +107,23 @@ export const STREAM: Group = defineGroup({
   },
 });
 
+// region Emby
+
+export const CITRUSLAB_EMBY: Group = defineGroup({
+  name: "CitrusLab Emby",
+  type: "url-test",
+  icon: "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Emby.png",
+  emoji: "📺",
+  filter(node: ProxyNode): boolean {
+    if (node.provider.name !== "CitrusLab") return false;
+    return node.emby || node.rate <= 1.0;
+  },
+});
+
+// endregion Emby
+
 export function groups(): Group[] {
-  const groups: Group[] = [AUTO, SELECT, AI, DOWNLOAD, EMBY, STREAM];
+  const groups: Group[] = [AUTO, SELECT, AI, DOWNLOAD, STREAM, CITRUSLAB_EMBY];
   groups.push(...countries.map(defineRegionGroup));
   return groups;
 }

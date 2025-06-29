@@ -136,6 +136,7 @@ rules:
   - RULE-SET,non-ip-global,PROXY
 
   # custom rules
+  - DOMAIN-SUFFIX,shenmi.link,CitrusLab Emby
   - RULE-SET,domain-direct,DIRECT
 
   - RULE-SET,ip-stream,Stream
