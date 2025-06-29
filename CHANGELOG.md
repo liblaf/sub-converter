@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/liblaf/sub-converter/compare/v0.2.3...v0.2.4) (2025-06-29)
+
+
+### ✨ Features
+
+* **group:** add CitrusLab Emby group and routing ([0f841e3](https://github.com/liblaf/sub-converter/commit/0f841e30fd02762994f9e75222830e9c5f30baa5))
+
 ## [0.2.3](https://github.com/liblaf/sub-converter/compare/v0.2.2..v0.2.3) - 2025-06-07
 
 ### ♻ Code Refactoring
