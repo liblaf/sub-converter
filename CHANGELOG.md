@@ -1,14 +1,22 @@
 # Changelog
 
-## [0.2.3](https://github.com/liblaf/sub-converter/compare/v0.2.2..v0.2.3) - 2025-06-07
+## [0.2.4](https://github.com/liblaf/sub-converter/compare/v0.2.3..v0.2.4) - 2025-06-29
 
-### ♻ Code Refactoring
+### ✨ Features
 
-- **group:** update flag icon URL format - ([b284367](https://github.com/liblaf/sub-converter/commit/b284367b1bc0b656bc7f73d04e8bf22527e657db))
+- **group:** add CitrusLab Emby group and routing - ([0f841e3](https://github.com/liblaf/sub-converter/commit/0f841e30fd02762994f9e75222830e9c5f30baa5))
 
 ### ❤️ New Contributors
 
 - [@liblaf](https://github.com/liblaf) made their first contribution
+- [@renovate[bot]](https://github.com/apps/renovate) made their first contribution in [#83](https://github.com/liblaf/sub-converter/pull/83)
+- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
+
+## [0.2.3](https://github.com/liblaf/sub-converter/compare/v0.2.2..v0.2.3) - 2025-06-08
+
+### ♻ Code Refactoring
+
+- **group:** update flag icon URL format - ([b284367](https://github.com/liblaf/sub-converter/commit/b284367b1bc0b656bc7f73d04e8bf22527e657db))
 
 ## [0.2.2](https://github.com/liblaf/sub-converter/compare/v0.2.1..v0.2.2) - 2025-06-06
 
